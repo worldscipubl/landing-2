@@ -23,6 +23,7 @@ jobs:
       - run: chmod 600 "$HOME/.ssh/key"
       # Deploy
       - run: mkdir build
+      - run: mkdir build/css
       - run: mv css/style.css build/css/style.css
       - run: mv fonts build/fonts
       - run: mv js build/js
