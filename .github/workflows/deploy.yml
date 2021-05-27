@@ -22,4 +22,11 @@ jobs:
       - run: echo "${{ secrets.key_server }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # Deploy
-      - run: cd css && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@5.253.63.141:/var/www/www-root/data/www/worldscipubl.com/public_html/public/landing/
+      - run: mkdir build
+      - run: mv css build/css
+      - run: mv fonts build/fonts
+      - run: mv js build/js
+      - run: mv media build/media
+      - run: mv pdf build/pdf
+      - run: mv index.html build/index.php
+      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@5.253.63.141:/var/www/www-root/data/www/worldscipubl.com/public_html/public/landing/
