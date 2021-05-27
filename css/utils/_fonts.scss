@@ -1,0 +1,37 @@
+@import 'mixins';
+
+@include font-face("Helvetica", "../fonts/HelveticaRegular/HelveticaRegular");
+@include font-face("HelveticaBold", "../fonts/HelveticaBold/HelveticaBold", bold);
+
+body,
+input,
+button,
+textarea {
+  font-family: $fontFamilyPrimary;
+}
+
+h2, h3, h4 {
+  font-family: $fontFamilySecondary;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 120%;
+  color: $textColorPrimary;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 35px;
+}
+
+span, a, p, button {
+  font-family: $fontFamilyPrimary;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 120%;
+
+  @include font-size(12px);
+  color: $textColorPrimary;
+}

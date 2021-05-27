@@ -1,0 +1,148 @@
+.footer {
+  position: relative;
+  @include margin(160px);
+  @include padding(16px, 0px, 16px, 0px);
+  background: #001437;
+
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+  }
+
+  &__about {
+    width: 75%;
+
+    &-text {
+      font-family: $fontFamilyPrimary;
+      font-style: italic;
+      @include font-size(12px);
+      color: $textColorSecondary;
+
+      &:not(:first-child) {
+        @include padding(18px);
+      }
+
+      &--link {
+        text-decoration: underline;
+      }
+
+      &--link {
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  &__logo {
+    object-fit: contain;
+    height: 100%;
+    margin: auto;
+
+  }
+
+  &__social {
+    height: 100%;
+    width: 80%;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    height: 100%;
+  }
+
+  &__bg {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    object-fit: contain;
+    object-position: right bottom;
+    height: 496px;
+
+    @include _more-than($bp-xxl-1442) {
+      height: #{get-vw(490px, $bp-xxl-1442)};
+    }
+
+    @include _less-than(1440px) {
+      height: #{get-vw(348px, 1400px)};
+    }
+
+    @include _less-than($bp-xl-1170) {
+      height: #{get-vw(268px, $bp-xl-1170)};
+    }
+
+    @include _less-than($bp-lg-979) {
+      height: #{get-vw(248px, $bp-lg-979)};
+    }
+
+    @include _less-than($bp-md-768) {
+      height: #{get-vw(248px, $bp-md-768)};
+    }
+
+  }
+}
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+
+  &__tel {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+    color: $textColorSecondary;
+  }
+
+  &__address {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+    color: $textColorSecondary;
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: row-reverse;
+
+  &__web {
+    font-family: $fontFamilyPrimary;
+    @include font-size(14px);
+    @include margin(8px);
+    color: $textColorPrimary;
+    text-align: center;
+  }
+
+  &__copy {
+    font-family: $fontFamilyPrimary;
+    @include font-size(9px);
+    @include margin(8px);
+    color: $textColorPrimary;
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    padding: 4px;
+    width: 15%;
+  }
+
+  &__img {
+    object-fit: cover;
+    border-radius: 24%;
+    overflow: hidden;
+
+    display: block;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+}

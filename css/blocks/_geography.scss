@@ -1,0 +1,23 @@
+.geography {
+  @include margin(140px);
+
+  &__wrap {
+
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(34px);
+    text-align: center;
+  }
+
+  &__map {
+    text-align: center;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}

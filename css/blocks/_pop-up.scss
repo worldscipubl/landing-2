@@ -1,0 +1,922 @@
+.pop-up {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 100;
+  display: flex;
+  transform: translateY(-100%);
+  overflow: hidden;
+
+  &__form {
+    width: 85%;
+
+    @include _less-than(1300px) {
+      width: 92%;
+    }
+
+    @include _less-than(1190px) {
+      width: 100%;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_transition {
+    transition: transform 0.5s;
+  }
+
+  &_active {
+    transform: translateY(0);
+  }
+
+  &__poster {
+    position: relative;
+    flex: 1;
+    background-color: #F5F5F5;
+
+    &--white {
+      background: $popupBackground;
+      @extend %s-border;
+    }
+  }
+
+  &__labels {
+    @include padding-size(0px, 12px, 12px, 12px);
+    @include font-size(10px);
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &--sign {
+      top: 2.5%;
+      bottom: auto;
+      left: 2.5%;
+    }
+  }
+
+  &__label {
+    font-family: $fontFamilyPrimary;
+    @include font-size(14px);
+
+    color: #FFFFFF;
+
+    display: block;
+
+    &--black {
+      color: $textColorAccent;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: contain;
+
+    $h-logo: 160px;
+    height: $h-logo;
+
+    &--right {
+      left: auto;
+      right: 0;
+    }
+
+
+    @include _more-than($bp-xxl-1442) {
+      height: #{get-vw($h-logo, $bp-xxl-1442)};
+    }
+
+    @include _less-than($bp-lg-979) {
+      height: #{get-vw($h-logo, $bp-lg-979)};
+    }
+
+    @include _less-than($bp-sm-576) {
+      height: #{get-vw($h-logo, $bp-sm-576)};
+    }
+  }
+
+  &__human {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    object-fit: contain;
+    height: 30%;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  &__main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &--gray {
+      background: #F5F5F5;
+    }
+  }
+
+  &__inner {
+    // height: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    @include padding(0px, 52px, 24px, 52px);
+
+    &--narrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__narrow {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    @include _less-than($bp-xl-1170) {
+      width: 100%;
+    }
+
+    &--center {
+      justify-content: center;
+    }
+  }
+
+  &__extended-block {
+    flex: 1;
+  }
+
+  &__desc {
+    font-weight: normal;
+    @include font-size(14px);
+    display: block;
+    width: 80%;
+
+    color: #000000;
+    @include margin(20px);
+  }
+
+  &__input {
+    width: 100%;
+    font-weight: normal;
+    cursor: text;
+    @include margin(15px);
+    @include font-size(14px);
+    @include padding(12px, 12px, 12px, 12px);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.49);
+
+    &--file {
+      cursor: pointer;
+    }
+  }
+
+  &__button {
+    border: 1px solid #000000;
+    border-radius: 300px;
+    background-color: #fff;
+    @include padding(12px, 50px, 12px, 50px);
+    transition: 0.3s;
+    cursor: pointer;
+    @include margin(20px);
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+
+    &--close {
+      align-self: flex-start;
+    }
+  }
+
+  &__super-desc {
+    font-weight: normal;
+    @include margin(21px);
+    @include font-size(10px);
+    color: #BBBBBB;
+    text-align: left;
+
+    &--link {
+      @include margin(0px);
+      text-decoration: underline;
+    }
+
+    &--finish {
+      position: absolute;
+      bottom: 2.5%;
+      left: 50%;
+      @include font-size(14px);
+      transform: translateX(-50%);
+      margin: 0;
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    @include font-size(18px);
+    line-height: 120%;
+
+    & + & {
+      margin-top: 2vh;
+    }
+
+    color: #000000;
+  }
+
+  &__video {
+    width: 100%;
+    margin: 4vh auto;
+    align-self: flex-start;
+  }
+
+  &__social {
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 60%;
+
+    &--center {
+      width: 85%;
+      align-self: center;
+    }
+
+    .social__link {
+    }
+  }
+
+  &__iframe {
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+    position: relative;
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      width: inherit;
+      height: 100%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    right: 1.3vw;
+    top: 1.5vh;
+
+    width: 25px;
+    height: 25px;
+
+    @include _more-than($bp-xxl-1442) {
+      right: #{get-vw(20px, $bp-xxl-1442)};
+      top: #{get-vw(20px, $bp-xxl-1442)};
+      width: #{get-vw(30px, $bp-xxl-1442)};
+      height: #{get-vw(30px, $bp-xxl-1442)};
+      margin-right: #{get-vw(12px, $bp-xxl-1442)};
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__file {
+
+  }
+
+}
+
+.popup-2 {
+  &__promo {
+    font-family: $fontFamilySecondary;
+    @include font-size(24px);
+    @include padding(24px, 24px, 24px, 24px);
+    background: #ECECEC;
+    border-radius: 6px;
+  }
+
+  &__description {
+    font-family: $fontFamilySecondary;
+    @include font-size(18px);
+    text-align: left;
+    cursor: default;
+  }
+
+  &__form {
+    width: 80%;
+
+    @include _less-than($bp-xl-1170) {
+      width: 100%;
+    }
+  }
+}
+
+.popup-3 {
+  &__promo {
+    font-family: $fontFamilySecondary;
+    @include font-size(24px);
+    @include padding(24px, 24px, 24px, 24px);
+    background: #ECECEC;
+    border-radius: 6px;
+  }
+
+  &__description {
+    font-family: $fontFamilyPrimary;
+    font-size: 24px;
+    padding-right: 100px;
+
+    @include _more-than($bp-xxl-1442) {
+      padding-right: #{get-vw(140px, $bp-xxl-1442)};
+      font-size: #{get-vw(24px, $bp-xxl-1442)};
+    }
+
+    @include _less-than($bp-xl-1170) {
+      font-size: 20px;
+      padding-right: 70px;
+    }
+
+    @include _less-than($bp-lg-979) {
+      padding: 0;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    @include margin(20px);
+    text-align: left;
+  }
+
+  &__form {
+    width: 100%;
+
+    @include _less-than($bp-xl-1170) {
+      width: 100%;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  }
+}
+
+.p-uploader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  @include padding(12px, 12px, 12px, 12px);
+
+  color: rgba(183, 183, 183, 1);
+
+  &--active {
+    background-color: $colorAccent;
+    border: 1px solid $colorAccent;
+
+    &:hover {
+      border: 1px solid rgba(0, 0, 0, 0.49);
+      background-color: #FFFEFE;
+      color: rgba(183, 183, 183, 1);
+
+      .p-uploader__choose {
+        .p-uploader__text {
+          color: rgba(183, 183, 183, 1) !important;
+          content: "sdfds";
+        }
+      }
+    }
+  }
+
+  &:active {
+    background-color: #0F5C30;
+  }
+
+  &:hover {
+    color: rgba(32, 32, 32, 1);
+  }
+
+  &__choose {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+
+      .p-uploader__text {
+        color: rgba(32, 32, 32, 1);
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    object-fit: contain;
+    width: 8%;
+  }
+
+  &__text {
+    display: block;
+    text-align: left;
+    font-style: $fontFamilyPrimary;
+    color: #B7B7B7;
+    @include font-size(14px);
+  }
+}
+
+.card-file {
+  text-decoration: none;
+  width: 61%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  @include padding(32px, 4px, 32px, 4px);
+  margin: 2vh auto;
+  cursor: default;
+
+  background: $popupBackground;
+  @extend %s-border;
+
+  @include _less-than($bp-xl-1170) {
+    width: 90%;
+  }
+
+  @include _less-than-height(700px) {
+    display: none;
+  }
+
+  &__img {
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(18px);
+    @include padding(16px, 12px, 0px, 12px);
+    line-height: 110%;
+    text-align: center;
+    color: $textColorPrimary;
+  }
+}
+
+.popup-4 {
+}
+
+.popup-7 {
+}
+
+.pdf-reader {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    flex: 50;
+    width: 100%;
+    background-color: $popupBackground;
+  }
+
+  &__viewer {
+    flex: 508;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__footer {
+    flex: 60;
+    width: 100%;
+    background-color: $popupBackground;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+  &__iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__close {
+  }
+
+  &__btn {
+    border: 1px solid #000000;
+    border-radius: 300px;
+    background-color: #fff;
+    @include padding(12px, 50px, 12px, 50px);
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+}
+
+.pdf-download {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    @include font-size(14px);
+  }
+
+  &__img {
+    height: 10%;
+    @include padding(0px, 12px, 0px, 12px);
+  }
+}
+
+.selector {
+  position: relative;
+  width: 100%;
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    @include margin(15px);
+
+    border: 1px solid rgba(0, 0, 0, 0.49);
+    background-color: #FFFEFE;
+    color: rgba(183, 183, 183, 1);
+    font-style: $fontFamilyPrimary;
+    @include font-size(14px);
+    @include padding(12px, 12px, 12px, 12px);
+    border-radius: 6px;
+    z-index: $z-index-menu;
+
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(32, 32, 32, 1);
+    }
+
+    &--show {
+      border: 1px solid $colorAccent;
+      background-color: $colorAccent;
+      color: #FFFEFE;
+
+      &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.49);
+        background-color: #FFFEFE;
+        color: rgba(183, 183, 183, 1);
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: calc(100% - 6px);
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background-color: #ffffff;
+
+    border: 1px solid #c7ccd1;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    transition: all 0.3s ease-out;
+
+    opacity: 0;
+    z-index: $z-index-content;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + label {
+      background-color: $colorAccent;
+      overflow: hidden;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    max-height: 0;
+    padding: 0 16px;
+
+    font-style: $fontFamilyPrimary;
+    @include font-size(14px);
+
+    transition: all 0.2s ease-out;
+    background-color: rgba(236, 236, 236, 1);
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    & + input + & {
+      border-top: 0 solid #C7CCD160;
+    }
+
+    &:hover {
+      background-color: rgba(206, 206, 206, 1);
+    }
+
+    &:active {
+      background-color: $colorAccent;
+    }
+  }
+
+  &[data-state="active"] {
+    .selector__title {
+      &::before {
+        transform: translate(-3px, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(3px, -50%) rotate(45deg);
+      }
+    }
+
+    .selector__content {
+      opacity: 1;
+    }
+
+    .selector__label + .selector__input + .selector__label {
+      max-height: 40px;
+      border-top-width: 1px;
+    }
+  }
+}
+
+.parea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 62.363%;
+
+  &__header {
+    flex: 1;
+  }
+
+  &__body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+  }
+
+  &__footer {
+    width: 70%;
+    @include margin(0px, 0px, 20px, 0px);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__logo {
+    position: absolute;
+    object-fit: contain;
+    height: 18%;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  &__title {
+    position: relative;
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+    @include font-size(18px);
+    line-height: 116%;
+    background-color: $colorPrimary;
+    @include padding(32px, 70px, 32px, 70px);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    &--pink {
+      font-family: $fontFamilyPrimary;
+      background-color: #F595A8;
+    }
+  }
+
+  &__subtitle {
+    width: 80%;
+    font-family: $fontFamilySecondary;
+    color: $textColorPrimary;
+    @include font-size(18px);
+    line-height: 116%;
+  }
+
+  &__text {
+    font-family: $fontFamilyPrimary;
+    color: $textColorPrimary;
+    @include font-size(14px);
+    @include margin(35px);
+  }
+
+  &__btn {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    @include font-size(14px);
+    @include padding(10px, 10px, 10px, 10px);
+    @include margin(35px);
+  }
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  width: 62.363%;
+
+  &__btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include font-size(18px);
+    @include padding(15px, 10px, 15px, 10px);
+    @include margin(35px);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    background-color: $colorPrimary;
+    //@include padding(32px, 77px, 32px, 15px);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 4;
+  }
+
+  &__footer {
+    width: 70%;
+    @include margin(0px, 0px, 20px, 0px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__logo {
+    object-fit: contain;
+    object-position: center;
+    height: 50%;
+  }
+
+  &__subtitle {
+    font-family: $fontFamilySecondary;
+    color: $textColorPrimary;
+    @include font-size(36px);
+    line-height: 116%;
+  }
+
+  &__text {
+    font-family: $fontFamilyPrimary;
+    color: $textColorPrimary;
+    @include font-size(24px);
+    @include margin(24px);
+  }
+}
+
+.pop-up-cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: none;
+
+  &__main {
+    height: 100%;
+  }
+
+  @include _less-than(720px) {
+    display: block;
+    z-index: 99999;
+  }
+}
+
+.folder {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 28%;
+
+  transform: translateX(50%) translateY(-50%);
+
+  &__img {
+    object-position: center;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    color: $textColorPrimary;
+    @include font-size(18px);
+    @include margin(12px);
+    line-height: 116%;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 83%;
+
+  &__img {
+    object-position: center;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    font-family: $fontFamilyPrimary;
+    color: $textColorPrimary;
+    @include font-size(14px);
+    @include margin(12px);
+    line-height: 116%;
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -1,0 +1,123 @@
+@import "nav";
+
+.header {
+  z-index: #{$z-index-menu + 2};
+  position: fixed;
+  width: 100%;
+  @include padding(12px, 28px, 12px, 28px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+
+  &--show {
+    background-color: $subtitleBackground;
+    transition: background-color ease-in-out 1s;
+  }
+
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+
+    @extend %tmp-button--nav;
+  }
+
+  &__call-text {
+    font-family: $fontFamilyPrimary;
+    color: $textColorSecondary;
+    @include font-size(12px);
+    font-size: 12px;
+    line-height: 116.6666%;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $textColorSecondary;
+
+  &__burger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    cursor: pointer;
+    z-index: $z-index-menu;
+  }
+
+  &__title {
+    display: block;
+    text-transform: capitalize;
+    color: inherit;
+    @include font-size(12px);
+    @include margin(0px, 0px, 0px, 9px);
+
+    &--show {
+      display: none;
+    }
+  }
+}
+
+.burger {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  @include margin(15px, 0px, 15px, 0px);
+
+  width: 30px;
+  height: 2px;
+  background-color: $textColorSecondary;
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    margin-top: 7px;
+    width: 30px;
+    height: 2px;
+    background-color: #FFFFFF;
+    border: none;
+    transition: transform 0.2s;
+  }
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    margin-top: -7px;
+    width: 30px;
+    height: 2px;
+    background-color: #FFFFFF;
+    border: none;
+    transition: transform 0.2s;
+  }
+
+  &-active:after {
+    transform: rotate(-45deg);
+    margin-top: 0;
+  }
+
+  &-active {
+    height: 0;
+  }
+
+  &-active:before {
+    transform: rotate(45deg);
+    margin-top: 0;
+  }
+}
+

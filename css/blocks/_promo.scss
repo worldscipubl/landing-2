@@ -1,0 +1,233 @@
+.promo {
+  @include margin(97px);
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    text-align: left;
+    @include font-size(36px);
+    padding-right: 280px;
+
+    @include _more-than($bp-xxl-1442) {
+      padding-right: #{get-vw(280px, $bp-xxl-1442)};
+    }
+
+    @include _less-than($bp-xl-1170) {
+      padding-right: #{get-vw(180px, $bp-xl-1170)};
+    }
+
+    @include _less-than($bp-lg-979) {
+      padding-right: #{get-vw(80px, $bp-lg-979)};
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include margin(24px);
+  }
+
+  &__column {
+    &:nth-child(1) {
+      width: 43.3559650824%;
+    }
+
+    &:nth-child(2) {
+      width: 48.6905916586%;
+    }
+
+    @include _less-than($bp-lg-979) {
+      &:nth-child(1) {
+        width: calc(43.3559650824% + 7.953443259% / 4);
+      }
+
+      &:nth-child(2) {
+        width: calc(48.6905916586% + 7.953443259% / 4);
+      }
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    background: #001437;
+    text-align: center;
+    @include padding(36px, 0px, 36px, 0px);
+    margin-top: 90px;
+
+    @include _more-than($bp-xxl-1442) {
+      margin-top: #{get-vw(90px, $bp-xxl-1442)};
+    }
+
+    @include _less-than($bp-lg-979) {
+      margin-top: #{get-vw(50px, $bp-lg-979)};
+    }
+  }
+
+  &__contract {
+    width: 32%;
+  }
+}
+
+.manifest {
+  position: relative;
+  background: $popupBackground;
+  @extend %s-border;
+  @include padding(12px, 5px, 20px, 21px);
+
+  &--ribbon {
+    @extend %s-border--manifest;
+  }
+
+  &--logo {
+    @include padding(50px, 16px, 60px, 28px);
+  }
+
+  &__logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    object-fit: contain;
+
+    $h-logo: 80px;
+    height: $h-logo;
+
+    @include _more-than($bp-xxl-1442) {
+      height: #{get-vw($h-logo, $bp-xxl-1442)};
+    }
+
+    @include _less-than($bp-lg-979) {
+      height: #{get-vw($h-logo, $bp-lg-979)};
+    }
+
+    @include _less-than($bp-sm-576) {
+      height: #{get-vw($h-logo, $bp-sm-576)};
+    }
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(14px);
+    line-height: 110%;
+  }
+
+  &__text {
+    @include font-size(14px);
+    line-height: 110%;
+
+    &:not(:first-child) {
+      @include padding(18px);
+    }
+
+    &--green {
+      color: $colorAccent;
+    }
+  }
+}
+
+.trailer {
+  &__video {
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+    position: relative;
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      width: inherit;
+      height: 100%;
+    }
+  }
+
+  &__description {
+    @include font-size(14px);
+    @include margin(16px);
+  }
+
+  &__form {
+    @include margin(10px);
+  }
+}
+
+%tmp-input {
+  $textColorInput: #B7B7B7;
+  $borderColorInput: rgba(0, 0, 0, 0.3);
+
+
+  background: $popupBackground;
+  color: $textColorPrimary;
+
+  &:placeholder {
+    color: $textColorInput;
+  }
+
+  text-align: left;
+
+  @include font-size(14px);
+  @include padding(10px, 20px, 10px, 20px);
+
+  border: 1px solid $borderColorInput;
+  border-radius: 6px;
+
+  @media (min-width: $bp-xxl-1442) {
+    border: #{get-vw(1px, $bp-xxl-1442)} solid $borderColorInput;
+    border-radius: #{get-vw(6px, $bp-xxl-1442)};
+  }
+
+  @media (max-width: #{$bp-lg-979}) {
+    border: #{get-vw(1px, $bp-lg-979)} solid $borderColorInput;
+    border-radius: #{get-vw(6px, $bp-lg-979)};
+  }
+}
+
+.app-form {
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(18px);
+  }
+
+  &__inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 309fr 177fr;
+    @include margin(10px);
+
+    column-gap: 16px;
+
+    @include _more-than($bp-xxl-1442) {
+      column-gap: #{get-vw(16px, $bp-xxl-1442)};
+    }
+
+    @include _less-than($bp-lg-979) {
+      column-gap: #{get-vw(16px, $bp-lg-979)};
+    }
+
+    @include _less-than($bp-sm-576) {}
+  }
+
+  &__input {
+    @extend %tmp-input;
+    cursor: text;
+  }
+
+  &__submit {}
+
+  &__note {
+    @include font-size(9px);
+    @include margin(4px);
+    max-width: 65%;
+    line-height: 105%;
+
+    color: #BBBBBB;
+
+    &--link {
+      text-decoration: underline;
+    }
+  }
+}

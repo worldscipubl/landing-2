@@ -1,0 +1,98 @@
+.component {
+  position: relative;
+  //height: 100vh;
+  @include margin(120px);
+  z-index: #{$z-index-menu + 1};
+
+  &__img {
+    position: absolute;
+    object-fit: contain;
+    object-position: top;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    @include _less-than(1372px) {
+      object-position: left;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+    @include font-size(35px);
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: #{$z-index-menu + 2};
+    @include padding(60px, 20px, 60px, 20px);
+  }
+
+  &__inner {
+    margin-top: 56px;
+    width: 50%;
+
+    @include _more-than($bp-xxl-1442) {
+      margin-top: #{get-vw(56px, $bp-xxl-1442)};
+    }
+
+    @include _less-than($bp-xl-1170) {
+      margin-top: #{get-vw(56px, $bp-xl-1170)};
+    }
+
+    @include _less-than($bp-lg-979) {
+      margin-top: #{get-vw(36px, $bp-lg-979)};
+      width: 64%;
+    }
+
+    @include _less-than($bp-md-768) {
+      margin-top: #{get-vw(16px, $bp-md-768)};
+    }
+  }
+
+  &__text {
+    @include font-size(18px);
+    color: $textColorSecondary;
+
+    &:not(:first-child) {
+      @include padding(20px);
+    }
+  }
+}
+
+.quote {
+  display: flex;
+  flex-direction: row;
+  @include margin(80px);
+  height: 100%;
+
+  &__text {
+    align-items: center;
+    font-style: italic;
+    color: $textColorSecondary;
+    @include font-size(18px);
+  }
+
+  &::before {
+    content: "“";
+  }
+
+  &::after {
+    content: "“";
+    transform: rotateZ(180deg) translateX(200%) translateY(-200%);
+  }
+
+  &::before,
+  &::after {
+    height: 10px;
+    line-height: 0%;
+    font-family: $fontFamilyPrimary;
+    color: $textColorSecondary;
+    @include font-size(72px);
+  }
+}
