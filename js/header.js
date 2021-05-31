@@ -55,7 +55,7 @@ function hideMenu() {
 function showOutPopup() {
     if (!localStorage.getItem('showOutPopup') && !localStorage.getItem('form') && currentShowPopUp == 0) {
         localStorage.setItem('showOutPopup', 'showOutPopup');
-        const showPopUpLogic = popups.get("out");
+        const showPopUpLogic = popups.get("777");
         showPopUpLogic();
     }
 }
