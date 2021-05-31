@@ -53,16 +53,21 @@ function hideMenu() {
 }
 
 function showOutPopup() {
-    const showPopUpLogic = popups.get("6");
-    showPopUpLogic();
+    if (!localStorage.getItem('showOutPopup') && !localStorage.getItem('form') && currentShowPopUp == 0) {
+        localStorage.setItem('showOutPopup', 'showOutPopup');
+        const showPopUpLogic = popups.get("6");
+        showPopUpLogic();
+    }
 }
 
+document.body.addEventListener('mousemove', function (event) {
+    const pointY = event.clientY;
 
-glio.init(
-    ['top', function () {
+    if (pointY <= 12) {
         showOutPopup();
-    }]
-);
+    }
+
+});
 
 const scrollItems = document.querySelectorAll('[data-scroll]');
 scrollItems.forEach((item) => {
