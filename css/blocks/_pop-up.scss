@@ -79,11 +79,11 @@
 
   &__logo {
     position: absolute;
-    left: 0;
+    left: 5%;
     top: 0;
     object-fit: contain;
 
-    $h-logo: 160px;
+    $h-logo: 90px;
     height: $h-logo;
 
     &--right {

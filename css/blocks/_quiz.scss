@@ -30,10 +30,10 @@
 
     &-logo {
       object-fit: contain;
+      height: 120%;
       position: absolute;
       left: 0;
       top: 0;
-      transform: translateY(-14.41048%);
 
       @include _less-than(720px) {
         display: none;

@@ -145,11 +145,11 @@
 
   &__logo {
     position: absolute;
-    left: 5%;
+    left: 8%;
     top: 0;
     object-fit: contain;
 
-    $h-logo: 80px;
+    $h-logo: 58px;
     height: $h-logo;
 
     @include _more-than($bp-xxl-1442) {

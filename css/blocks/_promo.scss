@@ -85,11 +85,11 @@
 
   &__logo {
     position: absolute;
-    right: 0;
+    right: 2%;
     top: 0;
     object-fit: contain;
 
-    $h-logo: 80px;
+    $h-logo: 58px;
     height: $h-logo;
 
     @include _more-than($bp-xxl-1442) {
