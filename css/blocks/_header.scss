@@ -3,6 +3,8 @@
 .header {
   z-index: #{$z-index-menu + 2};
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   @include padding(12px, 28px, 12px, 28px);
   display: flex;

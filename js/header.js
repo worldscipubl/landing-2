@@ -1,7 +1,6 @@
 _navToggle = document.getElementById("navToggle");
 _navBurger = document.getElementById("navBurger");
 _navBar = document.getElementById("navBar");
-// _navCoverBackground = document.getElementById("header-call-btn");
 _header = document.getElementById("header");
 _callBtn = document.getElementById("header-call-btn");
 

@@ -1,7 +1,12 @@
 .audit {
   @include margin(170px);
 
-  &__wrap {}
+  &--without {
+    @include margin(60px);
+  }
+
+  &__wrap {
+  }
 
   &__title {
     font-family: $fontFamilySecondary;
@@ -42,7 +47,8 @@
     width: 100%;
   }
 
-  &__header {}
+  &__header {
+  }
 
   &__subtitle {
     font-family: $fontFamilyPrimary;
@@ -307,47 +313,43 @@
   }
 
   progress[value]::-webkit-progress-value {
-    background:
-      -webkit-linear-gradient(-45deg,
-        transparent 33%,
-        rgba(0, 0, 0, .2) 33%,
-        rgba(0, 0, 0, .2) 66%,
-        transparent 66%),
-      -webkit-linear-gradient(right,
-        #005f95,
-        #07294d);
-    background:
-      linear-gradient(-45deg,
-        transparent 33%,
-        rgba(0, 0, 0, .2) 33%,
-        rgba(0, 0, 0, .2) 66%,
-        transparent 66%),
-      linear-gradient(right,
-        #005f95,
-        #07294d);
+    background: -webkit-linear-gradient(-45deg,
+            transparent 33%,
+            rgba(0, 0, 0, .2) 33%,
+            rgba(0, 0, 0, .2) 66%,
+            transparent 66%),
+    -webkit-linear-gradient(right,
+                    #005f95,
+                    #07294d);
+    background: linear-gradient(-45deg,
+            transparent 33%,
+            rgba(0, 0, 0, .2) 33%,
+            rgba(0, 0, 0, .2) 66%,
+            transparent 66%),
+    linear-gradient(right,
+                    #005f95,
+                    #07294d);
     background-size: 60px 30px, 100% 100%, 100% 100%;
     border-radius: 3px;
   }
 
   progress[value]::-moz-progress-bar {
-    background:
-      -moz-linear-gradient(-45deg,
-        transparent 33%,
-        rgba(0, 0, 0, .2) 33%,
-        rgba(0, 0, 0, .2) 66%,
-        transparent 66%),
-      -moz-linear-gradient(right,
-        #005f95,
-        #07294d);
-    background:
-      linear-gradient(-45deg,
-        transparent 33%,
-        rgba(0, 0, 0, .2) 33%,
-        rgba(0, 0, 0, .2) 66%,
-        transparent 66%),
-      linear-gradient(right,
-        #005f95,
-        #07294d);
+    background: -moz-linear-gradient(-45deg,
+            transparent 33%,
+            rgba(0, 0, 0, .2) 33%,
+            rgba(0, 0, 0, .2) 66%,
+            transparent 66%),
+    -moz-linear-gradient(right,
+                    #005f95,
+                    #07294d);
+    background: linear-gradient(-45deg,
+            transparent 33%,
+            rgba(0, 0, 0, .2) 33%,
+            rgba(0, 0, 0, .2) 66%,
+            transparent 66%),
+    linear-gradient(right,
+                    #005f95,
+                    #07294d);
     background-size: 60px 30px, 100% 100%, 100% 100%;
     border-radius: 3px;
   }
