@@ -2,7 +2,7 @@
   @include margin(170px);
 
   &--without {
-    @include margin(60px);
+    @include margin(80px, 0px, 40px, 80px);
   }
 
   &__wrap {
