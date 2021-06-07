@@ -279,6 +279,7 @@ function initForm(_form) {
             const base_url = '/main/';          // Базовый URLs
             const file_ep = 'add-file/';        // Загрзка файла
             const add_lead = 'add-lead/';       // Отправка заявки
+            //-
 
             let url = base_url;
 
