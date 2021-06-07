@@ -1,7 +1,7 @@
 function initForm(_form) {
     _form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const { currentTarget } = e;
+        const {currentTarget} = e;
         const idPopup = currentTarget.hasAttribute('data-popup')
             ? currentTarget.getAttribute('data-popup')
             : null;
@@ -24,8 +24,7 @@ function initForm(_form) {
 
             if (_form.id === 'activate_promo_code_') {
                 sendFormWithConfirm(data, currentTarget);  // Отправляем форму
-            }
-            else if (idShowPopUp === 'file_upload' || idShowPopUp === 'file_upload-2') {
+            } else if (idShowPopUp === 'file_upload' || idShowPopUp === 'file_upload-2') {
                 const email = localStorage.getItem('email');
                 console.log('Проверка email перед запуском popup file_upload');
                 if (email) checkEmail(true, email, data);
@@ -277,19 +276,24 @@ function initForm(_form) {
             /* Для отладки испольховать: */
             // const base_url = 'https://worldscipubl.com/main-test/';
 
-            const base_url = '/main/';       // Базовый URLs
+            const base_url = '/main/';          // Базовый URLs
             const file_ep = 'add-file/';        // Загрзка файла
+            const add_lead = 'add-lead/';       // Отправка заявки
+
             let url = base_url;
 
-            if (sendData.get('file')) url += file_ep;
+            if (sendData.get('file'))
+                url += file_ep;
+            else
+                url += add_lead;
 
             _button.style.pointerEvents = "none";
             loadProgressBar();
             axios.post(
                 url,
                 sendData,
-                { withCredentials: true },
-                { headers: head }
+                {withCredentials: true},
+                {headers: head}
             ).then(
                 (response) => {
                     const inputs = currentForm.querySelectorAll('input');
@@ -357,8 +361,8 @@ function initForm(_form) {
             axios.post(
                 url,
                 sendData,
-                { withCredentials: true },
-                { headers: headers }
+                {withCredentials: true},
+                {headers: headers}
             ).then(
                 (response) => {
                     console.log(response);
@@ -409,8 +413,8 @@ function initForm(_form) {
                 axios.post(
                     url,
                     fo,
-                    { withCredentials: true },
-                    { headers: head }
+                    {withCredentials: true},
+                    {headers: head}
                 ).then(
                     (response) => {
                         const resData = response.data;
