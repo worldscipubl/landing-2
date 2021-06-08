@@ -76,10 +76,15 @@
     transition: 0.6s;
     transform: translateX(-100%);
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
     height: 100vh;
     width: 40vw;
     background-color: #031435;
-    @include padding(20px, 65px, 0px, 65px);
+    @include padding(20px, 65px, 20px, 65px);
 
     @include _less-than($bp-xl-1170) {
       width: 50vw;
@@ -141,9 +146,14 @@
 
   &__footer {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     @include margin(20px);
+
+    @include _less-than-height(595px) {
+      display: none;
+    }
   }
 
   &__logo {
@@ -151,6 +161,14 @@
     width: 40%;
     align-self: center;
     object-fit: contain;
+
+    @include _less-than-height(670px) {
+      width: 20%;
+    }
+
+    @include _less-than-height(620px) {
+      width: 15%;
+    }
   }
 
   &__date {
