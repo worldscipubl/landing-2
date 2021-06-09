@@ -71,6 +71,7 @@ function initPopUp(button) {
         if (_currentBtn.hasAttribute('data-formsended')) {
             /* Считываем название цели */
             const formSender = _currentBtn.getAttribute('data-formsended');
+            console.log("formSender: " + formSender)
 
             if (_currentBtn.hasAttribute('data-show-popup')) {
                 /* Получаем доступ к открываемому popup-у */
@@ -89,6 +90,8 @@ function initPopUp(button) {
                     if (_form) _form.setAttribute('name', formSender);
                 }
             }
+        } else {
+            console.log("formSender don't exits!")
         }
 
         // Отправка цели для случаев где нет формы

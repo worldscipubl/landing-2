@@ -430,7 +430,7 @@ function initForm(_form) {
                         if (resData === true) {
                             console.log("Email already exists!");
                             if (data) {
-                                showPopUpLogic = popups.get("finished-2");
+                                    showPopUpLogic = popups.get("finished-2");
                                 openNextPopUp();                // Открываем следующий PopUp
                             }
                         } else {
