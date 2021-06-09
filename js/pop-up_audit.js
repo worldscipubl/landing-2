@@ -8,9 +8,6 @@ function initPopUp(button) {
     const _closeButton = _popUp.querySelector('.pop-up__close');
     const _closeBtn = _popUp.querySelector('.pop-up__button--close');
 
-    const _currentURL = new URL(window.location.href);
-    const _popUPFromURL = _currentURL.searchParams.get("get-popup-by-id");
-
     if (_closeBtn) {
         _closeBtn.addEventListener('click', () => {
             closePopUp(_popUp, duration);
@@ -104,10 +101,6 @@ function initPopUp(button) {
     _closeButton.addEventListener('click', () => {
         closePopUp(_popUp, duration);
     });
-
-    if (_popUPFromURL === idPopUp) {
-        showPopUpLogic();
-    }
 
     return showPopUpLogic;
 }
@@ -292,3 +285,13 @@ buttons.forEach((button) => {
             popups.set(idShowPopUp, initPopUp(button));
     }
 });
+
+
+const _currentURLAudit = new URL(window.location.href);
+const _emailFromURL = _currentURLAudit.searchParams.get("e");
+
+if (_emailFromURL) {
+    const _inputEmailAudit = document.getElementById('input-email-audit');
+    _inputEmailAudit.value = _emailFromURL;
+}
+
