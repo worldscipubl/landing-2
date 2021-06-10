@@ -1,3 +1,5 @@
+let currentFile = null;
+
 function initForm(_form) {
     _form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -186,7 +188,7 @@ function initForm(_form) {
                     }
                     break;
                 case 'fileUpload':
-                    if (input.validity.valid) {
+                    if (input.validity.valid || currentFile) {
                         removeErrorInput(input, hint);
                         return true;
                     } else {
@@ -232,7 +234,10 @@ function initForm(_form) {
 
                 if (_isValidity) {
                     if (input.getAttribute('type') === 'file') {
-                        fo.append('file', input.files[0]);
+                        if (currentFile)
+                            fo.append('file', currentFile);
+                        else
+                            fo.append('file', input.files[0]);
                     } else if (input.getAttribute('type') === 'radio') {
                         if (input.checked) {
                             fo.append(input.name, input.value);
@@ -430,7 +435,7 @@ function initForm(_form) {
                         if (resData === true) {
                             console.log("Email already exists!");
                             if (data) {
-                                    showPopUpLogic = popups.get("finished-2");
+                                showPopUpLogic = popups.get("finished-2");
                                 openNextPopUp();                // Открываем следующий PopUp
                             }
                         } else {
