@@ -873,6 +873,131 @@
     </div>
 </section>
 
+<section id="popup-file_upload-out" class="pop-up">
+    <div class="pop-up__poster">
+        <div class="pop-up__folder folder">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src="./media/folder-clip.png"
+                 alt="folder" class="folder__img lazy">
+            <p class="folder__title">Технический аудит</p>
+        </div>
+
+        <img class="pop-up__logo lazy"
+             src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+             data-src="./media/flazhek.png"
+             data-srcset="./media/flazhek@1.5x.png 1.5x, ./media/flazhek@2x.png 2x"
+             alt="pop-up__logo lazy"/>
+
+        <img class="pop-up__human lazy"
+             src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+             data-src="./media/humaaans.svg" alt="pop-up__logo lazy"/>
+    </div>
+
+    <div class="pop-up__main">
+        <div class="pop-up__inner popup-3">
+            <div class="pop-up__narrow">
+                <div class="pop-up__header">
+                    <h3 class="parea__title">
+                        Методические рекомендации по написанию научных статей будут
+                        направлены на указанную электронную почту
+                        <span class="parea__title-email parea__email">{Email}</span>
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                             data-src="./media/logo.svg" alt="logo"
+                             class="parea__logo lazy">
+                    </h3>
+                </div>
+
+                <div class="pop-up__group">
+                    <p class="popup-2__description">
+                        Проведем бесплатный технический аудит Вашей статьи.
+                        Заранее определим соответствие
+                        международным стандартам академического письма
+                    </p>
+
+                    <p class="pop-up__desc">
+                        Для этого выберите интересующую Вас базу
+                        и загрузите свою статью
+                    </p>
+                </div>
+
+                <div class="popup-3__form">
+                    <form novalidate name="file-uploader" enctype="multipart/form-data"
+                          method="post" action="/">
+                        <div class="pop-up__inputs">
+                            <div class="selector" data-state="">
+                                <div class="selector__title" data-default="Option 0">
+                                    Выберите базу (Scopus/WoS)
+                                </div>
+                                <div class="selector__content">
+                                    <input id="singleSelectOut1" class="selector__input"
+                                           type="radio" name="db" value="0"
+                                           required/>
+                                    <label for="singleSelectOut1" class="selector__label">
+                                        Выберите базу (Scopus/WoS)
+                                    </label>
+
+                                    <input id="singleSelectOut2" class="selector__input"
+                                           type="radio" name="db" value="1"
+                                           required/>
+                                    <label for="singleSelectOut2" class="selector__label">
+                                        Scopus
+                                    </label>
+
+                                    <input id="singleSelectOut3" class="selector__input"
+                                           type="radio" name="db" value="2"
+                                           required/>
+                                    <label for="singleSelectOut3" class="selector__label">
+                                        Web of Science
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <div class="p-uploader pop-up__input pop-up__input--file">
+                                    <label for="file-upload-3-out"
+                                           class="p-uploader__choose">
+                                        <span class="p-uploader__text">
+                                            Загрузить статью (.pdf .doc .docx)
+                                        </span>
+                                        <img class="p-uploader__img lazy"
+                                             src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                             data-src="./media/folder/folder.svg"
+                                             alt="uploader-img lazy"/>
+                                    </label>
+                                    <input name="file" id="file-upload-3-out" type="file"
+                                           accept=".pdf, .doc, .docx"
+                                           required>
+                                </div>
+                                <span class="input-wrapper__error"></span>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="pop-up__button"
+                                data-show-popup="finished" data-step="4">
+                            Отправить
+                        </button>
+                    </form>
+                </div>
+
+                <p class="pop-up__super-desc">
+                    Нажимая на кнопку, вы даете согласие на обработку своих
+                    персональных данных и соглашаетесь с
+                    <button class="pop-up__super-desc pop-up__super-desc--link"
+                            data-show-popup="500">
+                        Политикой конфиденциальности
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-up__close">
+        <img src="./media/X.svg" alt=""
+             class="close_btn"/>
+    </div>
+</section>
+
 <section id="popup-out" class="pop-up">
     <div class="pop-up__poster">
         <div class="pop-up__labels">
@@ -924,7 +1049,7 @@
                     </p>
 
                     <p class="pop-up__desc">
-                        Укажите, пожалуйста, контактный номер телефона, PDF - версия с
+                        Укажите, пожалуйста, вашу электронную почту, PDF - версия с
                         подробными методическими рекомендациями поступит в течение 15 минут.
                     </p>
 
@@ -932,9 +1057,9 @@
                         <form novalidate name="2" action="/">
                             <div class="pop-up__inputs">
                                 <div class="input-wrapper">
-                                    <input name="phone" type="tel" class="pop-up__input"
-                                           placeholder="Введите номер телефона"
-                                           pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                                    <input name="email" type="email" class="pop-up__input"
+                                           placeholder="Email"
+                                           pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
                                            required/>
                                     <span class="input-wrapper__error"></span>
                                 </div>
@@ -942,7 +1067,7 @@
 
                             <button type="submit" class="pop-up__button"
                                     data-formsended="out_"
-                                    data-show-popup="file_upload" data-step="3">
+                                    data-show-popup="file_upload-out" data-step="1">
                                 Получить рекомендации
                             </button>
                         </form>

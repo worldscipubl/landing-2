@@ -26,9 +26,11 @@ function initForm(_form) {
 
             if (_form.id === 'activate_promo_code_') {
                 sendFormWithConfirm(data, currentTarget);  // Отправляем форму
-            } else if (idShowPopUp === 'file_upload' || idShowPopUp === 'file_upload-2') {
-                const email = localStorage.getItem('email');
+            } else if (idShowPopUp === 'file_upload' || idShowPopUp === 'file_upload-2' || idShowPopUp === 'file_upload-out') {
+                let email = localStorage.getItem('email');
                 console.log('Проверка email перед запуском popup file_upload');
+                if (data.has('email'))
+                    email = data.get('email');
                 if (email) checkEmail(true, email, data);
                 else sendForm(data, currentTarget);  // Отправляем форму
             }

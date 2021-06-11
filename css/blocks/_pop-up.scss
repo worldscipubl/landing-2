@@ -755,6 +755,13 @@
     }
   }
 
+  &__title-email {
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+    @include font-size(18px);
+    line-height: 116%;
+  }
+
   &__subtitle {
     width: 80%;
     font-family: $fontFamilySecondary;

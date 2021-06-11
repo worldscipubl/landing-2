@@ -45,7 +45,9 @@
         </div>
         <img class="pop-up__logo lazy"
              src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-             data-src="./media/flazhek.png" data-srcset="./media/flazhek@1.5x.png 1.5x, ./media/flazhek@2x.png 2x" alt="pop-up__logo lazy"/>
+             data-src="./media/flazhek.png"
+             data-srcset="./media/flazhek@1.5x.png 1.5x, ./media/flazhek@2x.png 2x"
+             alt="pop-up__logo lazy"/>
         <img class="pop-up__img lazy" data-srcset="./media/pop-up/photo-5@2x.jpg, 2x"
              src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
              data-src="./mediapop-up/photo-5.jpg" alt="photo-5"/>
@@ -117,7 +119,9 @@
         </div>
         <img class="pop-up__logo lazy"
              src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-             data-src="./media/flazhek.png" data-srcset="./media/flazhek@1.5x.png 1.5x, ./media/flazhek@2x.png 2x" alt="pop-up__logo lazy"/>
+             data-src="./media/flazhek.png"
+             data-srcset="./media/flazhek@1.5x.png 1.5x, ./media/flazhek@2x.png 2x"
+             alt="pop-up__logo lazy"/>
         <img class="pop-up__img lazy" data-srcset="./media/pop-up/photo-6@2x.jpg, 2x"
              src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
              data-src="./mediapop-up/photo-6.jpg" alt="photo-6"/>
@@ -207,7 +211,9 @@
         </div>
         <img class="pop-up__logo lazy"
              src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-             data-src="./media/flazhek.png" data-srcset="./media/flazhek@1.5x.png 1.5x, ./media/flazhek@2x.png 2x" alt="pop-up__logo lazy"/>
+             data-src="./media/flazhek.png"
+             data-srcset="./media/flazhek@1.5x.png 1.5x, ./media/flazhek@2x.png 2x"
+             alt="pop-up__logo lazy"/>
         <img class="pop-up__img lazy" data-srcset="./media/pop-up/photo-6@2x.jpg, 2x"
              src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
              data-src="./mediapop-up/photo-6.jpg" alt="photo-6"/>
@@ -244,7 +250,7 @@
                     </p>
 
                     <p class="pop-up__desc">
-                        Укажите, пожалуйста, контактный номер телефона, PDF - версия с
+                        Укажите, пожалуйста, вашу электронную почту, PDF - версия с
                         подробными методическими рекомендациями поступит в течение 15 минут.
                     </p>
 
@@ -252,9 +258,9 @@
                         <form novalidate name="2" action="/">
                             <div class="pop-up__inputs">
                                 <div class="input-wrapper">
-                                    <input name="phone" type="tel" class="pop-up__input"
-                                           placeholder="Введите номер телефона"
-                                           pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                                    <input name="email" type="email" class="pop-up__input"
+                                           placeholder="Email"
+                                           pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
                                            required/>
                                     <span class="input-wrapper__error"></span>
                                 </div>
@@ -262,7 +268,7 @@
 
                             <button type="submit" class="pop-up__button"
                                     data-formsended="out_"
-                                    data-show-popup="file_upload" data-step="3">
+                                    data-show-popup="file_upload-out" data-step="1">
                                 Получить рекомендации
                             </button>
                         </form>
