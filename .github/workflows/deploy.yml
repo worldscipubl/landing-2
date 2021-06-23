@@ -25,4 +25,5 @@ jobs:
       - run: mv media build/media
       - run: mv index.html build/index.php
       - run: mv technical_audit.html build/technical_audit.php
+      - run: mv we_need_editors.html build/we_need_editors.php
       - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@5.253.63.141:/var/www/www-root/data/www/worldscipubl.com/public_html/public/landing/
