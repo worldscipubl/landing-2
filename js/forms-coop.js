@@ -1,6 +1,14 @@
 let currentFile = null;
 
 function initForm(_form) {
+    const _currentURL = new URL(window.location.href);
+    const _emailFromURL = _currentURL.searchParams.get("e");
+    const _emailInput = _form.querySelector('input[name="email"]');
+
+    if (_emailInput && _emailFromURL)
+        _emailInput.value = _emailFromURL;
+
+
     _form.addEventListener('submit', (e) => {
         e.preventDefault();
         const {currentTarget} = e;
