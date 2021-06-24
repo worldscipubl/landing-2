@@ -42,6 +42,12 @@
     padding: #{get-vw(12px, $bp-lg-979)};
   }
 
+  @include _less-than($bp-md-768) {
+    box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
+    border-radius: #{get-vw(24px, $bp-sm-576)};
+    padding: #{get-vw(12px, $bp-sm-576)};
+  }
+
   &--submit {
     height: fit-content;
     font-family: $fontFamilyPrimary;

@@ -52,8 +52,8 @@ function initForm(_form) {
         function showSuccess() {
             const _des = document.querySelector('.coop-form__description');
             const _form = document.querySelector('.coop-form__form');
-            _des.innerHTML = "Благодарю вас!\n" +
-                "Вы получите письмо с нашим предложением.";
+            _des.innerHTML = "Спасибо!" + "</br>" +
+                "Вы получите письмо с нашим предложением."
 
             _form.remove();
         }

@@ -22,9 +22,10 @@
     font-size: #{get-vw($f-size, $bp-lg-979)};
   }
 
-  @media (max-width: #{$bp-sm-576}) {
+  @media (max-width: #{$bp-md-768}) {
     font-size: #{get-vw($f-size, $bp-sm-576)};
   }
+
 }
 
 %s-border {
@@ -92,9 +93,15 @@
     padding-right: #{get-vw($right, $bp-lg-979)};
     padding-bottom: #{get-vw($bottom, $bp-lg-979)};
     padding-left: #{get-vw($left, $bp-lg-979)};
+
   }
 
-  @media (max-width: #{$bp-sm-576}) {}
+  @media (max-width: #{$bp-md-768}) {
+    padding-top: #{get-vw($top, $bp-sm-576)};
+    padding-right: #{get-vw($right, $bp-sm-576)};
+    padding-bottom: #{get-vw($bottom, $bp-sm-576)};
+    padding-left: #{get-vw($left, $bp-sm-576)};
+  }
 }
 
 @mixin padding-size($t-padding: 0px, $r-padding: 0px, $b-padding: 0px, $l-padding: 0px) {
@@ -104,9 +111,15 @@
     padding: #{get-vw($t-padding, $bp-xxl-1442)} #{get-vw($r-padding, $bp-xxl-1442)} #{get-vw($b-padding, $bp-xxl-1442)} #{get-vw($l-padding, $bp-xxl-1442)};
   }
 
-  @media (max-width: #{$bp-lg-979}) {}
+  @media (max-width: #{$bp-lg-979}) {
+  }
 
-  @media (max-width: #{$bp-sm-576}) {}
+  @media (max-width: #{$bp-md-768}) {
+    padding-top: #{get-vw($t-padding, $bp-sm-576)};
+    padding-right: #{get-vw($r-padding, $bp-sm-576)};
+    padding-bottom: #{get-vw($b-padding, $bp-sm-576)};
+    padding-left: #{get-vw($l-padding, $bp-sm-576)};
+  }
 }
 
 @mixin margin($t-margin: 0px, $r-margin: 0px, $b-margin: 0px, $l-margin: 0px) {
@@ -116,9 +129,15 @@
     margin: #{get-vw($t-margin, $bp-xxl-1442)} #{get-vw($r-margin, $bp-xxl-1442)} #{get-vw($b-margin, $bp-xxl-1442)} #{get-vw($l-margin, $bp-xxl-1442)};
   }
 
-  @media (max-width: #{$bp-lg-979}) {}
+  @media (max-width: #{$bp-lg-979}) {
+  }
 
-  @media (max-width: #{$bp-sm-576}) {}
+  @media (max-width: #{$bp-md-768}) {
+    margin-top: #{get-vw($t-margin, $bp-sm-576)};
+    margin-right: #{get-vw($r-margin, $bp-sm-576)};
+    margin-bottom: #{get-vw($b-margin, $bp-sm-576)};
+    margin-left: #{get-vw($l-margin, $bp-sm-576)};
+  }
 }
 
 
