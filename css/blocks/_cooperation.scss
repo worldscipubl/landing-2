@@ -8,6 +8,7 @@
 .cooperation {
 
   &__inner {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -16,6 +17,20 @@
 
     @include _less-than(1080px) {
       flex-direction: column;
+    }
+  }
+
+  &__logo {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 18%;
+    align-self: flex-end;
+    object-fit: contain;
+
+    @include _less-than(1080px) {
+      display: none;
     }
   }
 
@@ -46,6 +61,11 @@
     border-top-left-radius: 0;
     min-width: 508px;
     width: 70%;
+
+    @include _less-than(940px) {
+      min-width: auto;
+      width: 100%;
+    }
   }
 
   &__form {
