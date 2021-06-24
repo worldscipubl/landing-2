@@ -312,7 +312,7 @@ function initForm(_form) {
             const headers = {
                 Accept: 'application/json',
                 'Content-Type': 'multipart/form-data',
-                'Access-Control-Allow-Origin': "http://localhost:8848/",
+                'Access-Control-Allow-Origin': "https://worldscipubl.com/",
                 'Access-Control-Allow-Credentials': true,
                 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type,' + ' Accept'
             };
