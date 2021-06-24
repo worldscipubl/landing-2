@@ -317,23 +317,7 @@ function initForm(_form) {
                 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type,' + ' Accept'
             };
 
-            /* Для отладки испольховать: */
-            // const base_url = 'https://worldscipubl.com/main-test/';
-
-            const base_url = '/main/';          // Базовый URL
-            const file_ep = 'add-file/';        // Загрзка файла
-            const letter_ep = 'letter/';        // Вопрос из FAQ
-            const is_exists = 'is-exists/';     // Проверка email
-            const add_lead = 'add-lead/';       // Отправка заявки
-
-            let url = base_url;
-
-            if (sendData.get('file'))
-                url += file_ep;
-            else if (sendData.get('text'))
-                url += letter_ep;
-            else
-                url += add_lead;
+            const url = 'https://e.worldscipubl.com/site/editor-form/'
 
             _button.style.pointerEvents = "none";
             loadProgressBar();
