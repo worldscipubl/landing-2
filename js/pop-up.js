@@ -155,46 +155,38 @@ function initPopUpById(id, scriptForm = null) {
     });
 }
 
+function getDocIDbyName(nameDoc) {
+    switch (nameDoc) {
+        case "cooperation_agreement":
+            return '1W-CW3Q27ebiwfl-wv9S4B_3oIZaWSgUY';
+        case "privacy_policy":
+            return '1MF_Wx6QopTXjhBHDtE-IRUXVrxKyIZ8o';
+        case "example_tech_audit":
+            return '1VhlfISJeOnjL_ENnsIZ6nqfNpAuVfiUS';
+        case "example_provisional_defect":
+            return '1yJMEpbTCqqu7kJmzuz3JQVVHjW0Gcv1-';
+        case "example_scientific_editing":
+            return '1pqEmIpPLWBEhOjG6Z8YFTT6q_ERx0iL7';
+        case "example_revision_certificate":
+            return '1QP-ZloUgdMxDXPfIgN5ut9rnw4QEQ6W4';
+        case "example_cover_letter":
+            return '1w904xoCCq6lhLxyY_09YaA4DjuHRV7Sw';
+        case "example_final_article":
+            return '1eJf04ioy7zhJkao60TA6KjFmvIKCivFH';
+        default:
+            return;
+    }
+}
+
 function getPdfDocById(popUp) {
     const _iframe = popUp.querySelector('iframe');
+    const _linkDownload = popUp.querySelector('.pdf-reader__download .pdf-download');
+
     if (_iframe && _iframe.hasAttribute('id')) {
         const iframeID = _iframe.getAttribute('id');
-
-        switch (iframeID) {
-            case "cooperation_agreement":
-                _iframe.src = "https://drive.google.com/file/d/1W-CW3Q27ebiwfl-wv9S4B_3oIZaWSgUY/preview";
-                break;
-
-            case "privacy_policy":
-                _iframe.src = "https://drive.google.com/file/d/1MF_Wx6QopTXjhBHDtE-IRUXVrxKyIZ8o/preview";
-                break;
-
-            case "example_tech_audit":
-                _iframe.src = "https://drive.google.com/file/d/1wmHktxsPSc2OqqKaP4OT2vP2ysWUr9x-/preview";
-                break;
-
-            case "example_provisional_defect":
-                _iframe.src = "https://drive.google.com/file/d/1yJMEpbTCqqu7kJmzuz3JQVVHjW0Gcv1-/preview";
-                break;
-
-            case "example_scientific_editing":
-                _iframe.src = "https://drive.google.com/file/d/1pqEmIpPLWBEhOjG6Z8YFTT6q_ERx0iL7/preview";
-                break;
-
-            case "example_revision_certificate":
-                _iframe.src = "https://drive.google.com/file/d/1QP-ZloUgdMxDXPfIgN5ut9rnw4QEQ6W4/preview";
-                break;
-
-            case "example_cover_letter":
-                _iframe.src = "https://drive.google.com/file/d/1w904xoCCq6lhLxyY_09YaA4DjuHRV7Sw/preview";
-                break;
-
-            case "example_final_article":
-                _iframe.src = "https://drive.google.com/file/d/1eJf04ioy7zhJkao60TA6KjFmvIKCivFH/preview";
-                break;
-            default:
-                return;
-        }
+        const docID = getDocIDbyName(iframeID);
+        _iframe.src = `https://drive.google.com/file/d/${docID}/preview`;
+        _linkDownload.href = `https://drive.google.com/uc?id=${docID}&export=download`;
     }
 }
 
