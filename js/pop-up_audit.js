@@ -152,7 +152,7 @@ function getDocIDbyName(nameDoc) {
         case "privacy_policy":
             return '1MF_Wx6QopTXjhBHDtE-IRUXVrxKyIZ8o';
         case "example_tech_audit":
-            return '1VhlfISJeOnjL_ENnsIZ6nqfNpAuVfiUS';
+            return '1Wy6yeZy1JLCRyYE9FwMuwYj_w5AVDMt7';
         case "example_provisional_defect":
             return '1yJMEpbTCqqu7kJmzuz3JQVVHjW0Gcv1-';
         case "example_scientific_editing":
