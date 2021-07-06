@@ -2538,6 +2538,10 @@ input {
   width: 100%;
 }
 
+.file-cards_aline_evenly {
+  justify-content: space-evenly;
+}
+
 .file-cards__item {
   width: 27%;
   display: flex;

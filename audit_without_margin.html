@@ -1,5 +1,4 @@
 <section class="audit audit--without" id="audit">
-
     <div class="audit__wrap container">
         <h2 class="audit__title">
             Предлагаем бесплатно проанализировать Вашу статью
@@ -42,11 +41,16 @@
                     </div>
 
                     <p class="audit__desc">
-                        Проведем бесплатный технический аудит, чтобы оценить возможность
-                        публикации Вашей рукописи в
-                        журнале с необходимыми
-                        характеристиками, а также сформировать перечень требующихся
-                        доработок и рассчитать их стоимость
+                        1. Получите подробный аудит Вашего исследования
+                        с комментариями рецензента и пошаговый план для успешной публикации.
+                    </p>
+
+                    <p class="audit__desc">
+                        2. Рецензия и результаты технического аудита покажут уровень
+                        готовности статьи к началу публикационных работ. Чем выше будет
+                        качество исходного материала, тем больше шансов пройти процесс
+                        публикации быстрее и получить публикацию в журнале с необходимым для
+                        Вас рейтингом.
                     </p>
 
 
@@ -75,30 +79,22 @@
                 </div>
             </form>
 
-            <div class="audit__files file-cards">
-                <button class="file-cards__item" data-show-popup="200"
+            <div class="audit__files file-cards file-cards_aline_evenly">
+                <button class="file-cards__item" data-show-popup="tech-aspects"
                         data-formsended="technical_audit_" data-step="1">
                     <img class="file-cards__img lazy"
                          src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
                          data-src="./media/pdf_img.svg" alt="pdf_img lazy">
-                    <span class="file-cards__title">“Технический аудит”</span>
+                    <span class="file-cards__title">Пример проверки технических аспектов</span>
                 </button>
 
-                <button class="file-cards__item" data-show-popup="202"
+                <button class="file-cards__item" data-show-popup="editor-review"
                         data-formsended="expert_assessment_"
                         data-step="1">
                     <img class="file-cards__img lazy"
                          src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
                          data-src="./media/pdf_img.svg" alt="pdf_img lazy">
-                    <span class="file-cards__title">“Предварительная экспертная оценка”</span>
-                </button>
-
-                <button class="file-cards__item" data-show-popup="206"
-                        data-formsended="before_after_" data-step="1">
-                    <img class="file-cards__img lazy"
-                         src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                         data-src="./media/pdf_img.svg" alt="pdf_img lazy">
-                    <span class="file-cards__title">“До / После”</span>
+                    <span class="file-cards__title">Пример рецензии от редактора</span>
                 </button>
             </div>
         </div>
@@ -849,6 +845,45 @@
     </div>
 </section>
 
+<!-- Пример проверки технических аспектов -->
+<section id="popup-tech-aspects" class="pop-up pdf-reader">
+    <div class="pdf-reader__header">
+        <div class="pop-up__close pdf-reader__close">
+            <img src="./media/X.svg" alt="" class="close_btn"/>
+        </div>
+    </div>
+
+    <div class="pdf-reader__viewer">
+        <iframe class="pdf-reader__iframe lazy"
+                id="tech-aspects"
+                width="700"
+                height="500"
+                style="border: none"></iframe>
+    </div>
+
+    <div class="pdf-reader__footer">
+        <div class="pdf-reader__column">
+            <h2 class="pdf-reader__title">Пример проверки технических аспектов</h2>
+        </div>
+
+        <div class="pdf-reader__column">
+            <button class="pdf-reader__btn" data-show-popup="155" data-step="2">
+                Перейти к обсуждению
+            </button>
+        </div>
+
+        <div class="pdf-reader__column">
+            <a href="https://drive.google.com/uc?id=1wmHktxsPSc2OqqKaP4OT2vP2ysWUr9x-&export=download"
+               target="_blank" class="pdf-reader__download pdf-download">
+                <span class="pdf-download__title">Cкачать в PDF</span>
+                <img class="pdf-download__img lazy"
+                     src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                     data-src="./media/download_icon.svg" alt=""/>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Пример предварительной экспертной оценки -->
 <section id="popup-202" class="pop-up pdf-reader">
     <div class="pdf-reader__header">
@@ -869,6 +904,47 @@
         <div class="pdf-reader__column">
             <h2 class="pdf-reader__title">
                 Пример предварительной экспертной оценки
+            </h2>
+        </div>
+
+        <div class="pdf-reader__column">
+            <button class="pdf-reader__btn" data-show-popup="155" data-step="2">
+                Перейти к обсуждению
+            </button>
+        </div>
+
+        <div class="pdf-reader__column">
+            <a href="https://drive.google.com/u/0/uc?id=1yJMEpbTCqqu7kJmzuz3JQVVHjW0Gcv1-&export=download"
+               target="_blank" class="pdf-reader__download pdf-download">
+                <span class="pdf-download__title">Cкачать в PDF</span>
+                <img class="pdf-download__img lazy"
+                     src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                     data-src="./media/download_icon.svg" alt=""/>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Пример рецензии от редактора -->
+<section id="popup-editor-review" class="pop-up pdf-reader">
+    <div class="pdf-reader__header">
+        <div class="pop-up__close pdf-reader__close">
+            <img src="./media/X.svg" alt="" class="close_btn"/>
+        </div>
+    </div>
+
+    <div class="pdf-reader__viewer">
+        <iframe class="pdf-reader__iframe lazy"
+                id="editor-review"
+                width="700"
+                height="500"
+                style="border: none"></iframe>
+    </div>
+
+    <div class="pdf-reader__footer">
+        <div class="pdf-reader__column">
+            <h2 class="pdf-reader__title">
+                Пример рецензии от редактора
             </h2>
         </div>
 

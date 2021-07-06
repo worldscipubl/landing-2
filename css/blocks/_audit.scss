@@ -369,6 +369,12 @@
   @include margin(22px, 0px, 0px, 0px);
   width: 100%;
 
+  &_aline {
+    &_evenly {
+      justify-content: space-evenly;
+    }
+  }
+
   &__item {
     width: 27%;
     display: flex;

@@ -163,6 +163,10 @@ function getDocIDbyName(nameDoc) {
             return '1w904xoCCq6lhLxyY_09YaA4DjuHRV7Sw';
         case "example_final_article":
             return '1eJf04ioy7zhJkao60TA6KjFmvIKCivFH';
+        case "tech-aspects":
+            return '1Snpiuv7jjd5XhRkn2FUVevUyvaixAYPc';
+        case "editor-review":
+            return '1u_94uW7CmOwAzm9FNELqBisE1bl4MuuQ';
         default:
             return;
     }
@@ -170,7 +174,7 @@ function getDocIDbyName(nameDoc) {
 
 function getPdfDocById(popUp) {
     const _iframe = popUp.querySelector('iframe');
-    const _linkDownload = popUp.querySelector('.pdf-reader__download .pdf-download');
+    const _linkDownload = popUp.querySelector('.pdf-reader__download.pdf-download');
 
     if (_iframe && _iframe.hasAttribute('id')) {
         const iframeID = _iframe.getAttribute('id');

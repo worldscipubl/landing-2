@@ -1,3 +1,5 @@
+Сами ссылки уже не актуальные
+
 ?get-popup-by-id=<popup-id>
 
   Договор о сотрудничестве с World Sci Publ
