@@ -1,4 +1,4 @@
-/* Make clicks pass-through */
+@use '../global' as *;
 
 $colorProgress: red;
 
@@ -19,7 +19,6 @@ $colorProgress: red;
   height: 4px;
 }
 
-/* Fancy blur effect */
 #nprogress .peg {
   display: block;
   position: absolute;
@@ -34,7 +33,6 @@ $colorProgress: red;
   transform: rotate(3deg) translate(0px, -4px);
 }
 
-/* Remove these to get rid of the spinner */
 #nprogress .spinner {
   display: block;
   position: fixed;

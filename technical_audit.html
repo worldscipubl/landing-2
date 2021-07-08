@@ -13,7 +13,7 @@
           type="font/woff"
           crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <link href="./media/incons/favicon.ico" rel="shortcut icon">
+    <link href="media/icons/favicon.ico" rel="shortcut icon">
     <title>WorldSciPubl</title>
 
     <!-- Google Tag Manager -->
@@ -230,10 +230,10 @@
     <div class="header__menu menu">
 
         <div class="menu__burger" id="navToggle">
-            <div class="burger" id="navBurger"></div>
-            <p class="menu__title">
-                МЕНЮ
-            </p>
+            <div class="burger burger_hide" id="navBurger"></div>
+            <img class="menu__img"
+                 src="./media/logos/logo_white.svg"
+                 alt="logo_white">
         </div>
 
         <nav class="header__nav nav" id="navBar">
@@ -278,18 +278,21 @@
         <span class="header__call-text">+7 (495) 127 - 79 - 26</span>
     </a>
 </header>
+
 <main>
-<section class="audit audit--without" id="audit">
-    <div class="audit__wrap container">
+<section class="audit audit_container container" id="audit">
+    <div class="audit__wrap audit--without">
         <h2 class="audit__title">
             Получите подробный аудит Вашего исследования
             с комментариями рецензента и пошаговый план для успешной публикации
         </h2>
 
-        <div class="audit__inner">
-            <form novalidate class="audit__form" id="dran-n-drop" name="dran-n-drop"
+        <div class="audit__wrapper">
+            <form class="audit__colA" id="dran-n-drop" name="dran-n-drop"
                   action="/"
-                  enctype="multipart/form-data" method="post">
+                  enctype="multipart/form-data"
+                  method="post"
+                  novalidate>
                 <div class="audit__main">
                     <div class="audit__uploader uploader" id="file-upload-form">
                         <input class="uploader__input-file" id="file-upload" type="file"
@@ -319,56 +322,186 @@
                             </span>
                         </label>
                     </div>
-                    <p class="audit__desc">
-                        Рецензия и результаты технического аудита покажут уровень
-                        готовности статьи к началу публикационных работ. Чем выше будет
-                        качество исходного материала, тем больше шансов пройти процесс
-                        публикации быстрее и получить публикацию в журнале с необходимым для
-                        Вас рейтингом.
-                    </p>
-                    <div class="audit__fields">
-                        <div class="input-wrapper audit__email">
-                            <input class="audit-form__input" type="email" name="email"
-                                   id="input-email-audit"
-                                   placeholder="Email куда направить результат"
-                                   pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-                                   required>
-                            <span class="input-wrapper__error"></span>
+
+                    <div class="audit__container">
+                        <p class="audit__desc">
+                            Заполните данные:
+                        </p>
+                        <div class="audit__inputs">
+                            <div class="input-wrapper audit__input">
+                                <input class="audit-form__input" type="text" name="subject"
+                                       placeholder="Тематика статьи"
+                                       required>
+                                <span class="input-wrapper__error"></span>
+                            </div>
+                            <div class="input-wrapper audit__input">
+                                <input class="audit-form__input" type="email" name="email"
+                                       id="input-email-audit"
+                                       placeholder="Email куда направить результат"
+                                       pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                                       required>
+                                <span class="input-wrapper__error"></span>
+                            </div>
+                            <div class="input-wrapper audit__input">
+                                <input class="audit-form__input" type="tel" name="phone"
+                                       placeholder="Введите номер телефона"
+                                       pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                                       required/>
+                                <span class="input-wrapper__error"></span>
+                            </div>
+                            <div class="input-wrapper audit__input">
+                                <input class="audit-form__input" type="text"
+                                       name="name"
+                                       placeholder="Имя" required/>
+                                <span class="input-wrapper__error"></span>
+                            </div>
+                        </div>
+                        <div class="audit__action">
+                            <div class="audit__action-btn">
+                                <span class="input-wrapper__error"></span>
+                                <button type="submit" id="fileUploadBtn"
+                                        class="button audit__btn" name="submit"
+                                        data-show-popup="finished"
+                                        data-formsended="free_audit_"
+                                        data-step="1">
+                                    Отправить
+                                </button>
+                            </div>
+                            <div class="secure audit__action-secure">
+                                <div class="secure__inner">
+                                    <div class="secure__picture">
+                                        <div class="secure-pic">
+                                            <img class="secure-pic__img"
+                                                 src="./media/icons/security.svg"
+                                                 alt="security">
+                                            <div class="secure-pic__txt-block">
+                                                <p class="secure-pic__txt">
+                                                    100%
+                                                </p>
+                                                <p class="secure-pic__txt">
+                                                    Secure
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="secure__text text_size_default">
+                                        Мы обеспечим конфиденциальность<br>
+                                        и безопасность ваших документов
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="audit__submit">
-                            <span class="input-wrapper__error"></span>
-                            <button type="submit" id="fileUploadBtn"
-                                    class="button audit__btn" name="submit"
-                                    data-show-popup="finished" data-formsended="free_audit_"
-                                    data-step="1">
-                                Отправить
-                            </button>
-                        </div>
+                        <p class="audit__desc">
+                            Рецензия и результаты технического аудита покажут уровень
+                            готовности статьи к началу публикационных работ. Чем выше будет
+                            качество исходного материала, тем больше шансов пройти процесс
+                            публикации быстрее и получить публикацию в журнале <b>с
+                            необходимым для Вас рейтингом.</b>
+                            <br>
+                            <br>
+                        </p>
+
+                        <p class="audit__desc">
+                            * Количество редакторов ограничено<br>
+                            ** C 01.09.2021 стоимость данного аудита составит 100$
+                        </p>
                     </div>
                 </div>
             </form>
+            <div class="audit__cards audit__colB">
+                <div class="audit__card">
+                    <div class="card">
+                        <div class="card__inner">
+                            <div class="card__header">
+                                <h3 class="card__title text_size_subtitle">
+                                    Технический аудит
+                                </h3>
+                                <p class="card__subtitle text_size_subtitle">
+                                    Стоимость - <span class="cross_out text_size_subtitle">50$</span>
+                                    <span class="text text_weight_bold text_size_subtitle">0$</span>
+                                </p>
+                            </div>
+                            <div class="card__body">
+                                <img class="card__img"
+                                     src="./media/assets/tech_audit.svg"
+                                     alt="card img">
+                            </div>
+                            <div class="card__footer">
+                                <div class="doc">
+                                    <div class="doc__icon"></div>
+                                    <div class="doc__text"></div>
+                                    <div class="doc__download download-pdf">
+                                        <div class="download-pdf__inner">
+                                            <img class="download-pdf__icon"
+                                                 src="media/icons/pdf-icon.svg"
+                                                 alt="download-pdf">
+                                            <h4 class="download-pdf__text text_size_accent">
+                                                Пример технического аудита
+                                            </h4>
+                                        </div>
+                                        <a class="download-pdf__btn download-btn" href="">
+                                            <img class="download-btn__img"
+                                                 src="./media/icons/download.svg"
+                                                 alt="download">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div class="audit__files file-cards file-cards_aline_evenly">
-                <button class="file-cards__item" data-show-popup="tech-aspects"
-                        data-formsended="technical_audit_" data-step="1">
-                    <img class="file-cards__img lazy"
-                         src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                         data-src="./media/pdf_img.svg" alt="pdf_img lazy">
-                    <span class="file-cards__title">Пример проверки технических аспектов</span>
-                </button>
+                            <img class="card__picture"
+                                 src="./media/mockups/mockup_book_1.png"
+                                 alt="mockup_book_1">
+                        </div>
+                    </div>
+                </div>
+                <div class="audit__card">
+                    <div class="card">
+                        <div class="card__inner">
+                            <div class="card__header">
+                                <h3 class="card__title text_size_subtitle">
+                                    Рецензия
+                                </h3>
+                                <p class="card__subtitle text_size_subtitle">
+                                    Стоимость - <span class="cross_out text_size_subtitle">50$</span>
+                                    <span class="text text_weight_bold text_size_subtitle">0$</span>
+                                </p>
+                            </div>
+                            <div class="card__body">
+                                <img class="card__img"
+                                     src="./media/assets/dogovor.svg"
+                                     alt="card img">
+                            </div>
+                            <div class="card__footer">
+                                <div class="doc">
+                                    <div class="doc__icon"></div>
+                                    <div class="doc__text"></div>
+                                    <div class="doc__download download-pdf">
+                                        <div class="download-pdf__inner">
+                                            <img class="download-pdf__icon"
+                                                 src="media/icons/pdf-icon.svg"
+                                                 alt="download-pdf">
+                                            <h4 class="download-pdf__text text_size_accent">
+                                                Пример рецензии от редактора
+                                            </h4>
+                                        </div>
+                                        <a class="download-pdf__btn download-btn" href="">
+                                            <img class="download-btn__img"
+                                                 src="./media/icons/download.svg"
+                                                 alt="download">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                <button class="file-cards__item" data-show-popup="editor-review"
-                        data-formsended="expert_assessment_"
-                        data-step="1">
-                    <img class="file-cards__img lazy"
-                         src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                         data-src="./media/pdf_img.svg" alt="pdf_img lazy">
-                    <span class="file-cards__title">Пример рецензии от редактора</span>
-                </button>
+                            <img class="card__picture"
+                                 src="./media/mockups/mockup_book_2.png"
+                                 alt="mockup_book_2">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 </section>
 

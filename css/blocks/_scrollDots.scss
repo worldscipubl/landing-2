@@ -1,14 +1,5 @@
-/* Easy Scroll Dots 1.1.5 --- https://github.com/Superhands89/EasyScrollDots
-* Quickly add anchor points throughout your web page/application and have navigational dots automatically appear
-* in a fixed position on the side of the page. This allows the user to click to scroll though sections of the page,
-* and it updates as they scroll.
-*
-* By Superhands89 2019-2021 --- https://github.com/Superhands89/
-*
-* GPLv3 Licence for open source use only
-* or purchase a Single Commercial License at https://gum.co/TdtEX
-* or purchase an Extended Commercial License at https://gum.co/NGfmlw
-*/
+@use '../global' as *;
+
 .scroll-indicator-controller {
   position: fixed;
   top: 50vh;
@@ -16,14 +7,17 @@
   right: 10px;
   z-index: 999;
 }
+
 .scroll-indicator-controller.indi-mobile > div span {
   display: none;
 }
+
 @media (min-width: 1025px) {
   .scroll-indicator-controller {
     right: 20px;
   }
 }
+
 .scroll-indicator-controller > div {
   width: 20px;
   height: 20px;
@@ -36,6 +30,7 @@
   transition: background 0.4s ease;
   will-change: transition;
 }
+
 .scroll-indicator-controller > div span {
   color: tomato;
   position: absolute;
@@ -52,11 +47,13 @@
   transition: all 0.4s ease;
   will-change: transition;
 }
+
 @media (hover: none) {
   .scroll-indicator-controller > div span {
     display: none;
   }
 }
+
 .scroll-indicator-controller > div span:after {
   content: "-----";
   padding-left: 5px;
@@ -65,6 +62,7 @@
   vertical-align: text-top;
   line-height: 14px;
 }
+
 @media (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .scroll-indicator-controller > div:hover span {
     width: auto;
@@ -73,10 +71,12 @@
     transform: translateY(-50%) translateX(0px);
   }
 }
+
 .scroll-indicator-controller > div.active {
   background: tomato;
   border-color: rgba(0, 0, 0, 0.25);
 }
+
 @supports (-ms-ime-align:auto) {
   .scroll-indicator-controller > div span {
     transition: opacity 0.4s ease;

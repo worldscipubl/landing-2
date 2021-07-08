@@ -1,0 +1,7 @@
+@forward 'typography';
+@forward 'reset';
+@forward 'base';
+@forward 'components';
+
+// TODO: Нарушен порядок импортов в целях обратной совместимости
+// TODO: reset должен быть 1-ый.

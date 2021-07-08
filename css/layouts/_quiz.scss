@@ -1,0 +1,119 @@
+@use '../global' as *;
+
+.quiz {
+  @include margin(160px);
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(36px);
+  }
+
+  &__subtitle {
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+
+    @include font-size(14px);
+    @include padding(7px, 64px, 7px, 82px);
+
+    @include less-than(720px) {
+      @include padding(7px, 28px, 7px, 0px);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    @include margin(36px);
+  }
+
+  &__header {
+    @include margin(12px);
+
+    &-logo {
+      object-fit: contain;
+      height: 120%;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @include less-than(720px) {
+        display: none;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 476px;
+
+    @include more-than($bp-xxl-1442) {
+      height: #{get-vw(476px, $bp-xxl-1442)};
+    }
+
+    @include less-than(900px) {
+      height: #{get-vw(500px, 900px)};
+    }
+
+    @include less-than($bp-lg-979) {
+      height: #{get-vw(500px, $bp-lg-979)};
+    }
+
+    @include less-than($bp-md-768) {
+      height: #{get-vw(520px, $bp-md-768)};
+    }
+  }
+
+  &__content {
+    @include padding(0px, 64px, 60px, 82px);
+    @include margin(20px);
+
+    @include less-than(720px) {
+      @include padding(0px, 28px, 0px, 0px);
+    }
+  }
+
+  &__poster {
+    width: 30%;
+    position: relative;
+    @include margin(0px, 0px, 0px, 24px);
+  }
+
+  &__quote {
+    display: flex;
+    flex-direction: row;
+
+    @include margin(28px);
+    @include padding(0px, 64px, 0px, 82px);
+
+    width: 100%;
+    height: 100%;
+
+    &-text {
+      font-family: $fontFamilyPrimary;
+      font-style: italic;
+      @include font-size(18px);
+      @include padding(0px, 20px, 0px, 20px);
+    }
+
+    &::before {
+      content: "“";
+      transform: translateY(-12%);
+    }
+
+    &::after {
+      content: "“";
+      transform: rotateZ(180deg) translateX(15%) translateY(40%);
+    }
+
+    &::before,
+    &::after {
+      font-family: $fontFamilyPrimary;
+      @include font-size(96px);
+      color: $colorAccent;
+    }
+  }
+
+}

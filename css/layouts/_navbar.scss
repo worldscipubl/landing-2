@@ -1,0 +1,122 @@
+@use '../global' as *;
+
+.nav {
+  position: fixed;
+  transform: translateX(-100%);
+  opacity: 0;
+  left: 0;
+  top: 0;
+  transition: opacity 0.6s;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, .6);
+
+  &__inner {
+    position: relative;
+    transition: 0.6s;
+    transform: translateX(-100%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100vh;
+    width: 40vw;
+    background-color: #031435;
+    @include padding(20px, 65px, 20px, 65px);
+
+    @include less-than($bp-xl-1170) {
+      width: 50vw;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: flex-end;
+    transform: translateX(12%);
+
+    &-logo {
+      position: absolute;
+      top: 0;
+      right: 2%;
+      height: 8%;
+      align-self: flex-end;
+      object-fit: contain;
+    }
+  }
+
+  &--show {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  &--show &__inner {
+    transform: translateX(0%);
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    height: 58%;
+    @include margin(20px);
+  }
+
+  &__link {
+    @extend %tmp-button--nav;
+    font-family: $fontFamilyPrimary;
+    text-align: center;
+    color: $textColorSecondary;
+    @include font-size(18px);
+    @include padding(8px, 20px, 8px, 20px);
+    @include margin(17px);
+
+
+    &:hover {
+      background: $textColorSecondary;
+      color: $textColorPrimary;
+    }
+
+    &--special {
+      @include margin(36px);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    @include margin(20px);
+
+    @include less-than-height(595px) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    width: 40%;
+    align-self: center;
+    object-fit: contain;
+
+    @include less-than-height(670px) {
+      width: 20%;
+    }
+
+    @include less-than-height(620px) {
+      width: 15%;
+    }
+  }
+
+  &__date {
+    font-family: $fontFamilyPrimary;
+    color: $textColorSecondary;
+    @include font-size(14px);
+    @include margin(20px);
+    text-align: center;
+  }
+}
+

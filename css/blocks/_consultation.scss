@@ -1,18 +1,4 @@
-%tmp-logo {
-  width: 84px;
-
-  @include _more-than($bp-xxl-1442) {
-    width: #{get-vw(84px, $bp-xxl-1442)};
-  }
-
-  @include _less-than($bp-lg-979) {
-    width: #{get-vw(84px, $bp-lg-979)};
-  }
-
-  @include _less-than($bp-md-768) {
-    width: #{get-vw(84px, $bp-md-768)};
-  }
-}
+@use '../global' as *;
 
 .consultation {
   background: $windowBackground;

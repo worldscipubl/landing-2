@@ -1,23 +1,4 @@
-%highlighter {
-  padding: 8px 12px;
-  border-radius: 6px;
-
-  font-family: $fontFamilySecondary;
-  color: $textColorSecondary;
-  background: $colorAccent;
-
-  @media (min-width: $bp-xxl-1442) {
-    padding: #{get-vw(8px, $bp-xxl-1442)} #{get-vw(12px, $bp-xxl-1442)};
-    border-radius: #{get-vw(6px, $bp-xxl-1442)};
-  }
-
-  @media (max-width: #{$bp-lg-979}) {
-    padding: #{get-vw(8px, $bp-lg-979)} #{get-vw(12px, $bp-lg-979)};
-    border-radius: #{get-vw(6px, $bp-lg-979)};
-  }
-
-  @media (max-width: #{$bp-sm-576}) {}
-}
+@use '../global' as *;
 
 .quizlet {
   display: flex;

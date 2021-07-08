@@ -1,0 +1,83 @@
+@use '../global' as *;
+
+html,
+body {
+	background: $windowBackground;
+	font-family: sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+button,
+a,
+input {
+	cursor: pointer;
+}
+
+$p-side: 20px;
+$maxWidthContainer: 1031px;
+$maxWidthContainer: $maxWidthContainer + 2 * $p-side;
+
+.container {
+	max-width: $maxWidthContainer;
+	margin: 0 auto;
+	padding: 0 $p-side;
+
+	@include more-than($bp-xxl-1442) {
+		max-width: #{get-vw($maxWidthContainer, $bp-xxl-1442)};
+		padding: 0 #{get-vw($p-side, $bp-xxl-1442)};
+	}
+
+	@include less-than($bp-lg-979) {
+		max-width: #{get-vw($maxWidthContainer, $bp-lg-979)};
+		padding: 0 #{get-vw($p-side, $bp-lg-979)};
+	}
+
+	@include less-than($bp-sm-576) {
+		max-width: #{get-vw($maxWidthContainer, $bp-sm-576)};
+		padding: 0 #{get-vw($p-side, $bp-sm-576)};
+	}
+}
+
+.extended-block {
+	position: relative;
+
+	&:after {
+		@extend %block-background;
+	}
+
+
+	& > * {
+		z-index: $z-index-content;
+	}
+}
+
+.extended-header {
+	position: relative;
+
+	&:after {
+		@extend %header-background;
+	}
+
+
+	& > * {
+		position: relative;
+		z-index: $z-index-content;
+	}
+}
+
+.extended-subtitle {
+	position: relative;
+
+	&:after {
+		@extend %subtitle-background;
+	}
+
+
+	& > * {
+		position: relative;
+		z-index: $z-index-content;
+	}
+}

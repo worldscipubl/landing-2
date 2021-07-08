@@ -1,0 +1,18 @@
+@use '../global' as *;
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__error {
+    display: none;
+    color: red;
+    @include font-size(12px);
+    @include padding(4px);
+
+    &--show {
+      display: block;
+    }
+  }
+}

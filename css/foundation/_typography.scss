@@ -1,0 +1,156 @@
+@use '../global' as *;
+
+@include font-face("Helvetica", "../fonts/HelveticaRegular/HelveticaRegular");
+@include font-face("HelveticaBold", "../fonts/HelveticaBold/HelveticaBold", bold);
+
+body,
+input,
+button,
+textarea {
+  font-family: $fontFamilyPrimary;
+}
+
+h2, h3, h4 {
+  font-family: $fontFamilySecondary;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 120%;
+  color: $textColorPrimary;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 35px;
+}
+
+span, a, p, button {
+  font-family: $fontFamilyPrimary;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 120%;
+
+  @include font-size(12px);
+  color: $textColorPrimary;
+}
+
+$text-sizes: (
+        large: 64px,
+        title: 36px,
+        subtitle: 24px,
+        header-logo: 22px,
+        accent: 18px,
+        text: 14px,
+        default: 12px,
+        small: 9px,
+);
+
+$text-colors: (
+        black: #000,
+        white: #FFF,
+        gray: #00000066,
+        gray-blue: #0D1D47
+);
+
+.text {
+  @extend %text;
+  color: map-get($text-colors, black);
+
+  &_size {
+    @each $size, $val in $text-sizes {
+      &_#{$size} {
+        font-size: $val;
+      }
+    }
+  }
+
+  &_color {
+    @each $color, $val in $text-colors {
+      &_#{$color} {
+        color: $val;
+      }
+    }
+  }
+
+  &_weight {
+    &_normal {
+      font-weight: normal;
+    }
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.title {
+  @extend %title;
+  color: map-get($text-colors, black);
+
+  &_size {
+    @each $size, $val in $text-sizes {
+      &_#{$size} {
+        font-size: $val;
+      }
+    }
+  }
+
+  &_color {
+    @each $color, $val in $text-colors {
+      &_#{$color} {
+        color: $val;
+      }
+    }
+  }
+
+  &_weight {
+    &_normal {
+      font-weight: normal;
+    }
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.link {
+  @extend %text;
+  color: map-get($text-colors, gray);
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  &_size {
+    @each $size, $val in $text-sizes {
+      &_#{$size} {
+        font-size: $val;
+      }
+    }
+  }
+
+  &_color {
+    @each $color, $val in $text-colors {
+      &_#{$color} {
+        color: $val;
+      }
+    }
+  }
+
+  &_weight {
+    &_normal {
+      font-weight: normal;
+    }
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+}
+

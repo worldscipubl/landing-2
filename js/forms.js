@@ -154,6 +154,16 @@ function initForm(_form) {
                     }
                     break;
 
+                case 'subject':
+                    if (input.validity.valid) {
+                        removeErrorInput(input, hint);
+                        return true;
+                    } else {
+                        setErrorInput(input, hint, 'Не указана тематика!');
+                        return false;
+                    }
+                    break;
+
                 case 'link':
                     if (input.validity.valid) {
                         removeErrorInput(input, hint);

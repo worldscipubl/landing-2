@@ -1,0 +1,30 @@
+@use '../global' as *;
+
+.advantages {
+  @include margin(80px);
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 18.9263565891%;
+  }
+
+  @include less-than($bp-sm-576) {
+    &__inner {
+      //flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 48%;
+
+      &:nth-child(n + 3) {
+        margin-top: 20px;
+      }
+    }
+  }
+}

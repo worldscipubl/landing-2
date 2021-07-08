@@ -1,3 +1,5 @@
+@use '../global' as *;
+
 .cooperation-main {
   min-height: 100vh;
   display: flex;
@@ -15,7 +17,7 @@
     align-items: center;
     width: 100%;
 
-    @include _less-than(1080px) {
+    @include less-than(1080px) {
       flex-direction: column;
     }
   }
@@ -29,7 +31,7 @@
     align-self: flex-end;
     object-fit: contain;
 
-    @include _less-than(1080px) {
+    @include less-than(1080px) {
       display: none;
     }
   }
@@ -40,7 +42,7 @@
 
   &__aside {
     display: block;
-    @include _less-than(1080px) {
+    @include less-than(1080px) {
       display: none;
     }
   }
@@ -54,7 +56,7 @@
     min-width: 508px;
     width: 70%;
 
-    @include _less-than(940px) {
+    @include less-than(940px) {
       min-width: auto;
       width: 100%;
     }
@@ -173,7 +175,7 @@
   align-items: center;
   justify-content: space-between;
 
-  @include _less-than(1080px) {
+  @include less-than(1080px) {
     display: flex;
   }
 
@@ -193,7 +195,7 @@
     margin-top: 12px;
     margin-left: 12px;
 
-    @include _less-than(385px) {
+    @include less-than(385px) {
       height: auto;
       width: calc(100% / 3);
     }

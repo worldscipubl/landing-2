@@ -1,13 +1,4 @@
-%btn-white {
-  background: transparent;
-  color: $textColorPrimary;
-}
-
-%btn-green {
-  color: $textColorSecondary;
-  background: $colorAccent;
-}
-
+@use '../global' as *;
 
 .button {
   @extend %btn-green;
@@ -30,19 +21,19 @@
   text-align: center;
   padding: 12px;
 
-  @include _more-than($bp-xxl-1442) {
+  @include more-than($bp-xxl-1442) {
     box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
     border-radius: #{get-vw(24px, $bp-xxl-1442)};
     padding: #{get-vw(12px, $bp-xxl-1442)};
   }
 
-  @include _less-than($bp-lg-979) {
+  @include less-than($bp-lg-979) {
     box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
     border-radius: #{get-vw(24px, $bp-lg-979)};
     padding: #{get-vw(12px, $bp-lg-979)};
   }
 
-  @include _less-than($bp-md-768) {
+  @include less-than($bp-md-768) {
     box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
     border-radius: #{get-vw(24px, $bp-sm-576)};
     padding: #{get-vw(12px, $bp-sm-576)};
@@ -64,11 +55,11 @@
     border-radius: 6px;
     font-family: $fontFamilyPrimary;
 
-    @include _more-than($bp-xxl-1442) {
+    @include more-than($bp-xxl-1442) {
       border-radius: #{get-vw(6px, $bp-xxl-1442)};
     }
 
-    @include _less-than($bp-lg-979) {
+    @include less-than($bp-lg-979) {
       border-radius: #{get-vw(6px, $bp-lg-979)};
     }
   }
@@ -84,11 +75,11 @@
     box-shadow: 1px 1px 4px $colorShadow;
     border-radius: 34px;
 
-    @include _more-than($bp-xxl-1442) {
+    @include more-than($bp-xxl-1442) {
       border-radius: #{get-vw(34px, $bp-xxl-1442)};
     }
 
-    @include _less-than($bp-lg-979) {
+    @include less-than($bp-lg-979) {
       border-radius: #{get-vw(34px, $bp-lg-979)};
     }
 
@@ -123,7 +114,7 @@
   padding: 10px;
   font-size: 14px;
 
-  @include _more-than($bp-xxl-1442) {
+  @include more-than($bp-xxl-1442) {
     border: #{get-vw(1px, $bp-xxl-1442)} solid rgba(51, 51, 51, 0.6);
     box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
     border-radius: #{get-vw(24px, $bp-xxl-1442)};
@@ -131,11 +122,11 @@
     padding: #{get-vw(10px, $bp-xxl-1442)};
   }
 
-  @include _less-than(999px) {
+  @include less-than(999px) {
     font-size: 13px;
   }
 
-  @include _less-than($bp-lg-979) {
+  @include less-than($bp-lg-979) {
     border: #{get-vw(1px, $bp-lg-979)} solid rgba(51, 51, 51, 0.6);
     box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
     border-radius: #{get-vw(24px, $bp-lg-979)};
@@ -143,7 +134,7 @@
   }
 
 
-  @include _less-than($bp-md-768) {
+  @include less-than($bp-md-768) {
     border: #{get-vw(1px, $bp-md-768)} solid rgba(51, 51, 51, 0.6);
     box-shadow: #{get-vw(1px, $bp-md-768)} #{get-vw(1px, $bp-md-768)} #{get-vw(4px, $bp-md-768)} $colorShadow;
     border-radius: #{get-vw(24px, $bp-md-768)};

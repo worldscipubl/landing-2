@@ -1,3 +1,5 @@
+@use '../global' as *;
+
 .component {
   position: relative;
   //height: 100vh;
@@ -12,7 +14,7 @@
     top: 0;
     left: 0;
 
-    @include _less-than(1372px) {
+    @include less-than(1372px) {
       object-position: left;
       object-fit: cover;
       height: 100%;
@@ -37,20 +39,20 @@
     margin-top: 56px;
     width: 50%;
 
-    @include _more-than($bp-xxl-1442) {
+    @include more-than($bp-xxl-1442) {
       margin-top: #{get-vw(56px, $bp-xxl-1442)};
     }
 
-    @include _less-than($bp-xl-1170) {
+    @include less-than($bp-xl-1170) {
       margin-top: #{get-vw(56px, $bp-xl-1170)};
     }
 
-    @include _less-than($bp-lg-979) {
+    @include less-than($bp-lg-979) {
       margin-top: #{get-vw(36px, $bp-lg-979)};
       width: 64%;
     }
 
-    @include _less-than($bp-md-768) {
+    @include less-than($bp-md-768) {
       margin-top: #{get-vw(16px, $bp-md-768)};
     }
   }

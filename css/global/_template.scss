@@ -1,0 +1,204 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+%btn-white {
+  background: transparent;
+  color: $textColorPrimary;
+}
+
+%btn-green {
+  color: $textColorSecondary;
+  background: $colorAccent;
+}
+
+%tmp-input {
+  $textColorInput: #B7B7B7;
+  $borderColorInput: rgba(0, 0, 0, 0.3);
+
+
+  background: $popupBackground;
+  color: $textColorPrimary;
+
+  &:placeholder {
+    color: $textColorInput;
+  }
+
+  text-align: left;
+
+  @include font-size(14px);
+  @include padding(10px, 20px, 10px, 20px);
+
+  border: 1px solid $borderColorInput;
+  border-radius: 6px;
+
+  @media (min-width: $bp-xxl-1442) {
+    border: #{get-vw(1px, $bp-xxl-1442)} solid $borderColorInput;
+    border-radius: #{get-vw(6px, $bp-xxl-1442)};
+  }
+
+  @media (max-width: #{$bp-lg-979}) {
+    border: #{get-vw(1px, $bp-lg-979)} solid $borderColorInput;
+    border-radius: #{get-vw(6px, $bp-lg-979)};
+  }
+}
+
+%tmp-logo {
+  width: 84px;
+
+  @include more-than($bp-xxl-1442) {
+    width: #{get-vw(84px, $bp-xxl-1442)};
+  }
+
+  @include less-than($bp-lg-979) {
+    width: #{get-vw(84px, $bp-lg-979)};
+  }
+
+  @include less-than($bp-md-768) {
+    width: #{get-vw(84px, $bp-md-768)};
+  }
+}
+
+%tmp-button--nav {
+  @include padding(4px, 27px, 4px, 27px);
+
+  border: 1px solid $textColorSecondary;
+  box-shadow: 1px 1px 4px $colorShadow;
+  border-radius: 28px;
+
+  &:hover {
+    border: 1px solid #177840;
+    color: $textColorSecondary;
+    background: #177840;
+  }
+
+  &:active {
+    border: 1px solid #177840;
+    color: $textColorSecondary;
+    background: #0F5C30;
+  }
+
+  @include more-than($bp-xxl-1442) {
+    border: #{get-vw(1px, $bp-xxl-1442)} solid $textColorSecondary;
+    box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
+    border-radius: #{get-vw(28px, $bp-xxl-1442)};
+
+    &:hover {
+      border: #{get-vw(1px, $bp-xxl-1442)} solid #177840;
+    }
+
+    &:active {
+      border: #{get-vw(1px, $bp-xxl-1442)} solid #177840;
+    }
+  }
+
+  @include less-than($bp-lg-979) {
+    border: #{get-vw(1px, $bp-lg-979)} solid $textColorSecondary;
+    box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
+    border-radius: #{get-vw(28px, $bp-lg-979)};
+
+    &:hover {
+      border: #{get-vw(1px, $bp-lg-979)} solid #177840;
+    }
+
+    &:active {
+      border: #{get-vw(1px, $bp-lg-979)} solid #177840;
+    }
+  }
+
+  @include less-than($bp-md-768) {
+    border: #{get-vw(1px, $bp-md-768)} solid $textColorSecondary;
+    box-shadow: #{get-vw(1px, $bp-md-768)} #{get-vw(1px, $bp-md-768)} #{get-vw(4px, $bp-md-768)} $colorShadow;
+    border-radius: #{get-vw(28px, $bp-md-768)};
+
+    &:hover {
+      border: #{get-vw(1px, $bp-md-768)} solid #177840;
+    }
+
+    &:active {
+      border: #{get-vw(1px, $bp-md-768)} solid #177840;
+    }
+  }
+}
+
+%block-background {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 70vw;
+  background: $popupBackground;
+  @extend %s-border;
+}
+
+%header-background {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 70vw;
+  background: $colorAccent;
+}
+
+%subtitle-background {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  background: $subtitleBackground;
+  border-radius: 6px;
+
+  @include more-than($bp-xxl-1442) {
+    border-radius: #{get-vw(6px, $bp-xxl-1442)};
+  }
+
+  @include less-than($bp-lg-979) {
+    border-radius: #{get-vw(6px, $bp-lg-979)};
+  }
+
+  @include less-than($bp-md-768) {
+    border-radius: #{get-vw(6px, $bp-md-768)};
+  }
+
+}
+
+%highlighter {
+  padding: 8px 12px;
+  border-radius: 6px;
+
+  font-family: $fontFamilySecondary;
+  color: $textColorSecondary;
+  background: $colorAccent;
+
+  @media (min-width: $bp-xxl-1442) {
+    padding: #{get-vw(8px, $bp-xxl-1442)} #{get-vw(12px, $bp-xxl-1442)};
+    border-radius: #{get-vw(6px, $bp-xxl-1442)};
+  }
+
+  @media (max-width: #{$bp-lg-979}) {
+    padding: #{get-vw(8px, $bp-lg-979)} #{get-vw(12px, $bp-lg-979)};
+    border-radius: #{get-vw(6px, $bp-lg-979)};
+  }
+
+  @media (max-width: #{$bp-sm-576}) {}
+}
+
+%text {
+  font-family: $fontMain;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 16px;
+}
+
+%title {
+  font-family: $fontMain;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 41px;
+}
+

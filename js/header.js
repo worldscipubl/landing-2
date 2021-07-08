@@ -38,9 +38,12 @@ function toggleScroll(flag) {
 }
 
 function toggleMenu() {
-    _navBurger.classList.toggle("burger-active");
-    _navBar.classList.toggle("nav--show");
-    _menuTitle.classList.toggle("menu__title--show");
+    if (_navBurger)
+        _navBurger.classList.toggle("burger-active");
+    if (_navBar)
+        _navBar.classList.toggle("nav--show");
+    if (_menuTitle)
+        _menuTitle.classList.toggle("menu__title--show");
     toggleScroll(_navBar.classList.contains("nav--show"));
 }
 
