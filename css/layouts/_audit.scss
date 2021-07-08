@@ -4,6 +4,7 @@
   @include margin(170px);
 
   &_container {
+    margin-top: 170px;
     margin: 0 auto;
   }
 
@@ -46,7 +47,15 @@
     color: $textColorPrimary;
 
     @include font-size(18px);
-    line-height: 120%
+    line-height: 120%;
+
+    &_bg {
+      &_gray {
+        background: #F6F6FB;
+        border-radius: 6px;
+        @include padding(10px, 10px, 10px, 10px);
+      }
+    }
   }
 
   &__fields {
@@ -108,20 +117,6 @@
     width: 65%;
   }
 
-  &__wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 auto;
-    width: 100%;
-
-    @include less-than(1042px) {
-      flex-direction: column;
-      width: 90%;
-    }
-  }
-
   &__main {
     display: flex;
     flex-direction: column;
@@ -149,30 +144,37 @@
     height: 30%;
   }
 
-  &__colA {
-    width: 60%;
-    margin-right: 12px;
-
-    @include less-than(1042px) {
-      width: 100%;
-      margin: 0;
-    }
-  }
-
-  &__colB {
-    width: 40%;
-
-    @include less-than(1042px) {
-      width: 100%;
-    }
-  }
-
   &__form {
     width: 100%;
   }
 
-  &__cards {
-    height: 100%;
+  &__card {
+    flex: 1;
+
+    & + & {
+      @include margin(12px);
+    }
+  }
+
+  &__error {
+    display: block;
+    color: red;
+    @include font-size(12px);
+    @include padding(4px);
+  }
+
+  &__columns {
+    display: flex;
+    width: 100%;
+
+    @include less-than(1042px) {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -180,14 +182,31 @@
     @include less-than(1042px) {
       margin-top: 12px;
     }
+
+    &_type {
+      &_a {
+        flex: auto;
+        width: 60%;
+        margin-right: 12px;
+
+        @include less-than(1042px) {
+          width: 100%;
+          margin: 0;
+        }
+      }
+
+      &_b {
+        width: 40%;
+
+        @include less-than(1042px) {
+          width: 100%;
+        }
+      }
+    }
   }
 
-  &__card {
-    flex-grow: 1;
-
-    & + & {
-      @include margin(12px);
-    }
+  &__columns-content {
+    flex: 1;
   }
 
   &__instruction {

@@ -4,6 +4,7 @@
   border-radius: 10px;
   background: #ffffff;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  height: 100%;
 
   &_bg {
     &_white {
@@ -13,8 +14,14 @@
   }
 
   &__inner {
+    height: 100%;
+    width: 100%;
     @include padding(26px, 20px, 26px, 20px);
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__picture {
@@ -36,6 +43,8 @@
   &__body {
     display: flex;
     margin-top: 20px;
+    width: 100%;
+    flex: 1;
 
     &_align {
       &_left {
@@ -53,7 +62,6 @@
     object-position: center bottom;
     width: 80%;
     height: 100%;
-    margin-top: 28px;
   }
 
   &__subtitle {

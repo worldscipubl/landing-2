@@ -414,6 +414,9 @@ function initForm(_form) {
                     _button.style.pointerEvents = "auto";
                 },
                 (error) => {
+                    const _error = document.querySelector('.audit__error');
+                    if (_error)
+                        _error.innerHTML = error;
                     console.log(error);
                     _button.style.pointerEvents = "auto";
                 }

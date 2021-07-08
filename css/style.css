@@ -629,6 +629,7 @@ input {
   border-radius: 10px;
   background: #ffffff;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+  height: 100%;
 }
 
 .card_bg_white {
@@ -637,11 +638,16 @@ input {
 }
 
 .card__inner {
+  height: 100%;
+  width: 100%;
   padding-top: 26px;
   padding-right: 20px;
   padding-bottom: 26px;
   padding-left: 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card__picture {
@@ -658,6 +664,8 @@ input {
 .card__body {
   display: flex;
   margin-top: 20px;
+  width: 100%;
+  flex: 1;
 }
 
 .card__body_align_left {
@@ -673,7 +681,6 @@ input {
   object-position: center bottom;
   width: 80%;
   height: 100%;
-  margin-top: 28px;
 }
 
 .card__subtitle {
@@ -822,6 +829,7 @@ input {
 }
 
 .audit_container {
+  margin-top: 170px;
   margin: 0 auto;
 }
 
@@ -864,6 +872,15 @@ input {
   color: #000000;
   font-size: 18px;
   line-height: 120%;
+}
+
+.audit__desc_bg_gray {
+  background: #F6F6FB;
+  border-radius: 6px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
 
 .audit__fields {
@@ -925,15 +942,6 @@ input {
   width: 65%;
 }
 
-.audit__wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 0 auto;
-  width: 100%;
-}
-
 .audit__main {
   display: flex;
   flex-direction: column;
@@ -963,32 +971,51 @@ input {
   height: 30%;
 }
 
-.audit__colA {
-  width: 60%;
-  margin-right: 12px;
-}
-
-.audit__colB {
-  width: 40%;
-}
-
 .audit__form {
   width: 100%;
 }
 
-.audit__cards {
-  height: 100%;
+.audit__card {
+  flex: 1;
+}
+
+.audit__card+.audit__card {
+  margin: 12px 0px 0px 0px;
+}
+
+.audit__error {
+  display: block;
+  color: red;
+  font-size: 12px;
+  padding-top: 4px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.audit__columns {
+  display: flex;
+  width: 100%;
+}
+
+.audit__column {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.audit__card {
-  flex-grow: 1;
+.audit__column_type_a {
+  flex: auto;
+  width: 60%;
+  margin-right: 12px;
 }
 
-.audit__card+.audit__card {
-  margin: 12px 0px 0px 0px;
+.audit__column_type_b {
+  width: 40%;
+}
+
+.audit__columns-content {
+  flex: 1;
 }
 
 .audit__instruction {
@@ -5100,6 +5127,13 @@ input {
     font-size: 1.2482662968vw;
   }
 
+  .audit__desc_bg_gray {
+    padding-top: 0.693481276vw;
+    padding-right: 0.693481276vw;
+    padding-bottom: 0.693481276vw;
+    padding-left: 0.693481276vw;
+  }
+
   .audit__fields {
     padding-top: 0vw;
     padding-right: 1.8030513176vw;
@@ -5139,6 +5173,17 @@ input {
 
   .audit__card+.audit__card {
     margin: 0.8321775312vw 0vw 0vw 0vw;
+  }
+
+  .audit__error {
+    font-size: 0.8321775312vw;
+  }
+
+  .audit__error {
+    padding-top: 0.2773925104vw;
+    padding-right: 0vw;
+    padding-bottom: 0vw;
+    padding-left: 0vw;
   }
 
   .audit__instruction {
@@ -6733,22 +6778,23 @@ input {
 }
 
 @media (max-width:1042px) {
-  .audit__wrapper {
+  .audit__columns {
     flex-direction: column;
-    width: 90%;
+    width: 100%;
+    margin: 0 auto;
   }
 
-  .audit__colA {
+  .audit__column {
+    margin-top: 12px;
+  }
+
+  .audit__column_type_a {
     width: 100%;
     margin: 0;
   }
 
-  .audit__colB {
+  .audit__column_type_b {
     width: 100%;
-  }
-
-  .audit__cards {
-    margin-top: 12px;
   }
 }
 
@@ -6885,6 +6931,13 @@ input {
     font-size: 1.8386108274vw;
   }
 
+  .audit__desc_bg_gray {
+    padding-top: 1.0214504597vw;
+    padding-right: 1.0214504597vw;
+    padding-bottom: 1.0214504597vw;
+    padding-left: 1.0214504597vw;
+  }
+
   .audit__fields {
     padding-top: 0vw;
     padding-right: 2.6557711951vw;
@@ -6911,6 +6964,17 @@ input {
     padding-top: 0vw;
     padding-right: 0vw;
     padding-bottom: 2.0429009193vw;
+    padding-left: 0vw;
+  }
+
+  .audit__error {
+    font-size: 1.2257405516vw;
+  }
+
+  .audit__error {
+    padding-top: 0.4085801839vw;
+    padding-right: 0vw;
+    padding-bottom: 0vw;
     padding-left: 0vw;
   }
 
@@ -8217,6 +8281,13 @@ input {
     font-size: 3.125vw;
   }
 
+  .audit__desc_bg_gray {
+    padding-top: 1.7361111111vw;
+    padding-right: 1.7361111111vw;
+    padding-bottom: 1.7361111111vw;
+    padding-left: 1.7361111111vw;
+  }
+
   .audit__fields {
     padding-top: 0vw;
     padding-right: 4.5138888889vw;
@@ -8265,6 +8336,17 @@ input {
     margin-right: 0vw;
     margin-bottom: 0vw;
     margin-left: 0vw;
+  }
+
+  .audit__error {
+    font-size: 2.0833333333vw;
+  }
+
+  .audit__error {
+    padding-top: 0.6944444444vw;
+    padding-right: 0vw;
+    padding-bottom: 0vw;
+    padding-left: 0vw;
   }
 
   .audit__instruction {
