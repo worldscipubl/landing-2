@@ -148,6 +148,10 @@
     background: #F6F6FB;
     border-radius: 3px;
     @include padding(5px, 18px, 5px, 18px);
+
+    @include less-than($bp-md-768) {
+      padding: 8px;
+    }
   }
 
   &__picture {
@@ -160,6 +164,10 @@
   &__text {
     margin-left: 0.5em;
     text-align: left;
+
+    @include less-than($bp-md-768) {
+      margin-left: 6px;
+    }
   }
 }
 
@@ -176,6 +184,11 @@
     object-fit: contain;
     width: 36px;
     height: 36px;
+
+    @include less-than($bp-md-768) {
+      width: 28px;
+      height: 28px;
+    }
   }
 
   &__txt-block {

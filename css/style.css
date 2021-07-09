@@ -8244,6 +8244,19 @@ input {
     padding-left: 3.125vw;
   }
 
+  .secure__inner {
+    padding: 8px;
+  }
+
+  .secure__text {
+    margin-left: 6px;
+  }
+
+  .secure-pic__img {
+    width: 28px;
+    height: 28px;
+  }
+
   .advantages {
     margin-top: 13.8888888889vw;
     margin-right: 0vw;
@@ -10231,6 +10244,19 @@ input {
 
   .advantages__item:nth-child(n+3) {
     margin-top: 20px;
+  }
+
+  .audit__action {
+    flex-direction: column;
+  }
+
+  .audit__action-btn {
+    width: 100%;
+  }
+
+  .audit__action-secure {
+    width: 100%;
+    margin-top: 12px;
   }
 
   .pop-up__logo {

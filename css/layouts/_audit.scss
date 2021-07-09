@@ -22,14 +22,27 @@
     justify-content: space-between;
     align-items: center;
     margin: 12px 0;
+
+    @include less-than($bp-sm-576) {
+      flex-direction: column;
+    }
   }
 
   &__action-btn {
     width: 30%;
+
+    @include less-than($bp-sm-576) {
+      width: 100%;
+    }
   }
 
   &__action-secure {
     width: 65%;
+
+    @include less-than($bp-sm-576) {
+      width: 100%;
+      margin-top: 12px;
+    }
   }
 
   &__title {
