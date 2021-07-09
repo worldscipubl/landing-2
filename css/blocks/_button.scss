@@ -142,3 +142,36 @@
     padding: #{get-vw(10px, $bp-md-768)};
   }
 }
+
+
+.has-animation-blink {
+  animation: 3s linear 0s infinite normal;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0.5em;
+    height: 100%;
+    background: #fff;
+    opacity: .9;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    z-index: 1;
+    transform: rotate(45deg) scale(2);
+    animation: 3s linear 0s infinite normal animation-blink;
+  }
+}
+
+@keyframes animation-blink {
+  0% {
+    left: -100%
+  }
+  100%,
+  20% {
+    left: 100%;
+    margin-left: 5rem
+  }
+}
