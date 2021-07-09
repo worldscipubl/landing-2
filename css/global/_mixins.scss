@@ -2,169 +2,184 @@
 @use 'functions' as *;
 
 %text {
-	font-family: $fontMain;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 16px;
+  font-family: $fontMain;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 16px;
 }
 
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
-	@font-face {
-		font-family: $font-family;
-		font-weight: $weight;
-		font-style: $style;
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
 
-		src: url('#{$file-path}.eot');
-		src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
-		url('#{$file-path}.woff') format('woff'),
-		url('#{$file-path}.ttf') format('truetype');
-	}
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+    url('#{$file-path}.woff') format('woff'),
+    url('#{$file-path}.ttf') format('truetype');
+  }
 }
 
 @mixin font-size($f-size: 12px, ) {
-	font-size: $f-size;
+  font-size: $f-size;
 
-	@media (min-width: $bp-xxl-1442) {
-		font-size: #{get-vw($f-size, $bp-xxl-1442)};
-	}
+  @media (min-width: $bp-xxl-1442) {
+    font-size: #{get-vw($f-size, $bp-xxl-1442)};
+  }
 
-	@media (max-width: #{$bp-lg-979}) {
-		font-size: #{get-vw($f-size, $bp-lg-979)};
-	}
+  @media (max-width: #{$bp-lg-979}) {
+    font-size: #{get-vw($f-size, $bp-lg-979)};
+  }
 
-	@media (max-width: #{$bp-md-768}) {
-		font-size: #{get-vw($f-size, $bp-sm-576)};
-	}
+  @media (max-width: #{$bp-md-768}) {
+    font-size: #{get-vw($f-size, $bp-sm-576)};
+  }
+
+  @media (max-width: #{$bp-sm-576}) {
+    font-size: $f-size;
+  }
 
 }
 
 %s-border {
-	box-shadow: 1px 1px 4px $colorShadow;
-	border-radius: 6px;
+  box-shadow: 1px 1px 4px $colorShadow;
+  border-radius: 6px;
 
-	@media (min-width: $bp-xxl-1442) {
-		border-radius: #{get-vw(6px, $bp-xxl-1442)};
-		box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
-	}
+  @media (min-width: $bp-xxl-1442) {
+    border-radius: #{get-vw(6px, $bp-xxl-1442)};
+    box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
+  }
 
-	@media (max-width: #{$bp-lg-979}) {
-		border-radius: #{get-vw(6px, $bp-lg-979)};
-		box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
-	}
+  @media (max-width: #{$bp-lg-979}) {
+    border-radius: #{get-vw(6px, $bp-lg-979)};
+    box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
+  }
 
-	@media (max-width: #{$bp-sm-576}) {
-		border-radius: #{get-vw(6px, $bp-sm-576)};
-		box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
-	}
+  @media (max-width: #{$bp-sm-576}) {
+    border-radius: #{get-vw(6px, $bp-sm-576)};
+    box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
+  }
 }
 
 %s-border--manifest {
-	box-shadow: 1px 1px 4px $colorShadow;
-	border-radius: 6px;
-	border-left: #001437 solid 12px;
+  box-shadow: 1px 1px 4px $colorShadow;
+  border-radius: 6px;
+  border-left: #001437 solid 12px;
 
-	@media (min-width: $bp-xxl-1442) {
-		border-radius: #{get-vw(6px, $bp-xxl-1442)};
-		border-left: #001437 solid #{get-vw(12px, $bp-xxl-1442)};
+  @media (min-width: $bp-xxl-1442) {
+    border-radius: #{get-vw(6px, $bp-xxl-1442)};
+    border-left: #001437 solid #{get-vw(12px, $bp-xxl-1442)};
 
-		box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
-	}
+    box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
+  }
 
-	@media (max-width: #{$bp-lg-979}) {
-		border-radius: #{get-vw(6px, $bp-lg-979)};
-		border-left: #001437 solid #{get-vw(12px, $bp-lg-979)};
+  @media (max-width: #{$bp-lg-979}) {
+    border-radius: #{get-vw(6px, $bp-lg-979)};
+    border-left: #001437 solid #{get-vw(12px, $bp-lg-979)};
 
-		box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
-	}
+    box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
+  }
 
-	@media (max-width: #{$bp-sm-576}) {
-		border-radius: #{get-vw(6px, $bp-sm-576)};
-		border-left: #001437 solid #{get-vw(12px, $bp-sm-576)};
+  @media (max-width: #{$bp-sm-576}) {
+    border-radius: #{get-vw(6px, $bp-sm-576)};
+    border-left: #001437 solid #{get-vw(12px, $bp-sm-576)};
 
-		box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
-	}
+    box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
+  }
 }
 
 @mixin padding($top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
-	padding-top: $top;
-	padding-right: $right;
-	padding-bottom: $bottom;
-	padding-left: $left;
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
 
-	@media (min-width: $bp-xxl-1442) {
-		padding-top: #{get-vw($top, $bp-xxl-1442)};
-		padding-right: #{get-vw($right, $bp-xxl-1442)};
-		padding-bottom: #{get-vw($bottom, $bp-xxl-1442)};
-		padding-left: #{get-vw($left, $bp-xxl-1442)};
-	}
+  @media (min-width: $bp-xxl-1442) {
+    padding-top: #{get-vw($top, $bp-xxl-1442)};
+    padding-right: #{get-vw($right, $bp-xxl-1442)};
+    padding-bottom: #{get-vw($bottom, $bp-xxl-1442)};
+    padding-left: #{get-vw($left, $bp-xxl-1442)};
+  }
 
-	@media (max-width: #{$bp-lg-979}) {
-		padding-top: #{get-vw($top, $bp-lg-979)};
-		padding-right: #{get-vw($right, $bp-lg-979)};
-		padding-bottom: #{get-vw($bottom, $bp-lg-979)};
-		padding-left: #{get-vw($left, $bp-lg-979)};
+  @media (max-width: #{$bp-lg-979}) {
+    padding-top: #{get-vw($top, $bp-lg-979)};
+    padding-right: #{get-vw($right, $bp-lg-979)};
+    padding-bottom: #{get-vw($bottom, $bp-lg-979)};
+    padding-left: #{get-vw($left, $bp-lg-979)};
 
-	}
+  }
 
-	@media (max-width: #{$bp-md-768}) {
-		padding-top: #{get-vw($top, $bp-sm-576)};
-		padding-right: #{get-vw($right, $bp-sm-576)};
-		padding-bottom: #{get-vw($bottom, $bp-sm-576)};
-		padding-left: #{get-vw($left, $bp-sm-576)};
-	}
+  @media (max-width: #{$bp-md-768}) {
+    padding-top: #{get-vw($top, $bp-sm-576)};
+    padding-right: #{get-vw($right, $bp-sm-576)};
+    padding-bottom: #{get-vw($bottom, $bp-sm-576)};
+    padding-left: #{get-vw($left, $bp-sm-576)};
+  }
+
+  @media (max-width: #{$bp-sm-576}) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+  }
 }
 
 @mixin padding-size($t-padding: 0px, $r-padding: 0px, $b-padding: 0px, $l-padding: 0px) {
-	padding: $t-padding $r-padding $b-padding $l-padding;
+  padding: $t-padding $r-padding $b-padding $l-padding;
 
-	@media (min-width: $bp-xxl-1442) {
-		padding: #{get-vw($t-padding, $bp-xxl-1442)} #{get-vw($r-padding, $bp-xxl-1442)} #{get-vw($b-padding, $bp-xxl-1442)} #{get-vw($l-padding, $bp-xxl-1442)};
-	}
+  @media (min-width: $bp-xxl-1442) {
+    padding: #{get-vw($t-padding, $bp-xxl-1442)} #{get-vw($r-padding, $bp-xxl-1442)} #{get-vw($b-padding, $bp-xxl-1442)} #{get-vw($l-padding, $bp-xxl-1442)};
+  }
 
-	@media (max-width: #{$bp-lg-979}) {
-	}
+  @media (max-width: #{$bp-lg-979}) {
+  }
 
-	@media (max-width: #{$bp-md-768}) {
-		padding-top: #{get-vw($t-padding, $bp-sm-576)};
-		padding-right: #{get-vw($r-padding, $bp-sm-576)};
-		padding-bottom: #{get-vw($b-padding, $bp-sm-576)};
-		padding-left: #{get-vw($l-padding, $bp-sm-576)};
-	}
+  @media (max-width: #{$bp-md-768}) {
+    padding-top: #{get-vw($t-padding, $bp-sm-576)};
+    padding-right: #{get-vw($r-padding, $bp-sm-576)};
+    padding-bottom: #{get-vw($b-padding, $bp-sm-576)};
+    padding-left: #{get-vw($l-padding, $bp-sm-576)};
+  }
 }
 
 @mixin margin($t-margin: 0px, $r-margin: 0px, $b-margin: 0px, $l-margin: 0px) {
-	margin: $t-margin $r-margin $b-margin $l-margin;
+  margin: $t-margin $r-margin $b-margin $l-margin;
 
-	@media (min-width: $bp-xxl-1442) {
-		margin: #{get-vw($t-margin, $bp-xxl-1442)} #{get-vw($r-margin, $bp-xxl-1442)} #{get-vw($b-margin, $bp-xxl-1442)} #{get-vw($l-margin, $bp-xxl-1442)};
-	}
+  @media (min-width: $bp-xxl-1442) {
+    margin: #{get-vw($t-margin, $bp-xxl-1442)} #{get-vw($r-margin, $bp-xxl-1442)} #{get-vw($b-margin, $bp-xxl-1442)} #{get-vw($l-margin, $bp-xxl-1442)};
+  }
 
-	@media (max-width: #{$bp-lg-979}) {
-	}
+  @media (max-width: #{$bp-lg-979}) {
+  }
 
-	@media (max-width: #{$bp-md-768}) {
-		margin-top: #{get-vw($t-margin, $bp-sm-576)};
-		margin-right: #{get-vw($r-margin, $bp-sm-576)};
-		margin-bottom: #{get-vw($b-margin, $bp-sm-576)};
-		margin-left: #{get-vw($l-margin, $bp-sm-576)};
-	}
+  @media (max-width: #{$bp-md-768}) {
+    margin-top: #{get-vw($t-margin, $bp-sm-576)};
+    margin-right: #{get-vw($r-margin, $bp-sm-576)};
+    margin-bottom: #{get-vw($b-margin, $bp-sm-576)};
+    margin-left: #{get-vw($l-margin, $bp-sm-576)};
+  }
+
+  @media (max-width: #{$bp-sm-576}) {
+    margin: $t-margin $r-margin $b-margin $l-margin;
+  }
 }
 
 @mixin more-than($resolution: 180px) {
-	@media (min-width: $resolution) {
-		@content;
-	}
+  @media (min-width: $resolution) {
+    @content;
+  }
 }
 
 @mixin less-than($resolution: 1170px) {
-	@media (max-width: $resolution) {
-		@content;
-	}
+  @media (max-width: $resolution) {
+    @content;
+  }
 }
 
 @mixin less-than-height($resolution: 1170px) {
-	@media (max-height: $resolution) {
-		@content;
-	}
+  @media (max-height: $resolution) {
+    @content;
+  }
 }

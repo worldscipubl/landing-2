@@ -84,6 +84,13 @@
     }
 
   }
+
+  &--upload {
+
+    @include less-than($bp-sm-576) {
+      font-size: 12px;
+    }
+  }
 }
 
 .button-quiz {

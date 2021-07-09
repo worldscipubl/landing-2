@@ -49,10 +49,18 @@
     font-family: $fontFamilySecondary;
     @include font-size(36px);
     @include margin(0px, 0px, 22px, 0px);
+
+    @include less-than($bp-sm-576) {
+      @include font-size(24px);
+    }
   }
 
   &__container {
     @include padding(16px, 26px, 16px, 26px);
+
+    @media (max-width: #{$bp-sm-576}) {
+      @include padding(12px, 8px, 12px, 8px);
+    }
   }
 
   &__desc {
@@ -61,6 +69,10 @@
 
     @include font-size(18px);
     line-height: 120%;
+
+    @include less-than(380px) {
+      font-size: 14px;
+    }
 
     &_bg {
       &_gray {
@@ -342,11 +354,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    // background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%'style='fill: none; stroke: gray; opacity: 0.5; stroke-width: 4; stroke-dasharray: 20.1 10.05'/></svg>");
     border: 2px dashed #C4C4C4;
     padding: 2em;
     text-align: center;
     transition: background 0.3s, color 0.3s;
+
+    @include less-than($bp-sm-576) {
+      padding: 1em;
+    }
 
     &:hover {
       background-color: #CBCBCB;

@@ -29,6 +29,10 @@
     @include less-than($bp-xl-1170) {
       width: 50vw;
     }
+
+    @include less-than($bp-sm-576) {
+      width: 100vw;
+    }
   }
 
   &__header {

@@ -154,3 +154,41 @@ $text-colors: (
   }
 }
 
+.text {
+  @extend %text;
+  color: map-get($text-colors, black);
+
+  &_size {
+    @each $size, $val in $text-sizes {
+      &_#{$size} {
+        font-size: $val;
+      }
+    }
+  }
+
+  &_color {
+    @each $color, $val in $text-colors {
+      &_#{$color} {
+        color: $val;
+      }
+    }
+  }
+
+  &_weight {
+    &_normal {
+      font-weight: normal;
+    }
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+}
+
+
+@media (max-width: #{$bp-sm-576}) {
+  .text_size_accent {
+    font-size: 14px;
+  }
+}
+
