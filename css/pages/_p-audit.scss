@@ -1,3 +1,11 @@
+@forward '../blocks/button';
+
+@forward '../blocks/errors';
+@forward '../blocks/inputs';
+@forward '../blocks/nprogress';
+@forward '../blocks/progress-bar';
+@forward '../blocks/spoilers';
+
 @forward '../layouts/audit';
 @forward '../layouts/header';
 @forward '../layouts/navbar';
