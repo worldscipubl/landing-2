@@ -265,22 +265,15 @@ buttons.forEach((button) => {
         if (idShowPopUp === 'finished') {
             popups.set(idShowPopUp, initPopUp(button));
 
-            const button_copy = button.cloneNode(true);
-            const button_copy_2 = button.cloneNode(true);
             const button_copy_3 = button.cloneNode(true);
             const button_copy_4 = button.cloneNode(true);
 
-            button_copy.setAttribute('data-show-popup', 'finished-2');
-            button_copy_2.setAttribute('data-show-popup', 'finished-3');
             button_copy_3.setAttribute('data-show-popup', 'out');
             button_copy_4.setAttribute('data-show-popup', 'file_upload-out');
 
-            popups.set('finished-2', initPopUp(button_copy));
-            popups.set('finished-3', initPopUp(button_copy_2));
             popups.set('out', initPopUp(button_copy_3));
             popups.set('file_upload-out', initPopUp(button_copy_4));
-        } else
-            popups.set(idShowPopUp, initPopUp(button));
+        }
     }
 });
 

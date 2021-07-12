@@ -9050,6 +9050,10 @@ input {
     font-size: 2.6041666667vw;
   }
 
+  .pop-up__poster {
+    display: none;
+  }
+
   .pop-up__labels {
     padding-top: 0vw;
     padding-right: 2.0833333333vw;
@@ -9063,6 +9067,10 @@ input {
 
   .pop-up__label {
     font-size: 2.4305555556vw;
+  }
+
+  .pop-up__main--gray {
+    display: none;
   }
 
   .pop-up__inner {
@@ -9156,6 +9164,10 @@ input {
     font-size: 3.125vw;
   }
 
+  .popup-2__description {
+    font-size: 16px;
+  }
+
   .popup-3__promo {
     font-size: 4.1666666667vw;
   }
@@ -9243,6 +9255,10 @@ input {
     font-size: 2.4305555556vw;
   }
 
+  .parea__body {
+    width: 80%;
+  }
+
   .parea__footer {
     margin-top: 0vw;
     margin-right: 0vw;
@@ -9259,6 +9275,14 @@ input {
     padding-right: 12.1527777778vw;
     padding-bottom: 5.5555555556vw;
     padding-left: 12.1527777778vw;
+  }
+
+  .parea__title {
+    font-size: 16px;
+    padding-top: 24px;
+    padding-right: 48px;
+    padding-bottom: 24px;
+    padding-left: 48px;
   }
 
   .parea__title-email {
@@ -10179,7 +10203,66 @@ input {
   }
 }
 
+@media (max-width:768px) and (max-width:979px) {
+  .popup-2__description {
+    font-size: 1.6343207354vw;
+  }
+
+  .parea__title {
+    font-size: 1.6343207354vw;
+  }
+
+  .parea__title {
+    padding-top: 2.4514811032vw;
+    padding-right: 4.9029622063vw;
+    padding-bottom: 2.4514811032vw;
+    padding-left: 4.9029622063vw;
+  }
+
+  .review__text {
+    font-size: 1.6343207354vw;
+  }
+
+  .review-card__name {
+    font-size: 1.8386108274vw;
+  }
+
+  .review-card__degree {
+    font-size: 1.6343207354vw;
+  }
+
+  .review-card__profile-link {
+    font-size: 1.6343207354vw;
+  }
+
+  .review-card__item {
+    padding-top: 1.2257405516vw;
+    padding-right: 0.2042900919vw;
+    padding-bottom: 1.2257405516vw;
+    padding-left: 0.2042900919vw;
+  }
+
+  .review-card__index {
+    font-size: 1.4300306435vw;
+  }
+}
+
 @media (max-width:768px) and (max-width:768px) {
+  .popup-2__description {
+    font-size: 2.7777777778vw;
+  }
+
+  .parea__title {
+    font-size: 2.7777777778vw;
+  }
+
+  .parea__title {
+    padding-top: 4.1666666667vw;
+    padding-right: 8.3333333333vw;
+    padding-bottom: 4.1666666667vw;
+    padding-left: 8.3333333333vw;
+  }
+
   .r-cards__item:not(:first-child) {
     margin-top: 3.4722222222vw;
     margin-right: 0vw;
@@ -10216,6 +10299,21 @@ input {
 }
 
 @media (max-width:768px) and (max-width:576px) {
+  .popup-2__description {
+    font-size: 16px;
+  }
+
+  .parea__title {
+    font-size: 16px;
+  }
+
+  .parea__title {
+    padding-top: 24px;
+    padding-right: 48px;
+    padding-bottom: 24px;
+    padding-left: 48px;
+  }
+
   .r-cards__item:not(:first-child) {
     margin: 20px 0px 0px 0px;
   }
@@ -10245,35 +10343,6 @@ input {
 
   .review-card__index {
     font-size: 14px;
-  }
-}
-
-@media (max-width:768px) and (max-width:979px) {
-  .review__text {
-    font-size: 1.6343207354vw;
-  }
-
-  .review-card__name {
-    font-size: 1.8386108274vw;
-  }
-
-  .review-card__degree {
-    font-size: 1.6343207354vw;
-  }
-
-  .review-card__profile-link {
-    font-size: 1.6343207354vw;
-  }
-
-  .review-card__item {
-    padding-top: 1.2257405516vw;
-    padding-right: 0.2042900919vw;
-    padding-bottom: 1.2257405516vw;
-    padding-left: 0.2042900919vw;
-  }
-
-  .review-card__index {
-    font-size: 1.4300306435vw;
   }
 }
 
@@ -11032,8 +11101,16 @@ input {
     font-size: 10px;
   }
 
+  .pop-up__labels--sign {
+    left: 15%;
+  }
+
   .pop-up__label {
     font-size: 14px;
+  }
+
+  .pop-up__logo--right {
+    left: 4%;
   }
 
   .pop-up__logo {
@@ -11045,6 +11122,10 @@ input {
     padding-right: 52px;
     padding-bottom: 24px;
     padding-left: 52px;
+  }
+
+  .pop-up__inner {
+    padding: 0 2.2em 1em;
   }
 
   .pop-up__desc {
@@ -11097,6 +11178,10 @@ input {
     font-size: 14px;
   }
 
+  .pop-up__super-desc--finish {
+    transform: translateX(-5%);
+  }
+
   .pop-up__title {
     font-size: 18px;
   }
@@ -11114,6 +11199,10 @@ input {
 
   .popup-2__description {
     font-size: 18px;
+  }
+
+  .popup-2__description {
+    font-size: 14px;
   }
 
   .popup-3__promo {
@@ -11160,6 +11249,10 @@ input {
     padding-left: 12px;
   }
 
+  .pdf-reader__title {
+    font-size: 12px;
+  }
+
   .pdf-reader__btn {
     padding-top: 12px;
     padding-right: 50px;
@@ -11169,6 +11262,10 @@ input {
 
   .pdf-download__title {
     font-size: 14px;
+  }
+
+  .pdf-download__title {
+    font-size: 12px;
   }
 
   .pdf-download__img {
@@ -11193,6 +11290,11 @@ input {
     padding-left: 12px;
   }
 
+  .selector__title {
+    font-size: 12px;
+    padding: 0.8em;
+  }
+
   .selector__label {
     font-size: 14px;
   }
@@ -11212,8 +11314,20 @@ input {
     padding-left: 70px;
   }
 
+  .parea__title {
+    font-size: 14px;
+    padding-top: 18px;
+    padding-right: 42px;
+    padding-bottom: 18px;
+    padding-left: 42px;
+  }
+
   .parea__title-email {
     font-size: 18px;
+  }
+
+  .parea__title-email {
+    font-size: 14px;
   }
 
   .parea__subtitle {
@@ -11928,6 +12042,33 @@ input {
     padding-bottom: 1.2257405516vw;
     padding-left: 0.8171603677vw;
   }
+
+  .popup-2__description {
+    font-size: 1.4300306435vw;
+  }
+
+  .pdf-download__title {
+    font-size: 1.2257405516vw;
+  }
+
+  .selector__title {
+    font-size: 1.2257405516vw;
+  }
+
+  .parea__title {
+    font-size: 1.4300306435vw;
+  }
+
+  .parea__title {
+    padding-top: 1.8386108274vw;
+    padding-right: 4.2900919305vw;
+    padding-bottom: 1.8386108274vw;
+    padding-left: 4.2900919305vw;
+  }
+
+  .parea__title-email {
+    font-size: 1.4300306435vw;
+  }
 }
 
 @media (max-width:576px) and (max-width:768px) {
@@ -11941,6 +12082,33 @@ input {
     padding-bottom: 2.0833333333vw;
     padding-left: 1.3888888889vw;
   }
+
+  .popup-2__description {
+    font-size: 2.4305555556vw;
+  }
+
+  .pdf-download__title {
+    font-size: 2.0833333333vw;
+  }
+
+  .selector__title {
+    font-size: 2.0833333333vw;
+  }
+
+  .parea__title {
+    font-size: 2.4305555556vw;
+  }
+
+  .parea__title {
+    padding-top: 3.125vw;
+    padding-right: 7.2916666667vw;
+    padding-bottom: 3.125vw;
+    padding-left: 7.2916666667vw;
+  }
+
+  .parea__title-email {
+    font-size: 2.4305555556vw;
+  }
 }
 
 @media (max-width:576px) and (max-width:576px) {
@@ -11953,6 +12121,88 @@ input {
     padding-right: 8px;
     padding-bottom: 12px;
     padding-left: 8px;
+  }
+
+  .popup-2__description {
+    font-size: 14px;
+  }
+
+  .pdf-download__title {
+    font-size: 12px;
+  }
+
+  .selector__title {
+    font-size: 12px;
+  }
+
+  .parea__title {
+    font-size: 14px;
+  }
+
+  .parea__title {
+    padding-top: 18px;
+    padding-right: 42px;
+    padding-bottom: 18px;
+    padding-left: 42px;
+  }
+
+  .parea__title-email {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:420px) {
+  .parea__btn {
+    width: 100%;
+  }
+}
+
+@media (max-width:412px) {
+  .parea__title {
+    font-size: 12px;
+    padding-top: 12px;
+    padding-right: 30px;
+    padding-bottom: 12px;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width:412px) and (max-width:979px) {
+  .parea__title {
+    font-size: 1.2257405516vw;
+  }
+
+  .parea__title {
+    padding-top: 1.2257405516vw;
+    padding-right: 3.064351379vw;
+    padding-bottom: 1.2257405516vw;
+    padding-left: 3.064351379vw;
+  }
+}
+
+@media (max-width:412px) and (max-width:768px) {
+  .parea__title {
+    font-size: 2.0833333333vw;
+  }
+
+  .parea__title {
+    padding-top: 2.0833333333vw;
+    padding-right: 5.2083333333vw;
+    padding-bottom: 2.0833333333vw;
+    padding-left: 5.2083333333vw;
+  }
+}
+
+@media (max-width:412px) and (max-width:576px) {
+  .parea__title {
+    font-size: 12px;
+  }
+
+  .parea__title {
+    padding-top: 12px;
+    padding-right: 30px;
+    padding-bottom: 12px;
+    padding-left: 30px;
   }
 }
 
@@ -11992,6 +12242,33 @@ input {
     padding-bottom: 0.8321775312vw;
     padding-left: 0.5547850208vw;
   }
+
+  .popup-2__description {
+    font-size: 0.9708737864vw;
+  }
+
+  .pdf-download__title {
+    font-size: 0.8321775312vw;
+  }
+
+  .selector__title {
+    font-size: 0.8321775312vw;
+  }
+
+  .parea__title {
+    font-size: 0.9708737864vw;
+  }
+
+  .parea__title {
+    padding-top: 1.2482662968vw;
+    padding-right: 2.9126213592vw;
+    padding-bottom: 1.2482662968vw;
+    padding-left: 2.9126213592vw;
+  }
+
+  .parea__title-email {
+    font-size: 0.9708737864vw;
+  }
 }
 
 @media (max-width:940px) and (min-width:1442px) {
@@ -12000,23 +12277,22 @@ input {
   }
 }
 
-@media (max-width:720px) and (min-width:1442px) {
-  .quiz__subtitle {
-    padding-top: 0.4854368932vw;
-    padding-right: 1.9417475728vw;
-    padding-bottom: 0.4854368932vw;
-    padding-left: 0vw;
-  }
-
-  .quiz__content {
-    padding-top: 0vw;
-    padding-right: 1.9417475728vw;
-    padding-bottom: 0vw;
-    padding-left: 0vw;
-  }
-}
-
 @media (max-width:768px) and (min-width:1442px) {
+  .popup-2__description {
+    font-size: 1.1095700416vw;
+  }
+
+  .parea__title {
+    font-size: 1.1095700416vw;
+  }
+
+  .parea__title {
+    padding-top: 1.6643550624vw;
+    padding-right: 3.3287101248vw;
+    padding-bottom: 1.6643550624vw;
+    padding-left: 3.3287101248vw;
+  }
+
   .r-cards__item:not(:first-child) {
     margin: 1.386962552vw 0vw 0vw 0vw;
   }
@@ -12046,6 +12322,35 @@ input {
 
   .review-card__index {
     font-size: 0.9708737864vw;
+  }
+}
+
+@media (max-width:412px) and (min-width:1442px) {
+  .parea__title {
+    font-size: 0.8321775312vw;
+  }
+
+  .parea__title {
+    padding-top: 0.8321775312vw;
+    padding-right: 2.080443828vw;
+    padding-bottom: 0.8321775312vw;
+    padding-left: 2.080443828vw;
+  }
+}
+
+@media (max-width:720px) and (min-width:1442px) {
+  .quiz__subtitle {
+    padding-top: 0.4854368932vw;
+    padding-right: 1.9417475728vw;
+    padding-bottom: 0.4854368932vw;
+    padding-left: 0vw;
+  }
+
+  .quiz__content {
+    padding-top: 0vw;
+    padding-right: 1.9417475728vw;
+    padding-bottom: 0vw;
+    padding-left: 0vw;
   }
 }
 
