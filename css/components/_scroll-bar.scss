@@ -1,0 +1,21 @@
+@use '../global' as *;
+
+.scroll-bar {
+  text-align: center;
+  @include padding(8px, 24px, 8px, 24px);
+
+  &__btn {
+    background: none;
+    border: none;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    object-position: bottom;
+  }
+}

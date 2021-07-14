@@ -12,9 +12,31 @@
   justify-content: space-between;
   align-items: center;
 
+  &_bg {
+    &_white {
+      background-color: $white;
+      transition: background-color ease-in-out 1s;
+    }
+
+    &_dark-blue {
+      background-color: $subtitleBackground;
+      transition: background-color ease-in-out 1s;
+    }
+
+    &_transparent {
+      background-color: transparent;
+      transition: background-color ease-in-out 1s;
+    }
+  }
+
 
   &--show {
     background-color: $subtitleBackground;
+    transition: background-color ease-in-out 1s;
+  }
+
+  &--show-white {
+    background-color: $white;
     transition: background-color ease-in-out 1s;
   }
 
