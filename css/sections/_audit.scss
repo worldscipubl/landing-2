@@ -190,6 +190,7 @@
 
   &__columns {
     display: flex;
+    justify-content: space-between;
     width: 100%;
 
     @include less-than(1042px) {
@@ -222,6 +223,14 @@
 
       &_b {
         width: 40%;
+
+        @include less-than(1042px) {
+          width: 100%;
+        }
+      }
+
+      &_c {
+        width: 48%;
 
         @include less-than(1042px) {
           width: 100%;

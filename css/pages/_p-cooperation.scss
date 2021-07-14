@@ -1,0 +1,16 @@
+/*
+ * component import
+ */
+
+@forward '../components/button';
+@forward '../components/inputs';
+@forward '../components/errors';
+@forward '../components/nprogress';
+
+/*
+ * section import
+ */
+@forward '../sections/footer';
+@forward '../sections/header';
+@forward '../sections/navbar';
+@forward '../sections/cooperation';

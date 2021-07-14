@@ -1,0 +1,41 @@
+/*
+ * section import
+ */
+
+@forward '../sections/advantages';
+@forward '../sections/audit';
+@forward '../sections/faq';
+@forward '../sections/float-navbar';
+@forward '../sections/footer';
+@forward '../sections/foreign';
+@forward '../sections/geography';
+@forward '../sections/guaranty';
+@forward '../sections/header';
+@forward '../sections/navbar';
+@forward '../sections/personal-area';
+@forward '../sections/pop-up';
+@forward '../sections/promo';
+@forward '../sections/quizlet';
+@forward '../sections/quiz';
+@forward '../sections/reviews';
+@forward '../sections/slider';
+@forward '../sections/stages';
+@forward '../sections/team';
+@forward '../sections/cost';
+@forward '../sections/consultation';
+@forward '../sections/quotation';
+
+/*
+ * component import
+ */
+
+@forward '../components/quote';
+@forward '../components/button';
+@forward '../components/errors';
+@forward '../components/feature-card';
+@forward '../components/img-frame';
+@forward '../components/inputs';
+@forward '../components/nprogress';
+@forward '../components/scroll-bar';
+@forward '../components/progress-bar';
+@forward '../components/spoilers';

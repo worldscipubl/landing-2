@@ -438,6 +438,10 @@
 
   color: rgba(183, 183, 183, 1);
 
+  &--audit {
+    @include padding(10px, 20px, 10px, 20px);
+  }
+
   &--active {
     background-color: $colorAccent;
     border: 1px solid $colorAccent;
@@ -485,6 +489,7 @@
     display: block;
     object-fit: contain;
     width: 8%;
+    max-height: 20px;
   }
 
   &__text {
@@ -1004,3 +1009,4 @@
     width: 100%;
   }
 }
+

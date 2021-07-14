@@ -1,6 +1,6 @@
 @use '../global/index' as *;
 
-.component {
+.quotation {
   position: relative;
   @include margin(120px);
   z-index: #{$z-index-menu + 1};

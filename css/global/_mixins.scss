@@ -1,14 +1,6 @@
 @use 'variables' as *;
 @use 'functions' as *;
 
-%text {
-  font-family: $fontMain;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 16px;
-}
-
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
   @font-face {
     font-family: $font-family;

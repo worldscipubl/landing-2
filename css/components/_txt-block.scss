@@ -1,0 +1,27 @@
+.txt-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+
+  &__title {
+
+  }
+
+  &__body {
+    margin-top: 12px;
+    flex: 1;
+  }
+
+  &__paragraph {
+    margin-top: 12px;
+  }
+
+  &__img {
+    width: 100%;
+    object-position: center;
+    object-fit: contain;
+    display: inline-block;
+    transform: translateY(10%);
+  }
+}

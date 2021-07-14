@@ -1,12 +1,10 @@
-@forward '../blocks/button';
+@forward '../components/button';
+@forward '../components/errors';
+@forward '../components/inputs';
+@forward '../components/nprogress';
+@forward '../components/spoilers';
 
-@forward '../blocks/errors';
-@forward '../blocks/inputs';
-@forward '../blocks/nprogress';
-@forward '../blocks/progress-bar';
-@forward '../blocks/spoilers';
-
-@forward '../layouts/audit';
-@forward '../layouts/header';
-@forward '../layouts/navbar';
-@forward '../layouts/pop-up';
+@forward '../sections/audit';
+@forward '../sections/header';
+@forward '../sections/navbar';
+@forward '../sections/pop-up';

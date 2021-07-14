@@ -41,6 +41,27 @@ $maxWidthContainer: $maxWidthContainer + 2 * $p-side;
 	}
 }
 
+.container-2 {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 46px;
+
+	@include more-than($bp-xxl-1442) {
+		max-width: #{get-vw($maxWidthContainer, $bp-xxl-1442)};
+		padding: 0 #{get-vw($p-side, $bp-xxl-1442)};
+	}
+
+	@include less-than($bp-lg-979) {
+		max-width: #{get-vw($maxWidthContainer, $bp-lg-979)};
+		padding: 0 #{get-vw($p-side, $bp-lg-979)};
+	}
+
+	@include less-than($bp-sm-576) {
+		max-width: #{get-vw($maxWidthContainer, $bp-sm-576)};
+		padding: 0 #{get-vw($p-side, $bp-sm-576)};
+	}
+}
+
 .extended-block {
 	position: relative;
 

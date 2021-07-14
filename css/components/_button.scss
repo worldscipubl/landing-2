@@ -64,6 +64,19 @@
     }
   }
 
+  &--link {
+    background: $textColorSecondary;
+    color: $textColorPrimary;
+    @extend %btn-white;
+    @include font-size(18px);
+    @include padding(8px, 16px, 8px, 16px);
+    line-height: 116.666667%;
+    border: 1px solid $black;
+
+    font-family: $fontFamilyPrimary;
+    @include margin(17px);
+  }
+
   &--consultation {
     background: transparent;
     color: $textColorSecondary;
@@ -86,7 +99,6 @@
   }
 
   &--upload {
-
     @include less-than($bp-sm-576) {
       font-size: 12px;
     }
@@ -149,7 +161,6 @@
     padding: #{get-vw(10px, $bp-md-768)};
   }
 }
-
 
 .has-animation-blink {
   animation: 3s linear 0s infinite normal;

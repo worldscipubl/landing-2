@@ -23,8 +23,23 @@
 
     height: 100vh;
     width: 40vw;
-    background-color: #031435;
     @include padding(20px, 65px, 20px, 65px);
+
+    background-color: #031435;
+
+    &_bg {
+      &_white {
+        background-color: $white;
+      }
+
+      &_dark-blue {
+        background-color: $subtitleBackground;
+      }
+
+      &_transparent {
+        background-color: transparent;
+      }
+    }
 
     @include less-than($bp-xl-1170) {
       width: 50vw;
@@ -121,6 +136,12 @@
     @include font-size(14px);
     @include margin(20px);
     text-align: center;
+
+
+    &_color {
+      &_black {
+        color: $black;
+      }
+    }
   }
 }
-
