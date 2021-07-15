@@ -1,4 +1,10 @@
 const forms = document.querySelectorAll('form');
+const msgBoxBlue = document.querySelector('.message-box_blue');
+const msgBoxPink = document.querySelector('.message-box_pink');
+const msgBoxBlueEmail = msgBoxBlue.querySelector('.message-box__email');
+const msgBoxPinkEmail = msgBoxPink.querySelector('.message-box__email');
+const mainContent = document.querySelector('.audit__container');
+
 let emailUser = null;
 
 forms.forEach((form) => {
@@ -71,9 +77,7 @@ function initForm(form) {
                             resDataWarning['coupon']
                         );
                     else if (resDataWarning['email']) {
-                        currentForm
-                            .querySelector('.promocode-success')
-                            .textContent = "Для загрузки файла перейдите в ЛК!";
+                        showCardMessage(true);
                     } else if (resDataWarning['time'])
                         setErrorInput(
                             input,
@@ -154,7 +158,7 @@ function initForm(form) {
                             resDataWarning['time']
                         );
                 } else {
-                    currentForm.remove();
+                    showCardMessage(false);
                     triggerGoal(formName);          // Фиксируем цель
                     removeErrorInput(input, hint);
                 }
@@ -179,8 +183,10 @@ function initForm(form) {
 
     function unlockForm(currentForm) {
         forms[1].classList.remove('form-lock');
-        currentForm.querySelector('.promocode-success').textContent = "Купон успешно" +
-            " активирован!";
+        currentForm
+            .querySelector('.promocode-success')
+            .innerHTML = "Промокод введен верно. <br> Загрузите статью для подробного" +
+            " аудита с рецензией.";
     }
 
     function triggerGoal(currentGoal) {
@@ -375,5 +381,16 @@ function initForm(form) {
             fo.append('email', emailUser);
 
         return fo;
+    }
+
+    function showCardMessage(type) {
+        mainContent.remove();
+        if (type) {
+            msgBoxBlue.classList.remove('message-box_hidden');
+            msgBoxBlueEmail.textContent = emailUser;
+        } else {
+            msgBoxPink.classList.remove('message-box_hidden');
+            msgBoxPinkEmail.textContent = emailUser;
+        }
     }
 }

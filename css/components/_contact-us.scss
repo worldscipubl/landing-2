@@ -1,0 +1,18 @@
+@use '../global' as *;
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+
+  &__tel {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+    color: $textColorSecondary;
+  }
+
+  &__address {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+    color: $textColorSecondary;
+  }
+}
