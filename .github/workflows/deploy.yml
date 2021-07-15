@@ -21,10 +21,13 @@ jobs:
       - run: mkdir build/css
       - run: mv css/style.min.css build/css/style.min.css
       - run: mv css/style_audit.min.css build/css/style_audit.min.css
+      - run: mv css/style_cooperation.min.css build/css/style_cooperation.min.css
+      - run: mv css/style_promocode.min.css build/css/style_promocode.min.css
       - run: mv fonts build/fonts
       - run: mv js build/js
       - run: mv media build/media
       - run: mv index.html build/index.php
       - run: mv technical_audit.html build/technical_audit.php
       - run: mv we_need_editors.html build/we_need_editors.php
+      - run: mv promocode.html build/promocode.php
       - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@5.253.63.141:/var/www/www-root/data/www/worldscipubl.com/public_html/public/landing/
