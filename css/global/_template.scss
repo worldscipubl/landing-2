@@ -183,7 +183,8 @@
     border-radius: #{get-vw(6px, $bp-lg-979)};
   }
 
-  @media (max-width: #{$bp-sm-576}) {}
+  @media (max-width: #{$bp-sm-576}) {
+  }
 }
 
 %text {
@@ -191,7 +192,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
-  line-height: 16px;
+  line-height: 115%;
 }
 
 %title {

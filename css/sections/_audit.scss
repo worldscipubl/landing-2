@@ -20,7 +20,7 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin: 12px 0;
 
     @include less-than($bp-sm-576) {

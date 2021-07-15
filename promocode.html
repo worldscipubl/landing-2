@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <base href="/landing/">
+            <base href="/landing/">
     <link rel="preload" href="./fonts/HelveticaRegular/HelveticaRegular.woff" as="font"
           type="font/woff"
           crossorigin="anonymous">
@@ -326,6 +326,15 @@
                                            placeholder="Промокод" required/>
                                     <span class="input-wrapper__error"></span>
                                 </div>
+                                <div class="input-wrapper audit__input_promocode">
+                                    <input class="audit-form__input" type="email"
+                                           name="email"
+                                           id="input-email-audit"
+                                           placeholder="Email"
+                                           pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                                           required>
+                                    <span class="input-wrapper__error"></span>
+                                </div>
                                 <div class="audit__action-btn">
                                     <span class="input-wrapper__error"></span>
                                     <button type="submit" id="fileUploadBtn"
@@ -368,15 +377,6 @@
                                             <option value="Q1">Q1 / 75-100%</option>
                                         </select>
                                     </div>
-                                    <span class="input-wrapper__error"></span>
-                                </div>
-                                <div class="input-wrapper audit__input">
-                                    <input class="audit-form__input" type="email"
-                                           name="email"
-                                           id="input-email-audit"
-                                           placeholder="Email куда направить результат"
-                                           pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-                                           required>
                                     <span class="input-wrapper__error"></span>
                                 </div>
                                 <div class="input-wrapper audit__input">
@@ -997,8 +997,8 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <script>
-    var csrfToken = '<?=$_SESSION['csrf-token']?>';
-    // var csrfToken = 121;
+    // var csrfToken = '<?=$_SESSION['csrf-token']?>';
+    var csrfToken = 121;
 </script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gliojs/0.0.7/glio.min.js"></script>

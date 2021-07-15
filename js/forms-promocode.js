@@ -75,7 +75,7 @@ function initForm(form) {
                             resDataWarning['time']
                         );
                 } else {
-                    unlockForm(currentForm);
+                    unlockForm(currentForm, currentForm);
                     triggerGoal(formName);          // Фиксируем цель
                     removeErrorInput(input, hint);
                 }
@@ -177,8 +177,9 @@ function initForm(form) {
         );
     }
 
-    function unlockForm(submitForm) {
+    function unlockForm(submitForm, currentForm) {
         submitForm.classList.remove('form-lock');
+        currentForm.coupon.style.borderColor = "green";
     }
 
     function clearFrom() {
