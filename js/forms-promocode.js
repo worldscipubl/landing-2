@@ -154,7 +154,7 @@ function initForm(form) {
                             resDataWarning['time']
                         );
                 } else {
-                    unlockForm(currentForm, currentForm);
+                    currentForm.remove();
                     triggerGoal(formName);          // Фиксируем цель
                     removeErrorInput(input, hint);
                 }
