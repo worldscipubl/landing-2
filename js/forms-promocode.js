@@ -1,4 +1,5 @@
 const forms = document.querySelectorAll('form');
+let emailUser = null;
 
 forms.forEach((form) => {
     initForm(form);
@@ -17,7 +18,7 @@ function initForm(form) {
         if (formName === 'promocode') {
             checkPromoCode(formData, submitForm, formName);
         } else if (formName === 'promocode-file') {
-            submitPromoCodeFile(formData);
+            submitPromoCodeFile(formData, submitForm, formName);
         }
 
         /*
@@ -39,6 +40,80 @@ function initForm(form) {
         const base_url = '/main/';          // Базовый URLs
         const add_lead = 'add-lead/';       // Отправка заявки
         const url = base_url + add_lead;
+        const btnSubmit = currentForm.submit;
+
+        btnSubmit.style.pointerEvents = "none";
+        loadProgressBar();
+        axios.post(
+            url,
+            sendData,
+            {withCredentials: true},
+            {headers: head}
+        ).then(
+            (response) => {
+                const inputs = currentForm.querySelectorAll('input');
+                const input = inputs[inputs.length - 1];
+                const hint = input.parentNode.querySelector(
+                    '.input-wrapper__error'
+                );
+
+                const resData = response.data;
+                console.log(response);
+
+                if (resData['warning']) {
+                    const resDataWarning = resData['warning'];
+                    emailUser = null;
+
+                    if (resDataWarning['coupon'])
+                        setErrorInput(
+                            input,
+                            hint,
+                            resDataWarning['coupon']
+                        );
+                    else if (resDataWarning['time'])
+                        setErrorInput(
+                            input,
+                            hint,
+                            resDataWarning['time']
+                        );
+                } else {
+                    unlockForm(currentForm, currentForm);
+                    triggerGoal(formName);          // Фиксируем цель
+                    removeErrorInput(input, hint);
+                }
+                btnSubmit.style.pointerEvents = "auto";
+            },
+            (error) => {
+                const inputs = currentForm.querySelectorAll('input');
+                const input = inputs[inputs.length - 1];
+                const hint = input.parentNode.querySelector(
+                    '.input-wrapper__error'
+                );
+                setErrorInput(
+                    input,
+                    hint,
+                    "Ошибка при отправке данных!"
+                );
+                console.log(error);
+                btnSubmit.style.pointerEvents = "auto";
+            }
+        );
+    }
+
+    function submitPromoCodeFile(sendData, currentForm, formName) {
+        console.log('submitPromoCodeFile');
+
+        const head = {
+            Accept: 'application/json',
+            'Content-Type': 'multipart/form-data',
+            'Access-Control-Allow-Origin': "http://localhost:8848/",
+            'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type,' + ' Accept'
+        };
+
+        const base_url = '/main/';          // Базовый URLs
+        const file_ep = 'add-file/';        // Загрзка файла
+        const url = base_url + file_ep;
         const btnSubmit = currentForm.submit;
 
         btnSubmit.style.pointerEvents = "none";
@@ -98,121 +173,10 @@ function initForm(form) {
         );
     }
 
-    function submitPromoCodeFile(formData) {
-
-    }
-
-    function sendFormWithConfirm(sendData, currentForm) {
-        console.log('sendFormWithConfirm');
-        const head = {
-            Accept: 'application/json',
-            'Content-Type': 'multipart/form-data',
-            'Access-Control-Allow-Origin': "http://localhost:8848/",
-            'Access-Control-Allow-Credentials': true,
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type,' + ' Accept'
-        };
-
-        /* Для отладки: */
-        // const base_url = 'https://worldscipubl.com/main-test/';
-
-        const base_url = '/main/';          // Базовый URLs
-        const file_ep = 'add-file/';        // Загрзка файла
-        const add_lead = 'add-lead/';       // Отправка заявки
-
-        let url = base_url;
-
-        if (sendData.get('file'))
-            url += file_ep;
-        else
-            url += add_lead;
-
-        if (currentForm === 'cooperation')
-            url = 'https://e.worldscipubl.com/we_need_editors/'
-
-        _button.style.pointerEvents = "none";
-        loadProgressBar();
-        axios.post(
-            url,
-            sendData,
-            {withCredentials: true},
-            {headers: head}
-        ).then(
-            (response) => {
-                const inputs = currentForm.querySelectorAll('input');
-                const input = inputs[inputs.length - 1];
-                const hint = input.parentNode.querySelector(
-                    '.input-wrapper__error'
-                );
-                const resData = response.data;
-                console.log(response);
-
-                if (resData['warning']) {
-                    const resDataWarning = resData['warning'];
-
-                    if (resDataWarning['coupon'])
-                        setErrorInput(
-                            input,
-                            hint,
-                            resDataWarning['coupon']
-                        );
-                    else if (resDataWarning['time'])
-                        setErrorInput(
-                            input,
-                            hint,
-                            resDataWarning['time']
-                        );
-                } else {
-
-
-                    triggerGoal(formName);          // Фиксируем цель
-                    openNextPopUp();                // Открываем следующий PopUp
-                    removeErrorInput(input, hint);
-                }
-                _button.style.pointerEvents = "auto";
-            },
-            (error) => {
-                console.log(error);
-                _button.style.pointerEvents = "auto";
-            }
-        );
-    }
-
-    function unlockForm(submitForm, currentForm) {
-        submitForm.classList.remove('form-lock');
-        currentForm.coupon.style.borderColor = "green";
-    }
-
-    function clearFrom() {
-        currentTarget.reset();
-        if (form.id === 'dran-n-drop') {
-            const fileDrag = document.getElementById('file-drag');
-            fileDrag.classList.remove('uploader__inner--drag');
-            fileDrag.className = 'uploader__inner';
-
-            const _fileUploadBtn = document.getElementById('file-upload-btn');
-            const _uploaderArrowImg = form.querySelector('.uploader__arrow');
-            const _uploaderDoneImg = form.querySelector('.uploader__done');
-
-            const _status = document.getElementById('status');
-            _status.innerHTML = '';
-
-            const _messages = document.getElementById('messages');
-            _messages.innerHTML = 'Загрузите научную работу';
-
-            _fileUploadBtn.style.display = 'block';
-            _uploaderArrowImg.style.display = 'block';
-            _uploaderDoneImg.style.display = 'none';
-
-        }
-    }
-
-    function openNextPopUp() {
-        if (idShowPopUp != 0) {
-            if (data.has('email'))
-                localStorage.setItem('email', data.get('email'))
-            showPopUpLogic();
-            clearFrom();
-        }
+    function unlockForm(currentForm) {
+        forms[1].classList.remove('form-lock');
+        currentForm.querySelector('.promocode-success').textContent = "Купон успешно" +
+            " активирован!";
     }
 
     function triggerGoal(currentGoal) {
@@ -266,6 +230,7 @@ function initForm(form) {
             case 'email':
                 if (input.validity.valid) {
                     removeErrorInput(input, hint);
+                    emailUser = input.value;
                     return true;
                 } else {
                     setErrorInput(input, hint, 'Недопустимый email!');
@@ -405,122 +370,9 @@ function initForm(form) {
         fo.append('csrfToken', csrfToken);
         fo.append('formsended', formName);
 
+        if (formName === 'promocode-file')
+            fo.append('email', emailUser);
+
         return fo;
     }
-
-    function sendForm(sendData, currentForm) {
-        console.log('sendForm');
-        const headers = {
-            Accept: 'application/json',
-            'Content-Type': 'multipart/form-data',
-            'Access-Control-Allow-Origin': "http://localhost:8848/",
-            'Access-Control-Allow-Credentials': true,
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type,' + ' Accept'
-        };
-
-        /* Для отладки испольховать: */
-        // const base_url = 'https://worldscipubl.com/main-test/';
-
-        const base_url = '/main/';          // Базовый URL
-        const file_ep = 'add-file/';        // Загрзка файла
-        const letter_ep = 'letter/';        // Вопрос из FAQ
-        const is_exists = 'is-exists/';     // Проверка email
-        const add_lead = 'add-lead/';       // Отправка заявки
-
-        let url = base_url;
-
-        if (sendData.get('file'))
-            url += file_ep;
-        else if (sendData.get('text'))
-            url += letter_ep;
-        else
-            url += add_lead;
-
-        _button.style.pointerEvents = "none";
-        loadProgressBar();
-        axios.post(
-            url,
-            sendData,
-            {withCredentials: true},
-            {headers: headers}
-        ).then(
-            (response) => {
-                console.log(response);
-                const resData = response.data;
-                if (resData['warning']) {
-
-                } else {
-                    triggerGoal(formName);          // Фиксируем цель
-                    openNextPopUp();                // Открываем следующий PopUp
-                    clearFrom();                    // Отчищаем форму
-                }
-                _button.style.pointerEvents = "auto";
-            },
-            (error) => {
-                const _error = document.querySelector('.audit__error');
-                if (_error)
-                    _error.innerHTML = error;
-                console.log(error);
-                _button.style.pointerEvents = "auto";
-            }
-        );
-    }
-
-    function checkEmail(isDragDrop = false, email = null, data = null) {
-        console.log('checkEmail');
-
-        const head = {
-            Accept: 'application/json',
-            'Content-Type': 'multipart/form-data',
-            'Access-Control-Allow-Origin': "http://localhost:8848/",
-            'Access-Control-Allow-Credentials': true,
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type,' + ' Accept'
-        };
-
-        // const base_url = 'https://worldscipubl.com/main-test/';
-        const base_url = '/main/';
-        const is_exists = 'is-exists/';
-
-        const url = base_url + is_exists;
-
-        const fo = new FormData();
-
-
-        if (email != null) {
-            fo.append('email', email);
-            fo.append('csrfToken', csrfToken);
-            fo.append('formsended', formName);
-
-            _button.style.pointerEvents = "none";
-            _button.style.pointerEvents = "auto";
-            loadProgressBar();
-            console.log('Отправка запроса на проверку');
-            axios.post(
-                url,
-                fo,
-                {withCredentials: true},
-                {headers: head}
-            ).then(
-                (response) => {
-                    const resData = response.data;
-                    if (resData === true) {
-                        console.log("Email already exists!");
-                        if (data) {
-                            showPopUpLogic = popups.get("finished-2");
-                            openNextPopUp();                // Открываем следующий PopUp
-                        }
-                    } else {
-                        console.log("Email does't exist");
-                        if (isDragDrop)
-                            sendFormWithConfirm(data, currentTarget);  // Отправляем форму c файлом из drag-n-drop
-                    }
-                    _button.style.pointerEvents = "auto";
-                },
-                (error) => {
-                    console.log(error);
-                    _button.style.pointerEvents = "auto";
-                }
-            );
-        }
-    };
 }
