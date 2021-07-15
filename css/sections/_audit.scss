@@ -100,6 +100,19 @@
   }
 
   &__input {
+
+
+    &_promocode {
+      flex: 1;
+      margin-right: 1em;
+
+      @include less-than($bp-sm-576) {
+        margin: 0;
+        margin-bottom: 1em;
+        width: 100%;
+      }
+    }
+
     & + & {
       margin-top: 12px;
     }
@@ -563,5 +576,19 @@
     line-height: 110%;
     text-align: center;
     color: #383838;
+  }
+}
+
+.form-lock {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 }

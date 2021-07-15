@@ -1,0 +1,77 @@
+@use '../global' as *;
+
+.custom-select {
+  position: relative;
+
+  &__inner {
+    display: none;
+  }
+}
+
+.select-selected {
+  background-color: $white;
+  @extend %tmp-input;
+  cursor: pointer;
+  @extend %text;
+  position: relative;
+  z-index: 100;
+
+  &:focus {
+    border: 2px solid $colorAccent;
+  }
+
+  /* Стиль стрелки внутри элемента выбора: */
+  &:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #CECECE transparent transparent transparent;
+  }
+}
+
+
+/* Направьте стрелку вверх, когда поле выбора открыто (активно): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #CECECE transparent;
+  top: 7px;
+}
+
+/* стиль пунктов (option) */
+.select-items div {
+  @extend %tmp-input;
+  cursor: pointer;
+  background-color: $white;
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: #ECECEC;
+  }
+
+  &:first-of-type {
+    padding-top: 12px;
+  }
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background-color: $white;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.same-as-selected {
+  background-color: #ECECEC;
+}
