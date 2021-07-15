@@ -70,7 +70,11 @@ function initForm(form) {
                             hint,
                             resDataWarning['coupon']
                         );
-                    else if (resDataWarning['time'])
+                    else if (resDataWarning['email']) {
+                        currentForm
+                            .querySelector('.promocode-success')
+                            .textContent = "Для загрузки файла перейдите в ЛК!";
+                    } else if (resDataWarning['time'])
                         setErrorInput(
                             input,
                             hint,
@@ -355,10 +359,7 @@ function initForm(form) {
 
             if (_isValidity) {
                 if (input.getAttribute('type') === 'file') {
-                    if (currentFile)
-                        fo.append('file', currentFile);
-                    else
-                        fo.append('file', input.files[0]);
+                    fo.append('file', input.files[0]);
                 } else
                     fo.append(input.name, input.value);
             }
