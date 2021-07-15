@@ -15,7 +15,7 @@ function initForm(form) {
         if (!formData) return;
 
         if (formName === 'promocode') {
-            checkPromoCode(formData, submitForm);
+            checkPromoCode(formData, submitForm, formName);
         } else if (formName === 'promocode-file') {
             submitPromoCodeFile(formData);
         }
@@ -25,7 +25,7 @@ function initForm(form) {
          */
     });
 
-    function checkPromoCode(sendData, currentForm) {
+    function checkPromoCode(sendData, currentForm, formName) {
         console.log('checkPromoCode');
 
         const head = {
