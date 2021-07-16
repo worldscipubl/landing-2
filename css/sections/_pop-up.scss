@@ -7,7 +7,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #fff;
-  z-index: 100;
+  z-index: $z-index-pop-up;
   display: flex;
   transform: translateY(-100%);
   overflow: hidden;

@@ -14,7 +14,7 @@
   cursor: pointer;
   @extend %text;
   position: relative;
-  z-index: 100;
+  z-index: #{$z-index-select-items + 1};
 
   &:focus {
     border: 2px solid $colorAccent;
@@ -63,7 +63,7 @@
   top: 90%;
   left: 0;
   right: 0;
-  z-index: 90;
+  z-index: $z-index-select-items;
   background-color: $white;
 }
 

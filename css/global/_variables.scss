@@ -19,9 +19,12 @@ $fontMain: 'Helvetica', Arial, sans-serif;
 $header-height: 58px;
 $navbar-width: 283px;
 
-$z-index-nav: 5;
-$z-index-header: 10;
-$z-index-drop-down-menu: 20;
+$z-index-select-items: 5;
+$z-index-form-lock: 10;
+$z-index-nav: 15;
+$z-index-header: 20;
+$z-index-drop-down-menu: 25;
+$z-index-pop-up: 100;
 
 $minWidth: 320px;
 $maxWidth: 1440px;

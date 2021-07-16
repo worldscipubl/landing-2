@@ -541,7 +541,7 @@
   &:before {
     content: '';
     position: absolute;
-    z-index: 999;
+    z-index: $z-index-form-lock;
     top: 0;
     right: 0;
     bottom: 0;
