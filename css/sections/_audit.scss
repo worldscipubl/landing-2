@@ -468,57 +468,6 @@
     width: 40%;
   }
 
-  progress {
-    appearance: none;
-    background: #eee;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-    height: 30px;
-  }
-
-  progress[value]::-webkit-progress-value {
-    background: -webkit-linear-gradient(-45deg,
-            transparent 33%,
-            rgba(0, 0, 0, .2) 33%,
-            rgba(0, 0, 0, .2) 66%,
-            transparent 66%),
-    -webkit-linear-gradient(right,
-                    #005f95,
-                    #07294d);
-    background: linear-gradient(-45deg,
-            transparent 33%,
-            rgba(0, 0, 0, .2) 33%,
-            rgba(0, 0, 0, .2) 66%,
-            transparent 66%),
-    linear-gradient(right,
-                    #005f95,
-                    #07294d);
-    background-size: 60px 30px, 100% 100%, 100% 100%;
-    border-radius: 3px;
-  }
-
-  progress[value]::-moz-progress-bar {
-    background: -moz-linear-gradient(-45deg,
-            transparent 33%,
-            rgba(0, 0, 0, .2) 33%,
-            rgba(0, 0, 0, .2) 66%,
-            transparent 66%),
-    -moz-linear-gradient(right,
-                    #005f95,
-                    #07294d);
-    background: linear-gradient(-45deg,
-            transparent 33%,
-            rgba(0, 0, 0, .2) 33%,
-            rgba(0, 0, 0, .2) 66%,
-            transparent 66%),
-    linear-gradient(right,
-                    #005f95,
-                    #07294d);
-    background-size: 60px 30px, 100% 100%, 100% 100%;
-    border-radius: 3px;
-  }
-
   ul {
     list-style-type: none;
     margin: 0;

@@ -1,14 +1,15 @@
-<header class="header header_bg_white" id="header">
+<header class="header header--show" id="header">
     <div class="header__menu menu">
+
         <div class="menu__burger" id="navToggle">
             <div class="burger burger_hide" id="navBurger"></div>
             <img class="menu__img"
-                 src="./media/logos/logo_black.svg"
+                 src="../../media/logos/logo_white.svg"
                  alt="logo_white">
         </div>
 
         <nav class="header__nav nav" id="navBar">
-            <div class="nav__inner nav__inner_bg_white">
+            <div class="nav__inner">
                 <img class="nav__header-logo lazy"
                      src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
                      data-src="./media/flazhek_white.png"
@@ -16,20 +17,18 @@
                      alt="logo">
 
                 <div class="nav__links">
-                    <a class="button button--link" href="/"
+                    <a class="nav__link" href="/"
                        target="_blank">Сайт</a>
-                    <a class="button button--link"
-                       href="https://worldscipubl.com/cabinet/login"
+                    <a class="nav__link" href="https://worldscipubl.com/cabinet/login"
                        target="_blank">Личный кабинет</a>
-                    <a class="button button--link" href="https://teletype.in/@wsp"
-                       target="_blank">
+                    <a class="nav__link" href="https://teletype.in/@wsp" target="_blank">
                         Блог “Кафедра WSP”
                     </a>
-                    <a class="button button--link" href="/#faq-section" target="_blank">F.A.Q.</a>
-                    <a class="button button--link" href="/#footer-section"
+                    <a class="nav__link" href="/#faq-section" target="_blank">F.A.Q.</a>
+                    <a class="nav__link" href="/#footer-section"
                        target="_blank">Контакты</a>
-                    <a class="button button--link" href="/#footer-section" target="_blank">Соцсети</a>
-                    <a class="button button--link nav__link--special" data-show-popup="1"
+                    <a class="nav__link" href="/#footer-section" target="_blank">Соцсети</a>
+                    <a class="nav__link nav__link--special" data-show-popup="1"
                        data-step="1"
                        data-formsended="submit_application_">
                         Оставить заявку
@@ -39,17 +38,15 @@
                 <div class="nav__footer">
                     <img class="nav__logo lazy"
                          src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                         data-src="./media/logos/logo_black.svg" alt="logo">
-                    <p class="nav__date nav__date_color_black">2021 г.</p>
+                         data-src="./media/logo.svg" alt="logo">
+                    <p class="nav__date">2021 г.</p>
                 </div>
             </div>
         </nav>
+
     </div>
-    <a class="link
-    link_color_black"
-       id="header-call-btn"
-       href="tel:+74951277926"
+    <a id="header-call-btn" class="header__call" href="tel:+74951277926"
        data-formsended="call_1">
-        +7 (495) 127 - 79 - 26
+        <span class="header__call-text">+7 (495) 127 - 79 - 26</span>
     </a>
 </header>

@@ -13,7 +13,7 @@
   }
 
   &__title {
-    font-family: $textColorSecondary;
+    font-family: $fontFamilySecondary;
     color: $textColorSecondary;
     @include font-size(36px);
     @include padding(13px, 33px, 13px, 0px);

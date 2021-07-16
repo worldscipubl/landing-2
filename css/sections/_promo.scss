@@ -179,7 +179,8 @@
       column-gap: #{get-vw(16px, $bp-lg-979)};
     }
 
-    @include less-than($bp-sm-576) {}
+    @include less-than($bp-sm-576) {
+    }
   }
 
   &__input {
@@ -187,7 +188,8 @@
     cursor: text;
   }
 
-  &__submit {}
+  &__submit {
+  }
 
   &__note {
     @include font-size(9px);

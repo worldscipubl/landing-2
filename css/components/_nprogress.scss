@@ -7,7 +7,6 @@ $colorProgress: red;
 }
 
 #nprogress .bar {
-  // background: #29d;
   background: $colorProgress;
 
   position: fixed;
@@ -25,11 +24,8 @@ $colorProgress: red;
   right: 0px;
   width: 100px;
   height: 100%;
-  // box-shadow: 10px 0 0 $colorProgress, 5px 0 0 $colorProgress;
   opacity: 1.0;
 
-  -webkit-transform: rotate(3deg) translate(0px, -4px);
-  -ms-transform: rotate(3deg) translate(0px, -4px);
   transform: rotate(3deg) translate(0px, -4px);
 }
 
@@ -51,7 +47,6 @@ $colorProgress: red;
   border-left-color: $colorProgress;
   border-radius: 50%;
 
-  -webkit-animation: nprogress-spinner 400ms linear infinite;
   animation: nprogress-spinner 400ms linear infinite;
 }
 
