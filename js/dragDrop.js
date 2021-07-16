@@ -32,7 +32,7 @@
             const fileDrag = document.getElementById('file-drag');
             fileDrag.className = 'uploader__inner-done';
 
-            const _fileUploadBtn = document.getElementById('file-upload-btn');
+            const _fileUploadBtn = document.querySelector('.file-upload-btn');
             const _uploaderArrowImg = document.querySelector('.uploader__arrow');
             const _uploaderDoneImg = document.querySelector('.uploader__done');
 

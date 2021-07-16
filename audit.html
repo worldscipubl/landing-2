@@ -7,25 +7,35 @@
         </h2>
 
         <div class="audit__inner">
-            <form novalidate class="audit__form" id="dran-n-drop" name="dran-n-drop" action="/"
-                enctype="multipart/form-data" method="post">
+            <form novalidate class="audit__form" id="dran-n-drop" name="dran-n-drop"
+                  action="/"
+                  enctype="multipart/form-data" method="post">
                 <div class="audit__main">
 
                     <div class="audit__uploader uploader" id="file-upload-form">
-                        <input class="uploader__input-file" id="file-upload" type="file" name="fileUpload"
-                            accept=".pdf, .doc, .docx" required>
+                        <input class="uploader__input-file" id="file-upload" type="file"
+                               name="fileUpload"
+                               accept=".pdf, .doc, .docx" required>
                         <label class="uploader__inner" for="file-upload" id="file-drag">
-                            <div class="uploader__img lazy">
-                                <img class="uploader__cloud lazy" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="./media/uploader_img.svg" alt="uploader__cloud">
-                                <img class="uploader__arrow lazy" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="./media/cloud_arrow.svg" alt="uploader__arrow">
-                                <img class="uploader__done lazy" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="./media/cloud_done.svg" alt="uploader__done">
-                            </div>
+                            <span class="uploader__img lazy">
+                                <img class="uploader__cloud lazy"
+                                     src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                     data-src="./media/uploader_img.svg"
+                                     alt="uploader__cloud">
+                                <img class="uploader__arrow lazy"
+                                     src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                     data-src="./media/cloud_arrow.svg"
+                                     alt="uploader__arrow">
+                                <img class="uploader__done lazy"
+                                     src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                     data-src="./media/cloud_done.svg" alt="uploader__done">
+                            </span>
 
                             <span class="uploader__text" id="messages">Загрузите научную работу</span>
                             <span class="input-wrapper__error"></span>
                             <span class="uploader__text" id="status"></span>
 
-                            <span id="file-upload-btn" class="button">
+                            <span class="button file-upload-btn">
                                 Загрузить статью (.pdf .doc .docx)
                             </span>
                         </label>
@@ -33,9 +43,11 @@
 
                     <div class="audit__container">
                         <p class="audit__desc">
-                            Проведем бесплатный технический аудит, чтобы оценить возможность публикации Вашей рукописи в
+                            Проведем бесплатный технический аудит, чтобы оценить возможность
+                            публикации Вашей рукописи в
                             журнале с необходимыми
-                            характеристиками, а также сформировать перечень требующихся доработок и рассчитать их стоимость
+                            характеристиками, а также сформировать перечень требующихся
+                            доработок и рассчитать их стоимость
                         </p>
                     </div>
 
@@ -43,15 +55,20 @@
                     <div class="audit__fields">
                         <div class="input-wrapper audit__email">
                             <input class="audit-form__input" type="email" name="email"
-                                placeholder="Email куда направить результат"
-                                pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+                                   placeholder="Email куда направить результат"
+                                   pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                                   required>
                             <span class="input-wrapper__error"></span>
                         </div>
 
                         <div class="audit__submit">
                             <span class="input-wrapper__error"></span>
-                            <button type="submit" id="fileUploadBtn" class="button audit__btn" name="submit"
-                                data-show-popup="finished" data-formsended="free_audit_" data-step="1">
+                            <button class="button audit__btn"
+                                    name="submit"
+                                    type="submit"
+                                    data-show-popup="finished"
+                                    data-formsended="free_audit_"
+                                    data-step="1">
                                 Отправить
                             </button>
                         </div>
@@ -62,19 +79,28 @@
             </form>
 
             <div class="audit__files file-cards">
-                <button class="file-cards__item" data-show-popup="200" data-formsended="technical_audit_" data-step="1">
-                    <img class="file-cards__img lazy" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="./media/pdf_img.svg" alt="pdf_img lazy">
+                <button class="file-cards__item" data-show-popup="200"
+                        data-formsended="technical_audit_" data-step="1">
+                    <img class="file-cards__img lazy"
+                         src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/pdf_img.svg" alt="pdf_img lazy">
                     <span class="file-cards__title">“Технический аудит”</span>
                 </button>
 
-                <button class="file-cards__item" data-show-popup="202" data-formsended="expert_assessment_"
-                    data-step="1">
-                    <img class="file-cards__img lazy" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="./media/pdf_img.svg" alt="pdf_img lazy">
+                <button class="file-cards__item" data-show-popup="202"
+                        data-formsended="expert_assessment_"
+                        data-step="1">
+                    <img class="file-cards__img lazy"
+                         src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/pdf_img.svg" alt="pdf_img lazy">
                     <span class="file-cards__title">“Предварительная экспертная оценка”</span>
                 </button>
 
-                <button class="file-cards__item" data-show-popup="206" data-formsended="before_after_" data-step="1">
-                    <img class="file-cards__img lazy" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="./media/pdf_img.svg" alt="pdf_img lazy">
+                <button class="file-cards__item" data-show-popup="206"
+                        data-formsended="before_after_" data-step="1">
+                    <img class="file-cards__img lazy"
+                         src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/pdf_img.svg" alt="pdf_img lazy">
                     <span class="file-cards__title">“До / После”</span>
                 </button>
             </div>

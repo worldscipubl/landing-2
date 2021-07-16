@@ -20,7 +20,7 @@
                                    accept=".pdf, .doc, .docx" required>
                             <label class="uploader__inner" for="file-upload"
                                    id="file-drag">
-                                <div class="uploader__img lazy">
+                                <span class="uploader__img lazy">
                                     <img class="uploader__cloud lazy"
                                          src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
                                          data-src="./media/uploader_img.svg"
@@ -33,14 +33,14 @@
                                          src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
                                          data-src="./media/cloud_done.svg"
                                          alt="uploader__done">
-                                </div>
+                                </span>
 
                                 <span class="uploader__text" id="messages">Загрузите научную работу</span>
                                 <span class="input-wrapper__error"></span>
                                 <span class="uploader__text" id="status"></span>
 
-                                <span id="file-upload-btn"
-                                      class="button button--upload has-animation-blink">
+                                <span class="button button--upload
+                                       file-upload-btn has-animation-blink">
                                 Загрузить статью (.pdf .doc .docx)
                             </span>
                             </label>
@@ -86,7 +86,7 @@
                             <div class="audit__action">
                                 <div class="audit__action-btn">
                                     <span class="input-wrapper__error"></span>
-                                    <button type="submit" id="fileUploadBtn"
+                                    <button type="submit"
                                             class="button audit__btn has-animation-blink"
                                             name="submit"
                                             data-show-popup="finished"
@@ -590,7 +590,7 @@
 
     <div class="pdf-reader__viewer">
         <iframe class="pdf-reader__iframe lazy"
-                id="privacy_policy"
+                name="privacy_policy"
                 width="700"
                 height="500"
                 style="border: none"></iframe>

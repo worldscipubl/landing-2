@@ -226,7 +226,7 @@ function clearFrom(popUp) {
             fileDrag.classList.remove('uploader__inner--drag');
             fileDrag.className = 'uploader__inner';
 
-            const _fileUploadBtn = document.getElementById('file-upload-btn');
+            const _fileUploadBtn = _form.querySelector('.file-upload-btn');
             const _uploaderArrowImg = _form.querySelector('.uploader__arrow');
             const _uploaderDoneImg = _form.querySelector('.uploader__done');
 

@@ -182,9 +182,9 @@ function getPdfDocById(popUp) {
     const _iframe = popUp.querySelector('iframe');
     const _linkDownload = popUp.querySelector('.pdf-reader__download .pdf-download');
 
-    if (_iframe && _iframe.hasAttribute('id')) {
-        const iframeID = _iframe.getAttribute('id');
-        const docID = getDocIDbyName(iframeID);
+    if (_iframe && _iframe.hasAttribute('name')) {
+        const iframeName = _iframe.getAttribute('name');
+        const docID = getDocIDbyName(iframeName);
         _iframe.src = `https://drive.google.com/file/d/${docID}/preview`;
         _linkDownload.href = `https://drive.google.com/uc?id=${docID}&export=download`;
     }
@@ -232,7 +232,7 @@ function clearFrom(popUp) {
             fileDrag.classList.remove('uploader__inner--drag');
             fileDrag.className = 'uploader__inner';
 
-            const _fileUploadBtn = document.getElementById('file-upload-btn');
+            const _fileUploadBtn = _form.querySelector('.file-upload-btn');
             const _uploaderArrowImg = _form.querySelector('.uploader__arrow');
             const _uploaderDoneImg = _form.querySelector('.uploader__done');
 
