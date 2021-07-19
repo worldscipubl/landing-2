@@ -9,6 +9,13 @@
     display: none;
   }
 
+  &_width {
+    &_small {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -38,7 +45,7 @@
     position: relative;
     line-height: 116%;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
     @include padding(28px, 58px, 28px, 58px);
 
@@ -67,7 +74,7 @@ font-weight: bold;
     &_bg {
       &_pink {
         font-family: $fontMain;
-font-weight: normal;
+        font-weight: normal;
         background-color: #F595A8;
       }
 
