@@ -345,6 +345,7 @@
 
         function removeErrorInput(input, hint) {
             if (input.hasAttribute('style')) input.removeAttribute('style');
+            if (!hint) return;
             hint.classList.remove('input-wrapper__error--show');
             hint.innerHTML = '';
         }
