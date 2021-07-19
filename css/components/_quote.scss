@@ -26,7 +26,8 @@
   &::after {
     height: 10px;
     line-height: 0%;
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     color: $textColorSecondary;
     @include font-size(72px);
   }

@@ -1,14 +1,21 @@
-_navToggle = document.getElementById("navToggle");
-_navBurger = document.getElementById("navBurger");
-_navBar = document.getElementById("navBar");
-_header = document.getElementById("header");
-_callBtn = document.getElementById("header-call-btn");
+const _drawer = document.querySelector(".js-drawer");
+const _drawerOverlay = _drawer.querySelector(".js-drawer-overlay");
+const _burger = document.querySelector(".js-burger");
 
+const _navBurger = document.getElementById("navBurger");
+const _navBar = document.getElementById("navBar");
+const _header = document.getElementById("header");
+const _callBtn = document.getElementById("header-call-btn");
 
-_menuTitle = _navToggle.querySelector(".menu__title");
-
-_navToggle.addEventListener("click", () => {
-    toggleMenu();
+_burger.addEventListener("click", toggleMenu);
+_drawerOverlay.addEventListener("click", toggleMenu);
+window.addEventListener("keydown", (event) => {
+    const {key} = event;
+    if ((key === 'Esc' || key === 'Escape') && _burger.classList.contains("is_active")) {
+        _drawer.classList.toggle('is_active');
+        _burger.classList.toggle('is_active');
+        toggleScroll(false);
+    }
 });
 
 _callBtn.addEventListener('click', () => {
@@ -24,12 +31,6 @@ _callBtn.addEventListener('click', () => {
     }
 });
 
-_navBar.addEventListener('click', (e) => {
-    const currentElement = e.target;
-    const isOverlay = currentElement.getAttribute('class') === 'header__nav nav nav--show';
-    isOverlay && toggleMenu();
-});
-
 function toggleScroll(flag) {
     if (flag)
         document.body.style = 'overflow:hidden';
@@ -38,20 +39,9 @@ function toggleScroll(flag) {
 }
 
 function toggleMenu() {
-    if (_navBurger)
-        _navBurger.classList.toggle("burger-active");
-    if (_navBar)
-        _navBar.classList.toggle("nav--show");
-    if (_menuTitle)
-        _menuTitle.classList.toggle("menu__title--show");
-    toggleScroll(_navBar.classList.contains("nav--show"));
-}
-
-function hideMenu() {
-    _navBurger.classList.remove("burger-active");
-    _navBar.classList.remove("nav--show");
-    _menuTitle.classList.remove("menu__title--show");
-    toggleScroll(_navBar.classList.contains("nav--show"));
+    _drawer.classList.toggle('is_active');
+    _burger.classList.toggle('is_active');
+    toggleScroll(_burger.classList.contains("is_active"));
 }
 
 function showOutPopup() {
@@ -74,7 +64,6 @@ document.body.addEventListener('mousemove', function (event) {
 const scrollItems = document.querySelectorAll('[data-scroll]');
 scrollItems.forEach((item) => {
     item.addEventListener("click", () => {
-        hideMenu();
         const anchor = item.getAttribute("data-scroll")
         const anchorElement = document.querySelector(anchor);
         let yOffset = 0.99;

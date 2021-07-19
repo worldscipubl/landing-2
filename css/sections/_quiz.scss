@@ -4,12 +4,14 @@
   @include margin(160px);
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(36px);
   }
 
   &__subtitle {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorSecondary;
 
     @include font-size(14px);
@@ -92,7 +94,8 @@
     height: 100%;
 
     &-text {
-      font-family: $fontFamilyPrimary;
+      font-family: $fontMain;
+font-weight: normal;
       font-style: italic;
       @include font-size(18px);
       @include padding(0px, 20px, 0px, 20px);
@@ -110,7 +113,8 @@
 
     &::before,
     &::after {
-      font-family: $fontFamilyPrimary;
+      font-family: $fontMain;
+font-weight: normal;
       @include font-size(96px);
       color: $colorAccent;
     }

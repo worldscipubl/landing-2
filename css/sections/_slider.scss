@@ -31,7 +31,8 @@
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
     @include margin(20px);
   }
@@ -63,7 +64,8 @@
     width: 50%;
     align-self: flex-end;
 
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
   }
 
@@ -81,13 +83,15 @@
     border-radius: 20px;
     padding: 6px 20px;
 
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(24px);
   }
 
   &__title {
     width: 100%;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(24px);
     text-align: left;
     color: #161616;

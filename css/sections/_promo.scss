@@ -4,7 +4,8 @@
   @include margin(97px);
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     text-align: left;
     @include font-size(36px);
     padding-right: 280px;
@@ -108,7 +109,8 @@
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(14px);
     line-height: 110%;
   }
@@ -159,7 +161,8 @@
 .app-form {
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
   }
 

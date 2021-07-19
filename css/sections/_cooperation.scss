@@ -69,9 +69,11 @@
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     font-style: normal;
-    font-weight: bold;
+    font-family: $fontMain;
+font-weight: bold;
     color: $subtitleBackground;
     text-align: center;
     @include margin(0px, 0px, 42px, 0px);
@@ -79,7 +81,8 @@
   }
 
   &__description {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     color: $textColorPrimary;
     @include margin(0px, 0px, 18px, 0px);
     @include font-size(18px);
@@ -110,7 +113,8 @@
 
   &__input {
     width: 100%;
-    font-weight: normal;
+    font-family: $fontMain;
+font-weight: normal;
     cursor: text;
     @include margin(5px);
     @include font-size(14px);

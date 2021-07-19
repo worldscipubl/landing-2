@@ -15,7 +15,8 @@
     padding: 12px;
     font-family: Helvetica;
     font-style: normal;
-    font-weight: bold;
+    font-family: $fontMain;
+font-weight: bold;
     font-size: 36px;
     line-height: 120%;
     text-align: center;
@@ -48,7 +49,8 @@
     margin-top: 160px;
 
     &-title {
-      font-family: $fontFamilySecondary;
+      font-family: $fontMain;
+font-weight: bold;
       color: $textColorSecondary;
       @include font-size(24px);
     }
@@ -70,13 +72,15 @@
   height: 46.77419%;
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(48px);
     text-align: left;
   }
 
   &__text {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
     text-align: left;
   }
@@ -122,7 +126,8 @@
 
   &__title {
     @include margin(12px);
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
   }
 
@@ -131,7 +136,8 @@
   }
 
   &__option {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include margin(12px);
     @include font-size(14px);
     @include padding(3px, 22px, 3px, 7px);
@@ -170,12 +176,14 @@
   }
 
   &__country {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(12px);
   }
 
   &__btn {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
     @include padding(4px, 10px, 4px, 10px);
     width: 80%;
@@ -200,14 +208,16 @@
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorSecondary;
     @include font-size(48px);
     //@include margin(43px);
   }
 
   &__stars {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorSecondary;
 
     &-img {
@@ -219,7 +229,8 @@
   }
 
   &__text {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorSecondary;
     @include font-size(18px);
     @include margin(12px);

@@ -37,7 +37,8 @@
   &__title {
     position: relative;
     line-height: 116%;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
     @include padding(28px, 58px, 28px, 58px);
 
@@ -65,7 +66,8 @@
 
     &_bg {
       &_pink {
-        font-family: $fontFamilyPrimary;
+        font-family: $fontMain;
+font-weight: normal;
         background-color: #F595A8;
       }
 

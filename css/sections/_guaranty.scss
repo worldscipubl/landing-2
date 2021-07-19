@@ -6,7 +6,8 @@
   &__wrap {}
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(36px);
   }
 
@@ -66,7 +67,8 @@
   }
 
   &__text {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
     position: absolute;
     top: 50%;

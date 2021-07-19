@@ -68,14 +68,16 @@
   &__circle-text {
     display: block;
     text-align: center;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(14px);
     transform: translateY(10%);
     color: #FFFFFF;
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(14px);
   }
 

@@ -67,7 +67,8 @@
     transition: all 0.1s;
     padding-right: 1em;
 
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(12px);
     text-align: right;
   }

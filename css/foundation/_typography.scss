@@ -1,18 +1,23 @@
 @use '../global' as *;
 
-@include font-face("Helvetica", "../fonts/HelveticaRegular/HelveticaRegular");
-@include font-face("HelveticaBold", "../fonts/HelveticaBold/HelveticaBold", bold);
+@include font-face("Helvetica", "../fonts/helvetica-regular", 400);
+@include font-face("Helvetica", "../fonts/helvetica-light", 300);
+@include font-face("Helvetica", "../fonts/helvetica-bold", 700);
+
 
 body,
 input,
 button,
 textarea {
-  font-family: $fontFamilyPrimary;
+  font-family: $fontMain;
+  font-weight: normal;
 }
 
 h2, h3, h4 {
-  font-family: $fontFamilySecondary;
+  font-family: $fontMain;
+  font-weight: bold;
   font-style: normal;
+  font-family: $fontMain;
   font-weight: bold;
   line-height: 120%;
   color: $textColorPrimary;
@@ -27,8 +32,10 @@ h3 {
 }
 
 span, a, p, button {
-  font-family: $fontFamilyPrimary;
+  font-family: $fontMain;
+  font-weight: normal;
   font-style: normal;
+  font-family: $fontMain;
   font-weight: normal;
   line-height: 120%;
 
@@ -78,12 +85,15 @@ $text-colors: (
 
   &_weight {
     &_normal {
+      font-family: $fontMain;
       font-weight: normal;
     }
 
     &_bold {
+      font-family: $fontMain;
       font-weight: bold;
-      font-family: $fontFamilySecondary;
+      font-family: $fontMain;
+      font-weight: bold;
     }
   }
 }
@@ -110,10 +120,12 @@ $text-colors: (
 
   &_weight {
     &_normal {
+      font-family: $fontMain;
       font-weight: normal;
     }
 
     &_bold {
+      font-family: $fontMain;
       font-weight: bold;
     }
   }
@@ -148,10 +160,12 @@ $text-colors: (
 
   &_weight {
     &_normal {
+      font-family: $fontMain;
       font-weight: normal;
     }
 
     &_bold {
+      font-family: $fontMain;
       font-weight: bold;
     }
   }
@@ -179,10 +193,12 @@ $text-colors: (
 
   &_weight {
     &_normal {
+      font-family: $fontMain;
       font-weight: normal;
     }
 
     &_bold {
+      font-family: $fontMain;
       font-weight: bold;
     }
   }

@@ -75,7 +75,8 @@
   }
 
   &__label {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
 
     color: #FFFFFF;
@@ -192,7 +193,8 @@
   }
 
   &__desc {
-    font-weight: normal;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
     display: block;
     width: 80%;
@@ -203,7 +205,8 @@
 
   &__input {
     width: 100%;
-    font-weight: normal;
+    font-family: $fontMain;
+font-weight: normal;
     cursor: text;
     @include margin(15px);
     @include font-size(14px);
@@ -236,7 +239,8 @@
   }
 
   &__super-desc {
-    font-weight: normal;
+    font-family: $fontMain;
+font-weight: normal;
     @include margin(21px);
     @include font-size(10px);
     color: #BBBBBB;
@@ -263,7 +267,8 @@
   }
 
   &__title {
-    font-weight: bold;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
     line-height: 120%;
 
@@ -351,7 +356,8 @@
 
 .popup-2 {
   &__promo {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(24px);
     @include padding(24px, 24px, 24px, 24px);
     background: #ECECEC;
@@ -359,7 +365,8 @@
   }
 
   &__description {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
     text-align: left;
     cursor: default;
@@ -384,7 +391,8 @@
 
 .popup-3 {
   &__promo {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(24px);
     @include padding(24px, 24px, 24px, 24px);
     background: #ECECEC;
@@ -392,7 +400,8 @@
   }
 
   &__description {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     font-size: 24px;
     padding-right: 100px;
 
@@ -495,7 +504,8 @@
   &__text {
     display: block;
     text-align: left;
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     color: #B7B7B7;
     @include font-size(14px);
   }
@@ -529,7 +539,8 @@
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
     @include padding(16px, 12px, 0px, 12px);
     line-height: 110%;
@@ -638,7 +649,8 @@
     border: 1px solid rgba(0, 0, 0, 0.49);
     background-color: #FFFEFE;
     color: rgba(183, 183, 183, 1);
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
     @include padding(12px, 12px, 12px, 12px);
     border-radius: 6px;
@@ -707,7 +719,8 @@
     max-height: 0;
     padding: 0 16px;
 
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
 
     transition: all 0.2s ease-out;
@@ -800,7 +813,8 @@
 
   &__title {
     position: relative;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorSecondary;
     @include font-size(18px);
     line-height: 116%;
@@ -825,13 +839,15 @@
     }
 
     &--pink {
-      font-family: $fontFamilyPrimary;
+      font-family: $fontMain;
+font-weight: normal;
       background-color: #F595A8;
     }
   }
 
   &__title-email {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorSecondary;
     @include font-size(18px);
     line-height: 116%;
@@ -843,14 +859,16 @@
 
   &__subtitle {
     width: 80%;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorPrimary;
     @include font-size(18px);
     line-height: 116%;
   }
 
   &__text {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     color: $textColorPrimary;
     @include font-size(14px);
     @include margin(35px);
@@ -922,14 +940,16 @@
   }
 
   &__subtitle {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorPrimary;
     @include font-size(36px);
     line-height: 116%;
   }
 
   &__text {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     color: $textColorPrimary;
     @include font-size(24px);
     @include margin(24px);
@@ -975,7 +995,8 @@
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorPrimary;
     @include font-size(18px);
     @include margin(12px);
@@ -1000,7 +1021,8 @@
   }
 
   &__title {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     color: $textColorPrimary;
     @include font-size(14px);
     @include margin(12px);

@@ -170,7 +170,8 @@
   padding: 8px 12px;
   border-radius: 6px;
 
-  font-family: $fontFamilySecondary;
+  font-family: $fontMain;
+font-weight: bold;
   color: $textColorSecondary;
   background: $colorAccent;
 
@@ -192,7 +193,8 @@
   font-family: $fontMain;
   font-size: 14px;
   font-style: normal;
-  font-weight: normal;
+  font-family: $fontMain;
+font-weight: normal;
   line-height: 115%;
 }
 
@@ -200,7 +202,8 @@
   font-family: $fontMain;
   font-size: 36px;
   font-style: normal;
-  font-weight: bold;
+  font-family: $fontMain;
+font-weight: bold;
   line-height: 41px;
 }
 

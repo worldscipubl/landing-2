@@ -5,7 +5,8 @@
   flex-direction: row-reverse;
 
   &__web {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
     @include margin(8px);
     color: $textColorPrimary;
@@ -13,7 +14,8 @@
   }
 
   &__copy {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(9px);
     @include margin(8px);
     color: $textColorPrimary;

@@ -8,9 +8,11 @@
   }
 
   &__title {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     font-style: normal;
-    font-weight: bold;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(36px);
   }
 
@@ -121,13 +123,15 @@
 
   &__name {
     display: block;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
   }
 
   &__post {
     display: block;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(18px);
   }
 
@@ -152,7 +156,8 @@
     }
 
     &::before, &::after {
-      font-family: $fontFamilyPrimary;
+      font-family: $fontMain;
+font-weight: normal;
       @include font-size(64px);
       line-height: 50%;
       color: #219653;
@@ -160,7 +165,8 @@
   }
 
   &__text {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
 
     @include less-than($bp-md-768) {
@@ -173,7 +179,8 @@
   }
 
   &__profile-link {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(14px);
     @include padding(5px, 0px, 0px, 39px);
     text-decoration-line: underline;
@@ -228,7 +235,8 @@
   }
 
   &__name {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(14px);
 
     @include less-than($bp-md-768) {
@@ -237,7 +245,8 @@
   }
 
   &__degree {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(12px);
 
     @include less-than($bp-md-768) {
@@ -246,7 +255,8 @@
   }
 
   &__profile-link {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(12px);
 
     @include less-than($bp-md-768) {
@@ -284,7 +294,8 @@
 
   &__counter {
     display: block;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(36px);
     text-align: center;
   }
@@ -292,7 +303,8 @@
   &__index {
     display: block;
     text-align: center;
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(9px);
 
     @include less-than($bp-md-768) {

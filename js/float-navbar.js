@@ -30,10 +30,8 @@ function getScrollPosition() {
     }
 
     if (scrollObject.y > 180) {
-        _header.classList.add("header_bg_dark-blue")
         _floatNavBar.classList.add("float-navbar--show");
     } else {
-        _header.classList.remove("header_bg_dark-blue")
         _floatNavBar.classList.remove("float-navbar--show");
     }
 

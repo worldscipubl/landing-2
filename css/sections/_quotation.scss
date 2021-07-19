@@ -21,7 +21,8 @@
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     color: $textColorSecondary;
     @include font-size(35px);
   }

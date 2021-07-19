@@ -9,7 +9,8 @@
   }
 
   &__title {
-    font-family: $fontFamilySecondary;
+    font-family: $fontMain;
+font-weight: bold;
     @include font-size(36px);
     text-align: left;
   }
@@ -26,7 +27,8 @@
   flex-direction: column;
 
   &__description {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(24px);
     @include margin(36px);
   }

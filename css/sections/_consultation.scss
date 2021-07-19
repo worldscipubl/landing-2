@@ -20,7 +20,8 @@
   }
 
   &__logo-txt {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     line-height: 101%;
     text-align: center;
     align-items: center;
@@ -75,7 +76,8 @@
   }
 
   &__text {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     color: $textColorSecondary;
     @include font-size(12px);
 

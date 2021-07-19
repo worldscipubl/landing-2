@@ -5,13 +5,15 @@
   flex-direction: column;
 
   &__tel {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(12px);
     color: $textColorSecondary;
   }
 
   &__address {
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+font-weight: normal;
     @include font-size(12px);
     color: $textColorSecondary;
   }

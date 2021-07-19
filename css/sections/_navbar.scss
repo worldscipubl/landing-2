@@ -1,52 +1,30 @@
 @use '../global' as *;
 
-.nav {
-  position: fixed;
-  transform: translateX(-100%);
-  opacity: 0;
-  left: 0;
-  top: 0;
-  transition: opacity 0.6s;
-  height: 100vh;
-  width: 100vw;
-  background: rgba(0, 0, 0, .6);
+.navbar {
+  width: 100%;
+  height: 100%;
 
   &__inner {
-    position: relative;
-    transition: 0.6s;
-    transform: translateX(-100%);
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    @include padding($header-height, 65px, 20px, 65px);
+    width: 100%;
+    height: 100%;
+  }
 
-    height: 100vh;
-    width: 40vw;
-    @include padding(20px, 65px, 20px, 65px);
-
-    background-color: #031435;
-
-    &_bg {
-      &_white {
-        background-color: $white;
-      }
-
-      &_dark-blue {
-        background-color: $subtitleBackground;
-      }
-
-      &_transparent {
-        background-color: transparent;
-      }
+  &_bg {
+    &_white {
+      background-color: $white;
     }
 
-    @include less-than($bp-xl-1170) {
-      width: 50vw;
+    &_dark-blue {
+      background-color: $subtitleBackground;
     }
 
-    @include less-than($bp-sm-576) {
-      width: 100vw;
+    &_transparent {
+      background-color: transparent;
     }
   }
 
@@ -55,37 +33,16 @@
     flex-direction: row-reverse;
     width: 100%;
     align-items: flex-end;
-    transform: translateX(12%);
-
-    &-logo {
-      position: absolute;
-      top: 0;
-      right: 2%;
-      height: 8%;
-      align-self: flex-end;
-      object-fit: contain;
-    }
-  }
-
-  &--show {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-
-  &--show &__inner {
-    transform: translateX(0%);
   }
 
   &__links {
-    display: flex;
-    flex-direction: column;
-    height: 58%;
-    @include margin(20px);
+
   }
 
   &__link {
     @extend %tmp-button--nav;
-    font-family: $fontFamilyPrimary;
+    font-family: $fontMain;
+    font-weight: normal;
     text-align: center;
     color: $textColorSecondary;
     @include font-size(18px);
@@ -115,6 +72,14 @@
     }
   }
 
+  &__union {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    height: 8%;
+    object-fit: contain;
+  }
+
   &__logo {
     display: flex;
     width: 40%;
@@ -131,17 +96,123 @@
   }
 
   &__date {
-    font-family: $fontFamilyPrimary;
-    color: $textColorSecondary;
-    @include font-size(14px);
     @include margin(20px);
-    text-align: center;
+  }
+}
 
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: #{$z-index-header + 1};
 
-    &_color {
-      &_black {
-        color: $black;
+  &__overlay {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    background-color: black;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+
+    z-index: -1;
+  }
+
+  &__sidebar {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 487px;
+
+    pointer-events: auto;
+    transform: translateX(100%);
+    transition: transform .3s;
+    will-change: transform;
+    contain: paint;
+
+    &_pos {
+      &_left {
+        left: 0;
+      }
+
+      &_right {
+        left: auto;
+        right: 0;
       }
     }
+
+    background-color: #C4C4C4;
+  }
+
+  &.is_active {
+    pointer-events: auto;
+
+    .drawer__overlay {
+      visibility: visible;
+      opacity: 0.6;
+    }
+
+    .drawer__sidebar {
+      transform: none;
+    }
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  height: 70px;
+  width: 30px;
+  cursor: pointer;
+
+  position: relative;
+  z-index: #{$z-index-header + 2};
+
+  &__item {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $black;
+    transition: .3s;
+
+    & + & {
+      margin-top: 5px;
+    }
+  }
+
+
+  &.is_active {
+    .burger__item:nth-of-type(1) {
+      transform: translate3d(0, 7px, 0) rotate(45deg);
+    }
+
+    .burger__item:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    .burger__item:nth-of-type(3) {
+      transform: translate3d(0, -7px, 0) rotate(-45deg);
+    }
+  }
+}
+
+.nav-links {
+  width: 100%;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
   }
 }
