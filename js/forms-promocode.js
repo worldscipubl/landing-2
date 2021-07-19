@@ -1,6 +1,6 @@
 (function () {
-    const auditWrapper = document.querySelectorAll('.js-audit-wrapper');
-    const formsPromocode = auditWrapper.querySelectorAll('form[data-form-type="promocode"]');
+    const auditWrapper = document.querySelector('.js-promocode-form');
+    const formsPromocode = document.querySelectorAll('form[data-form-type="promocode"]');
 
     const msgBoxBlue = auditWrapper.querySelector('.message-box_blue');
     const msgBoxPink = auditWrapper.querySelector('.message-box_pink');
