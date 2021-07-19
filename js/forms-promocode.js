@@ -1,4 +1,4 @@
-(() => {
+(function () {
     const formsPromocode = document.querySelectorAll('form[data-form-type="promocode"]');
     const msgBoxBlue = document.querySelector('.message-box_blue');
     const msgBoxPink = document.querySelector('.message-box_pink');
@@ -395,4 +395,4 @@
             }
         }
     }
-});
+}());
