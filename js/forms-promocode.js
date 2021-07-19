@@ -7,13 +7,14 @@
     const mainContent = document.querySelector('.audit__container');
 
     let emailUser = null;
-    let currentFile = null;
 
     formsPromocode.forEach((form) => {
         initForm(form);
     });
 
     function initForm(form) {
+
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -305,15 +306,6 @@
                     break;
                 case 'file':
                     if (input.validity.valid) {
-                        removeErrorInput(input, hint);
-                        return true;
-                    } else {
-                        setErrorInput(input, hint, 'Загрузите файл!');
-                        return false;
-                    }
-                    break;
-                case 'fileUpload':
-                    if (input.validity.valid || currentFile) {
                         removeErrorInput(input, hint);
                         return true;
                     } else {

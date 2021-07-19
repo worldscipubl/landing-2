@@ -1,7 +1,6 @@
 (function () {
-    let currentFile = null;
-
     function initForm(_form) {
+        let currentFile = null;
         _form.addEventListener('submit', (e) => {
             e.preventDefault();
             const {currentTarget} = e;
