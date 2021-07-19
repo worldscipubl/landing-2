@@ -1,0 +1,120 @@
+@use '../global' as *;
+
+.main-slider {
+  width: 100%;
+  min-height: calc(100vh - #{$header-height});
+  overflow: visible;
+
+  &_first-section {
+    margin-top: $header-height;
+  }
+
+  &__item {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .flickity-page-dots {
+    bottom: auto;
+    top: 15px;
+  }
+
+  .flickity-prev-next-button {
+    top: 5%;
+  }
+}
+
+.callback {
+  width: 100%;
+  height: 100%;
+
+  &_first-section {
+    margin-top: 70px;
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    width: 80%;
+    align-self: flex-start;
+  }
+
+  &__title {
+
+  }
+
+  &__subtitle {
+    margin-top: 12px;
+  }
+
+  &__heroes {
+    margin-top: 12px;
+  }
+
+  &__form {
+    width: 68%;
+    margin-top: 12px;
+    align-self: flex-start;
+  }
+}
+
+.form-callback {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heroes {
+  width: 100%;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__item {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    display: block;
+    object-position: bottom center;
+    object-fit: cover;
+    width: 85%;
+    margin: 0 auto 12px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__counter {
+    font-family: $fontMain;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 120%;
+    color: #0D1D47;
+    opacity: 0.2;
+    padding: 4px 8px;
+  }
+
+  &__txt {
+    font-size: 12px;
+  }
+}

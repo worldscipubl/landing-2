@@ -24,13 +24,13 @@
 @forward '../sections/cost';
 @forward '../sections/consultation';
 @forward '../sections/quotation';
-@forward '../components/social';
-@forward '../components/contact-us';
+@forward '../sections/main-slider';
 
 /*
  * component import
  */
-
+@forward '../components/social';
+@forward '../components/contact-us';
 @forward '../components/quote';
 @forward '../components/button';
 @forward '../components/errors';
@@ -41,3 +41,6 @@
 @forward '../components/scroll-bar';
 @forward '../components/progress-bar';
 @forward '../components/spoilers';
+@forward '../components/message-box';
+@forward '../components/txt-block';
+@forward '../components/select';

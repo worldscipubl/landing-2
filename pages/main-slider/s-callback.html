@@ -1,0 +1,162 @@
+<section class="callback callback_first-section container">
+    <div class="callback__inner">
+        <div class="callback__header">
+            <h2 class="callback__title text
+            text_weight_bold text_size_subtitle text_color_gray-blue">
+                Опубликуйте научную статью в рецензируемых<br>
+                журналах из Scopus и Web of Science за 12 месяцев
+            </h2>
+
+            <p class="callback__subtitle text">
+                Подготовим исследование под требования и возьмем на себя весь процесс
+                публикации.<br>
+                Отправьте рукопись на оценку экспертам сервиса
+                <span class="text_color_green">
+                    и отслеживайте прогресс в личном кабинете.
+                </span>
+            </p>
+        </div>
+
+        <div class="heroes callback__heroes">
+            <ul class="heroes__inner">
+                <li class="hero heroes__item">
+                    <img class="hero__img"
+                         src="./media/hero/audit.svg"
+                         alt="hero">
+                    <div class="hero__content">
+                        <span class="hero__counter">1</span>
+                        <p class="hero__txt">
+                            Подробный аудит и подготовка статьи при
+                            <span class="text_color_green">
+                                помощи западных ученых
+                            </span>
+                        </p>
+                    </div>
+                </li>
+                <li class="hero heroes__item">
+                    <img class="hero__img"
+                         src="./media/hero/editing.svg"
+                         alt="hero">
+                    <div class="hero__content">
+                        <span class="hero__counter">2</span>
+                        <p class="hero__txt">
+                            Продвижение в качественные международные журналы
+                            <span class="text_color_green">
+                                нужного рейтинга
+                            </span>
+                        </p>
+                    </div>
+                </li>
+                <li class="hero heroes__item">
+                    <img class="hero__img"
+                         src="./media/hero/dogovor.svg"
+                         alt="hero">
+                    <div class="hero__content">
+                        <span class="hero__counter">3</span>
+                        <p class="hero__txt">
+                            Сопровождение до индексации статьи в базах данных Scopus или Web
+                            of Science. С гарантией того, что
+                            <span class="text_color_green">
+                                журнал не вылетит.
+                            </span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <form class="callback__form form-callback"
+              name="callback"
+              action="/"
+              enctype="multipart/form-data"
+              method="post"
+              novalidate>
+            <p class="text text_size_accent text_weight_bold text_color_gray-blue">
+                Бесплатное рецензирование:
+            </p>
+            <span class="audit__error"></span>
+            <div class="audit__inputs">
+                <div class="input-wrapper audit__input">
+                    <input class="audit-form__input" type="text"
+                           name="name"
+                           placeholder="Имя" required/>
+                    <span class="input-wrapper__error"></span>
+                </div>
+                <div class="input-wrapper audit__input">
+                    <input class="audit-form__input" type="email"
+                           name="email"
+                           id="input-email-audit"
+                           placeholder="Email куда направить результат"
+                           pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                           required>
+                    <span class="input-wrapper__error"></span>
+                </div>
+                <div class="input-wrapper audit__input">
+                    <input class="audit-form__input" type="tel"
+                           name="phone"
+                           placeholder="Введите номер телефона"
+                           pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                           required/>
+                    <span class="input-wrapper__error"></span>
+                </div>
+                <div class="input-wrapper audit__input">
+                    <div class="p-uploader p-uploader--audit audit-form__input pop-up__input--file">
+                        <label for="file-upload-promocode"
+                               class="p-uploader__choose">
+                                        <span class="p-uploader__text text_color_black">
+                                            Загрузить статью (.pdf .doc .docx)
+                                        </span>
+                            <img class="p-uploader__img lazy"
+                                 src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                 data-src="./media/folder/folder.svg"
+                                 alt="uploader-img lazy"/>
+                        </label>
+                        <input class="input-file"
+                               name="file"
+                               id="file-upload-promocode"
+                               type="file"
+                               accept=".pdf, .doc, .docx"
+                               required>
+                    </div>
+                    <span class="input-wrapper__error"></span>
+                </div>
+            </div>
+            <div class="audit__action">
+                <div class="audit__action-btn">
+                    <span class="input-wrapper__error"></span>
+                    <button type="submit"
+                            class="button audit__btn has-animation-blink"
+                            name="submit"
+                            data-show-popup="finished"
+                            data-formsended="free_audit_"
+                            data-step="1">
+                        Отправить
+                    </button>
+                </div>
+                <div class="secure audit__action-secure">
+                    <div class="secure__inner">
+                        <div class="secure__picture">
+                            <div class="secure-pic">
+                                <img class="secure-pic__img"
+                                     src="./media/icons/security.svg"
+                                     alt="security">
+                                <div class="secure-pic__txt-block">
+                                    <p class="secure-pic__txt">
+                                        100%
+                                    </p>
+                                    <p class="secure-pic__txt">
+                                        Secure
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="secure__text text_size_default">
+                            Мы обеспечим конфиденциальность<br>
+                            и безопасность ваших документов
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
