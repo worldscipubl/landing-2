@@ -7,6 +7,7 @@
     const mainContent = document.querySelector('.audit__container');
 
     let emailUser = null;
+    let currentFile = null;
 
     formsPromocode.forEach((form) => {
         initForm(form);
