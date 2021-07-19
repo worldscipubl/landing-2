@@ -1,11 +1,12 @@
 (function () {
-    const formsPromocode = document.querySelectorAll('form[data-form-type="promocode"]');
+    const auditWrapper = document.querySelectorAll('.js-audit-wrapper');
+    const formsPromocode = auditWrapper.querySelectorAll('form[data-form-type="promocode"]');
 
-    const msgBoxBlue = formsPromocode.parentNode.parentNode.querySelector('.message-box_blue');
-    const msgBoxPink = formsPromocode.parentNode.parentNode.querySelector('.message-box_pink');
+    const msgBoxBlue = auditWrapper.querySelector('.message-box_blue');
+    const msgBoxPink = auditWrapper.querySelector('.message-box_pink');
     const msgBoxBlueEmail = msgBoxBlue.querySelector('.message-box__email');
     const msgBoxPinkEmail = msgBoxPink.querySelector('.message-box__email');
-    const mainContent = formsPromocode.parentNode.parentNode.querySelector('.audit__container');
+    const mainContent = auditWrapper.querySelector('.audit__container');
 
     let emailUser = null;
 
