@@ -1,10 +1,11 @@
 (function () {
     const formsPromocode = document.querySelectorAll('form[data-form-type="promocode"]');
-    const msgBoxBlue = document.querySelector('.message-box_blue');
-    const msgBoxPink = document.querySelector('.message-box_pink');
+
+    const msgBoxBlue = formsPromocode.parentNode.parentNode.querySelector('.message-box_blue');
+    const msgBoxPink = formsPromocode.parentNode.parentNode.querySelector('.message-box_pink');
     const msgBoxBlueEmail = msgBoxBlue.querySelector('.message-box__email');
     const msgBoxPinkEmail = msgBoxPink.querySelector('.message-box__email');
-    const mainContent = document.querySelector('.audit__container');
+    const mainContent = formsPromocode.parentNode.parentNode.querySelector('.audit__container');
 
     let emailUser = null;
 
@@ -13,7 +14,6 @@
     });
 
     function initForm(form) {
-
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -379,6 +379,7 @@
         }
 
         function showCardMessage(type) {
+            console.log("showCardMessage")
             mainContent.remove();
             if (type) {
                 msgBoxBlue.classList.remove('message-box_hidden');
