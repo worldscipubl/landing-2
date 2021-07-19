@@ -485,5 +485,6 @@ function initForm(_form) {
 
 const forms = document.querySelectorAll('form');
 forms.forEach((_form) => {
-    initForm(_form);
+    if (!_form.hasAttribute("data-form-type"))
+        initForm(_form);
 });
