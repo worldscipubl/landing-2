@@ -1,4 +1,4 @@
-const forms = document.querySelectorAll('form');
+const forms = document.querySelectorAll('form[data-form-type="promocode"]');
 const msgBoxBlue = document.querySelector('.message-box_blue');
 const msgBoxPink = document.querySelector('.message-box_pink');
 const msgBoxBlueEmail = msgBoxBlue.querySelector('.message-box__email');
