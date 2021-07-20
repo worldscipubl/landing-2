@@ -24,8 +24,16 @@
             const submitForm = e.currentTarget;
             const formName = submitForm.getAttribute('name');
 
+            const btn = document.querySelector('button[type="submit"]');
+            btn && btn.classList.add('button_disabled');
+
             const formData = scrabbleForm(submitForm, formName);
-            if (!formData) return;
+            if (!formData) {
+                const btn = document.querySelector('button[type="submit"]');
+                btn && btn.classList.remove('button_disabled');
+
+                return;
+            }
 
             if (formName === 'promocode') {
                 checkPromoCode(formData, submitForm, formName);
@@ -63,6 +71,9 @@
                 {headers: head}
             ).then(
                 (response) => {
+                    const btn = document.querySelector('button[type="submit"]');
+                    btn && btn.classList.remove('button_disabled');
+
                     const inputs = currentForm.querySelectorAll('input');
                     const input = inputs[inputs.length - 1];
                     const hint = input.parentNode.querySelector(
@@ -74,8 +85,6 @@
 
                     if (resData['warning']) {
                         const resDataWarning = resData['warning'];
-                        emailUser = null;
-                        promoCodeUser = null;
 
                         if (resDataWarning['coupon'])
                             setErrorInput(
@@ -99,6 +108,9 @@
                     btnSubmit.style.pointerEvents = "auto";
                 },
                 (error) => {
+                    const btn = document.querySelector('button[type="submit"]');
+                    btn && btn.classList.remove('button_disabled');
+
                     const inputs = currentForm.querySelectorAll('input');
                     const input = inputs[inputs.length - 1];
                     const hint = input.parentNode.querySelector(
@@ -150,6 +162,9 @@
                     console.log(response);
 
                     if (resData['warning']) {
+                        const btn = document.querySelector('button[type="submit"]');
+                        btn && btn.classList.remove('button_disabled');
+
                         const resDataWarning = resData['warning'];
 
                         if (resDataWarning['coupon'])
@@ -171,6 +186,9 @@
                     btnSubmit.style.pointerEvents = "auto";
                 },
                 (error) => {
+                    const btn = document.querySelector('button[type="submit"]');
+                    btn && btn.classList.remove('button_disabled');
+
                     const inputs = currentForm.querySelectorAll('input');
                     const input = inputs[inputs.length - 1];
                     const hint = input.parentNode.querySelector(
@@ -212,6 +230,9 @@
                 {headers: head}
             ).then(
                 (response) => {
+                    const btn = document.querySelector('button[type="submit"]');
+                    btn && btn.classList.remove('button_disabled');
+
                     const inputs = currentForm.querySelectorAll('input');
                     const input = inputs[inputs.length - 1];
                     const hint = input.parentNode.querySelector(
@@ -244,6 +265,9 @@
                     btnSubmit.style.pointerEvents = "auto";
                 },
                 (error) => {
+                    const btn = document.querySelector('button[type="submit"]');
+                    btn && btn.classList.remove('button_disabled');
+
                     const inputs = currentForm.querySelectorAll('input');
                     const input = inputs[inputs.length - 1];
                     const hint = input.parentNode.querySelector(
