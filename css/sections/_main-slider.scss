@@ -39,6 +39,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    position: relative;
+  }
+
+  &__union {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   &__header {

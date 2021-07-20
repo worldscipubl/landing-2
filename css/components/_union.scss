@@ -1,0 +1,37 @@
+@use '../global' as *;
+
+.union {
+  @extend %tmp-logo;
+
+  &__img {
+    display: inline-block;
+    object-fit: contain;
+    object-position: top;
+  }
+
+  &__txt {
+    font-family: $fontMain;
+    font-weight: normal;
+    line-height: 101%;
+    text-align: center;
+    align-items: center;
+    color: $textColorSecondary;
+    padding: 0;
+
+    @include font-size(8px);
+
+    @media (max-width: #{800px}) {
+      font-size: #{get-vw(9px, 800px)};
+    }
+
+    @media (max-width: #{750px}) {
+      font-size: #{get-vw(9px, 750px)};
+    }
+
+
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-58%);
+  }
+}

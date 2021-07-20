@@ -44,18 +44,18 @@
 }
 
 %tmp-logo {
-  width: 84px;
+  width: 82px;
 
   @include more-than($bp-xxl-1442) {
-    width: #{get-vw(84px, $bp-xxl-1442)};
+    width: #{get-vw(82px, $bp-xxl-1442)};
   }
 
   @include less-than($bp-lg-979) {
-    width: #{get-vw(84px, $bp-lg-979)};
+    width: #{get-vw(82px, $bp-lg-979)};
   }
 
   @include less-than($bp-md-768) {
-    width: #{get-vw(84px, $bp-md-768)};
+    width: #{get-vw(82px, $bp-md-768)};
   }
 }
 
