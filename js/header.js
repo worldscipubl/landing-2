@@ -56,7 +56,7 @@ document.body.addEventListener('mousemove', function (event) {
     const pointY = event.clientY;
 
     if (pointY <= 12) {
-        showOutPopup();
+        // showOutPopup();
     }
 
 });
