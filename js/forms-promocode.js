@@ -84,9 +84,7 @@
                     console.log(response);
 
                     if (resData['warning']) {
-                        const resDataWarning = resData['warning'];
-                        emailUser = null;
-                        promoCodeUser = null;
+                        const resDataWarning = resData['warngit ing'];
 
                         if (resDataWarning['coupon'])
                             setErrorInput(
@@ -181,6 +179,10 @@
                                 hint,
                                 resDataWarning['time']
                             );
+                        else {
+                            submitPromoCodeFileStepTwo(sendData, currentForm, formName);
+                            removeErrorInput(input, hint);
+                        }
                     } else {
                         submitPromoCodeFileStepTwo(sendData, currentForm, formName);
                         removeErrorInput(input, hint);
