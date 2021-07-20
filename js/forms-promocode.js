@@ -85,6 +85,8 @@
 
                     if (resData['warning']) {
                         const resDataWarning = resData['warning'];
+                        emailUser = null;
+                        promoCodeUser = null;
 
                         if (resDataWarning['coupon'])
                             setErrorInput(
