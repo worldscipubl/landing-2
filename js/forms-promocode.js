@@ -84,7 +84,7 @@
                     console.log(response);
 
                     if (resData['warning']) {
-                        const resDataWarning = resData['warngit ing'];
+                        const resDataWarning = resData['warning'];
 
                         if (resDataWarning['coupon'])
                             setErrorInput(
