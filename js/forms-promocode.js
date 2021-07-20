@@ -1,5 +1,6 @@
 (function () {
     const auditWrapper = document.querySelector('.js-promocode-form');
+    const promoCodeHint = document.querySelector('.js-promocode-hint');
     const formsPromocode = document.querySelectorAll('form[data-form-type="promocode"]');
 
     const msgBoxBlue = auditWrapper.querySelector('.message-box_blue');
@@ -191,6 +192,12 @@
                 .querySelector('.promocode-success')
                 .innerHTML = "Промокод введен верно. <br> Загрузите статью для подробного" +
                 " аудита с рецензией.";
+            removePromoCodeHint();
+        }
+
+        function removePromoCodeHint() {
+            if (!promoCodeHint) return;
+            promoCodeHint.remove();
         }
 
         function triggerGoal(currentGoal) {

@@ -3,20 +3,30 @@
         <div class="audit__columns">
             <div class="audit__column audit__column_type_c">
                 <div class="txt-block">
-                    <h2 class="title text_color_gray-blue">
-                        Активация промокода
+                    <h2 class="text text_weight_bold text_size_subtitle text_color_gray-blue">
+                        Планируете приступить к публикации в этом году?
                     </h2>
 
                     <div class="txt-block__body">
                         <p class="text text_size_accent text_weight_bold txt-block__paragraph">
-                            Заполните все обязательные поля, подгрузите статью на подробный
-                            аудит и введите промокод, который Вам отправил коллега.
+                            <span class="text_color_green">Активируйте купон cо скидкой 100$ сейчас</span>,
+                            а задействуйте когда потребуется помощь наших экспертов:
                         </p>
-                        <p class="text text_size_accent txt-block__paragraph">
-                            За Вами будет закреплена скидка и создан профиль в личном
-                            кабинете World Sci Publ, а также на указанную почту поступит
-                            подробная информация о дальнейшем ходе работ.
-                        </p>
+                        <ol class="order-list txt-block__order-list">
+                            <li class="order-list__item text">Введите адрес email</li>
+                            <li class="order-list__item text">
+                                Нажмите проверить<br>
+                                <p class="text txt-block__paragraph">
+                                    Мы проверим наличие профиля в личном кабинете автора и
+                                    действительность промокода. После подтверждения вам
+                                    будет предложено заполнить контактные данные и загрузить
+                                    научную статью на бесплатное рецензирование.
+                                </p>
+                            </li>
+                            <li class="order-list__item text text_color_green">Отправьте
+                                заявку
+                            </li>
+                        </ol>
                     </div>
 
                     <img class="txt-block__img"
@@ -26,7 +36,7 @@
             </div>
             <div class="audit__column audit__column_type_c">
                 <div class="audit__main audit__main_collapsed js-promocode-form">
-                    <div class="message-box message-box_width_small
+                    <div class="audit__message-box message-box
                      message-box_blue message-box_hidden">
                         <div class="message-box__inner">
                             <div class="message-box__header">
@@ -60,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="message-box message-box_width_small
+                    <div class="audit__message-box message-box
                      message-box_pink message-box_hidden">
                         <div class="message-box__inner">
                             <div class="message-box__header">
@@ -94,7 +104,7 @@
                     </div>
                     <div class="audit__container">
                         <p class="audit__desc">
-                            Заполните данные:
+                            Активировать промокод:
                         </p>
                         <form id="promocode"
                               name="promocode"
@@ -106,7 +116,8 @@
                             <div class="audit__action">
                                 <div class="input-wrapper audit__input_promocode">
                                     <input name="coupon" class="audit-form__input"
-                                           placeholder="Промокод" required/>
+                                           placeholder="Промокод" value="1OX8CVBOYF"
+                                           required/>
                                     <span class="input-wrapper__error"></span>
                                 </div>
                                 <div class="input-wrapper audit__input_promocode">
@@ -184,7 +195,7 @@
                                 </div>
                                 <div class="input-wrapper audit__input">
                                     <div class="p-uploader p-uploader--audit audit-form__input pop-up__input--file">
-                                        <label for="file-upload-coupon"
+                                        <label for="file-upload-promocode"
                                                class="p-uploader__choose">
                                         <span class="p-uploader__text text_color_black">
                                             Загрузить статью (.pdf .doc .docx)
@@ -196,7 +207,7 @@
                                         </label>
                                         <input class="input-file"
                                                name="file"
-                                               id="file-upload-coupon"
+                                               id="file-upload-promocode"
                                                type="file"
                                                accept=".pdf, .doc, .docx"
                                                required>
@@ -262,43 +273,11 @@
                                 ** Бесплатно до 31.08.2021
                             </p>
                         </form>
-
-                        <div class="get-promocode js-promocode-hint">
-                            <div class="get-promocode__inputs">
-                                <div
-                                        class="get-promocode__input js-get-promocode-stage-1">
-                                    <label class="checkbox">
-                                        <input class="css-checkbox js-get-promocode-checkbox-1"
-                                               type="checkbox">
-                                        <i></i>
-                                        <span class="text">
-                                    У меня нет промокода, получить промокод
-                                </span>
-                                    </label>
-                                </div>
-                                <div class="get-promocode__input js-get-promocode-stage-2">
-                                    <label class="checkbox">
-                                        <input class="css-checkbox js-get-promocode-checkbox-2"
-                                               type="checkbox">
-                                        <i></i>
-                                        <span class="text">
-                                        Ознакомлен(а) с
-                                        <a class="link link_color_green"
-                                           href="https://drive.google.com/uc?id=1kfqAilLzXAOejtG7n8MLV2n10SKU_sQR&export=download"
-                                           target="_blank">
-                                            презентацией сервиса
-                                        </a>
-                                    </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <a
-                                    class="button button_disabled get-promocode__btn js-get-promocode-btn"
-                                    href="/main/promocode-ads"
-                                    target="_blank">
-                                Получить промокод
-                            </a>
-                        </div>
+                        <p class="audit__desc text audit__desc_color_gray js-promocode-hint">
+                            Cоздадим ваш профиль автора в личном кабинете и проведем
+                            бесплатное рецензирование статьи. Сообщим результаты и предложим
+                            рекомендации в течение 1 - 3 рабочих дней.
+                        </p>
                     </div>
                 </div>
             </div>

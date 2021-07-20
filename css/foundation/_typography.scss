@@ -63,41 +63,6 @@ $text-colors: (
         gray-dark: #B0B0B0
 );
 
-.text {
-  @extend %text;
-  color: map-get($text-colors, black);
-
-  &_size {
-    @each $size, $val in $text-sizes {
-      &_#{$size} {
-        font-size: $val;
-      }
-    }
-  }
-
-  &_color {
-    @each $color, $val in $text-colors {
-      &_#{$color} {
-        color: $val;
-      }
-    }
-  }
-
-  &_weight {
-    &_normal {
-      font-family: $fontMain;
-      font-weight: normal;
-    }
-
-    &_bold {
-      font-family: $fontMain;
-      font-weight: bold;
-      font-family: $fontMain;
-      font-weight: bold;
-    }
-  }
-}
-
 .title {
   @extend %title;
   color: map-get($text-colors, black);
@@ -106,6 +71,9 @@ $text-colors: (
     @each $size, $val in $text-sizes {
       &_#{$size} {
         font-size: $val;
+        @include more-than($bp-xxl-1442) {
+          font-size: #{get-vw($val, $bp-xxl-1442)};
+        }
       }
     }
   }
@@ -146,6 +114,9 @@ $text-colors: (
     @each $size, $val in $text-sizes {
       &_#{$size} {
         font-size: $val;
+        @include more-than($bp-xxl-1442) {
+          font-size: #{get-vw($val, $bp-xxl-1442)};
+        }
       }
     }
   }
@@ -179,6 +150,9 @@ $text-colors: (
     @each $size, $val in $text-sizes {
       &_#{$size} {
         font-size: $val;
+        @include more-than($bp-xxl-1442) {
+          font-size: #{get-vw($val, $bp-xxl-1442)};
+        }
       }
     }
   }
@@ -200,6 +174,19 @@ $text-colors: (
     &_bold {
       font-family: $fontMain;
       font-weight: bold;
+    }
+  }
+}
+
+.order-list {
+  padding-left: 1em;
+
+
+  &__item {
+    list-style-type: decimal;
+
+    & + & {
+      margin-top: 8px;
     }
   }
 }

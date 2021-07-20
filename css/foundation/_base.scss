@@ -47,8 +47,8 @@ $maxWidthContainer: $maxWidthContainer + 2 * $p-side;
   padding: 0 52px;
 
   @include more-than($bp-xxl-1442) {
-    max-width: #{get-vw($maxWidthContainer, $bp-xxl-1442)};
-    padding: 0 #{get-vw($p-side, $bp-xxl-1442)};
+    max-width: #{get-vw(1440px, $bp-xxl-1442)};
+    padding: 0 #{get-vw(52px, $bp-xxl-1442)};
   }
 
   @include less-than($bp-lg-979) {

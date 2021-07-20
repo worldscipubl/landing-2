@@ -1,9 +1,15 @@
 @use '../global' as *;
 
 .button {
+  display: inline-block;
   @extend %btn-green;
   box-shadow: 1px 1px 4px $colorShadow;
   border-radius: 24px;
+
+  &_disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
 
   &:hover {
     border-color: transparent;
@@ -42,7 +48,7 @@
   &--submit {
     height: fit-content;
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
   }
 
@@ -55,7 +61,7 @@ font-weight: normal;
     line-height: 116.666667%;
     border-radius: 6px;
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
 
     @include more-than($bp-xxl-1442) {
       border-radius: #{get-vw(6px, $bp-xxl-1442)};
@@ -76,7 +82,7 @@ font-weight: normal;
     border: 1px solid $black;
 
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include margin(17px);
   }
 
@@ -84,7 +90,7 @@ font-weight: normal;
     background: transparent;
     color: $textColorSecondary;
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include padding(10px, 24px, 10px, 24px);
     @include font-size(14px);
 
@@ -128,7 +134,7 @@ font-weight: normal;
   color: $textColorPrimary;
 
   font-family: $fontMain;
-font-weight: bold;
+  font-weight: bold;
   line-height: 100%;
   text-align: center;
 
