@@ -457,7 +457,7 @@
 
             if (formName === 'promocode-file') {
                 fo.append('email', emailUser);
-                fo.append('email', promoCodeUser);
+                fo.append('coupon', promoCodeUser);
             }
 
             return fo;
