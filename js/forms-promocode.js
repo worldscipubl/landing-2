@@ -10,6 +10,7 @@
     const mainContent = auditWrapper.querySelector('.audit__container');
 
     let emailUser = null;
+    let promoCodeUser = null;
 
     formsPromocode.forEach((form) => {
         initForm(form);
@@ -29,7 +30,7 @@
             if (formName === 'promocode') {
                 checkPromoCode(formData, submitForm, formName);
             } else if (formName === 'promocode-file') {
-                submitPromoCodeFile(formData, submitForm, formName);
+                submitPromoCodeFileStepOne(formData, submitForm, formName);
             }
 
             /*
@@ -74,6 +75,7 @@
                     if (resData['warning']) {
                         const resDataWarning = resData['warning'];
                         emailUser = null;
+                        promoCodeUser = null;
 
                         if (resDataWarning['coupon'])
                             setErrorInput(
@@ -113,7 +115,79 @@
             );
         }
 
-        function submitPromoCodeFile(sendData, currentForm, formName) {
+        function submitPromoCodeFileStepOne(sendData, currentForm, formName) {
+            console.log('submitPromoCodeFileStepOne');
+
+            const head = {
+                Accept: 'application/json',
+                'Content-Type': 'multipart/form-data',
+                'Access-Control-Allow-Origin': "http://localhost:8848/",
+                'Access-Control-Allow-Credentials': true,
+                'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type,' + ' Accept'
+            };
+
+            const base_url = '/main/';          // Базовый URLs
+            const add_lead = 'add-lead/';       // Отправка заявки
+            const url = base_url + add_lead;
+            const btnSubmit = currentForm.submit;
+
+            btnSubmit.style.pointerEvents = "none";
+            loadProgressBar();
+            axios.post(
+                url,
+                sendData,
+                {withCredentials: true},
+                {headers: head}
+            ).then(
+                (response) => {
+                    const inputs = currentForm.querySelectorAll('input');
+                    const input = inputs[inputs.length - 1];
+                    const hint = input.parentNode.querySelector(
+                        '.input-wrapper__error'
+                    );
+
+                    const resData = response.data;
+                    console.log(response);
+
+                    if (resData['warning']) {
+                        const resDataWarning = resData['warning'];
+
+                        if (resDataWarning['coupon'])
+                            setErrorInput(
+                                input,
+                                hint,
+                                resDataWarning['coupon']
+                            );
+                        else if (resDataWarning['time'])
+                            setErrorInput(
+                                input,
+                                hint,
+                                resDataWarning['time']
+                            );
+                    } else {
+                        submitPromoCodeFileStepTwo(sendData, currentForm, formName);
+                        removeErrorInput(input, hint);
+                    }
+                    btnSubmit.style.pointerEvents = "auto";
+                },
+                (error) => {
+                    const inputs = currentForm.querySelectorAll('input');
+                    const input = inputs[inputs.length - 1];
+                    const hint = input.parentNode.querySelector(
+                        '.input-wrapper__error'
+                    );
+                    setErrorInput(
+                        input,
+                        hint,
+                        "Ошибка при отправке данных!"
+                    );
+                    console.log(error);
+                    btnSubmit.style.pointerEvents = "auto";
+                }
+            );
+        }
+
+        function submitPromoCodeFileStepTwo(sendData, currentForm, formName) {
             console.log('submitPromoCodeFile');
 
             const head = {
@@ -306,6 +380,7 @@
                 case 'coupon':
                     if (input.validity.valid) {
                         removeErrorInput(input, hint);
+                        promoCodeUser = input.value;
                         return true;
                     } else {
                         setErrorInput(input, hint, 'Введите купон!');
@@ -380,8 +455,10 @@
             fo.append('csrfToken', csrfToken);
             fo.append('formsended', formName);
 
-            if (formName === 'promocode-file')
+            if (formName === 'promocode-file') {
                 fo.append('email', emailUser);
+                fo.append('email', promoCodeUser);
+            }
 
             return fo;
         }
