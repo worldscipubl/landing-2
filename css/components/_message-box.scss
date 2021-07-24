@@ -50,7 +50,7 @@
     @include padding(28px, 58px, 28px, 58px);
 
 
-    background-color: $colorPrimary;
+    background-color: $colorSecondary;
     color: $textColorSecondary;
 
     border-bottom-left-radius: 6px;
@@ -75,12 +75,14 @@
       &_pink {
         font-family: $fontMain;
         font-weight: normal;
-        background-color: #F595A8;
+        //background-color: #F595A8;
+        background-color: $colorSecondary;
       }
 
       &_dark-blude {
-        background-color: $colorPrimary;
-        color: $textColorSecondary;
+        //background-color: $colorPrimary;
+        background-color: $colorAccent;
+        color: $colorSecondary;
       }
     }
   }

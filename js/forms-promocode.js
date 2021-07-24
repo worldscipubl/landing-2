@@ -9,6 +9,10 @@
     const msgBoxPinkEmail = msgBoxPink.querySelector('.message-box__email');
     const mainContent = auditWrapper.querySelector('.audit__container');
 
+    const _currentURL = new URL(window.location.href);
+    const _emailFromURL = _currentURL.searchParams.get("e");
+    const _couponFromURL = _currentURL.searchParams.get("c");
+
     let emailUser = null;
     let promoCodeUser = null;
 
@@ -17,6 +21,12 @@
     });
 
     function initForm(form) {
+
+        const couponField = form.querySelector('[name="coupon"]');
+        const couponEmail = form.querySelector('[name="email"]');
+
+        if (_couponFromURL && couponField) couponField.value = _couponFromURL;
+        if (_emailFromURL && couponEmail) couponEmail.value = _emailFromURL;
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -292,8 +302,7 @@
             formsPromocode[1].classList.remove('form-lock');
             currentForm
                 .querySelector('.promocode-success')
-                .innerHTML = "Промокод введен верно. <br> Загрузите статью для подробного" +
-                " аудита с рецензией.";
+                .innerHTML = "Промокод введен верно. <br> Продолжайте активацию.";
             removePromoCodeHint();
         }
 
