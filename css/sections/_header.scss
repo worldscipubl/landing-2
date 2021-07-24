@@ -9,7 +9,23 @@
   left: 0;
   width: 100%;
   z-index: $z-index-header;
-  @include padding(10px, 24px, 10px, 24px);
+  padding: 10px 20px 10px 20px;
+
+  @include more-than($bp-xxl-1442) {
+    $top: 10px;
+    $right: 20px;
+    $bottom: 10px;
+    $left: 20px;
+
+    padding-top: #{get-vw($top, $bp-xxl-1442)};
+    padding-right: #{get-vw($right, $bp-xxl-1442)};
+    padding-bottom: #{get-vw($bottom, $bp-xxl-1442)};
+    padding-left: #{get-vw($left, $bp-xxl-1442)};
+  }
+
+  @include less-than($bp-md-768) {
+    padding: 12px;
+  }
 
   &__inner {
     align-items: center;
@@ -25,6 +41,10 @@
     align-items: center;
     display: flex;
     justify-content: flex-start;
+
+    @include less-than(465px) {
+      justify-content: center;
+    }
   }
 
   &__action {
@@ -38,6 +58,12 @@
       margin-left: 12px;
       border-left: 1px solid #C4C4C4;
       padding-left: 12px;
+    }
+
+    &_call {
+      @include less-than(465px) {
+        display: none;
+      }
     }
   }
 }
@@ -73,7 +99,7 @@
   &__img {
     display: block;
     object-fit: contain;
-    height: 68%;
+    height: 32px;
   }
 
   &__label {
@@ -232,16 +258,6 @@
 }
 
 @media screen and (max-width: 780px) {
-  .header {
-
-    &__logo {
-      justify-content: center;
-    }
-
-    &__inner {
-      padding: 16px;
-    }
-  }
 
   .action-header {
     &__item {

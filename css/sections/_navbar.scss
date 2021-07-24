@@ -9,9 +9,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    @include padding($header-height, 65px, 20px, 65px);
     width: 100%;
     height: 100%;
+    padding: $header-height 65px 20px 65px;
+
+    @include more-than($bp-xxl-1442) {
+      $top: $header-height;
+      $right: 65px;
+      $bottom: 20px;
+      $left: 65px;
+
+      padding-top: #{get-vw($top, $bp-xxl-1442)};
+      padding-right: #{get-vw($right, $bp-xxl-1442)};
+      padding-bottom: #{get-vw($bottom, $bp-xxl-1442)};
+      padding-left: #{get-vw($left, $bp-xxl-1442)};
+    }
+
+
+    @include less-than($bp-md-768) {
+      padding: $header-height 25px 20px 25px;
+    }
   }
 
   &_bg {
@@ -66,10 +83,6 @@
     flex-direction: column;
     align-items: center;
     @include margin(20px);
-
-    @include less-than-height(595px) {
-      display: none;
-    }
   }
 
   &__union {
@@ -85,14 +98,6 @@
     width: 40%;
     align-self: center;
     object-fit: contain;
-
-    @include less-than-height(670px) {
-      width: 20%;
-    }
-
-    @include less-than-height(620px) {
-      width: 15%;
-    }
   }
 
   &__date {
@@ -137,6 +142,10 @@
     transition: transform .3s;
     will-change: transform;
     contain: paint;
+
+    @include less-than($bp-md-768) {
+      width: 100vw;
+    }
 
     &_pos {
       &_left {
