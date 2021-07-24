@@ -128,5 +128,9 @@
   &__btn {
     width: 40%;
     margin-top: 1em;
+
+    @include less-than($bp-md-768) {
+      width: 100%;
+    }
   }
 }

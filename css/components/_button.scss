@@ -84,6 +84,11 @@
     font-family: $fontMain;
     font-weight: normal;
     @include margin(17px);
+
+    @include less-than($bp-sm-576) {
+      @include margin(12px);
+      @include font-size(12px);
+    }
   }
 
   &--consultation {
