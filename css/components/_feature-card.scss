@@ -3,7 +3,7 @@
 .feature-card {
   background: $popupBackground;
   @extend %s-border;
-
+  height: 100%;
   padding: 30px 24px 30px 17px;
 
   @include more-than($bp-xxl-1442) {
@@ -18,10 +18,6 @@
     #{get-vw(24px, $bp-lg-979)}
     #{get-vw(48px, $bp-lg-979)}
     #{get-vw(17px, $bp-lg-979)};
-  }
-
-  @include less-than($bp-sm-576) {
-
   }
 
   &__title {

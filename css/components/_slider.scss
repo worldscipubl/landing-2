@@ -1,0 +1,12 @@
+@use '../global' as *;
+
+.slider {
+  &:after {
+    content: 'flickity';
+    display: none; /* hide :after */
+
+    @include more-than($bp-md-768) {
+      content: '';
+    }
+  }
+}

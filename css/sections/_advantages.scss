@@ -7,24 +7,40 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include less-than($bp-lg-979) {
+      flex-wrap: wrap;
+    }
+
+    @include less-than($bp-md-768) {
+      display: block;
+      width: 100%;
+      height: 212px;
+    }
   }
 
   &__item {
     width: 18.9263565891%;
-  }
 
-  @include less-than($bp-sm-576) {
-    &__inner {
-      //flex-direction: column;
-      flex-wrap: wrap;
-    }
-
-    &__item {
+    @include less-than($bp-lg-979) {
       width: 48%;
 
       &:nth-child(n + 3) {
         margin-top: 20px;
       }
+    }
+
+    @include less-than($bp-md-768) {
+      width: 64%;
+      height: 100%;
+
+      @include padding(10px, 10px, 10px, 10px);
+
+      &:nth-child(n + 3) {
+        margin: 0;
+      }
+
+      margin: 0 12px;
     }
   }
 }
