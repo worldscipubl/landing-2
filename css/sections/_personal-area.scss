@@ -20,9 +20,14 @@
     bottom: 0;
     object-fit: contain;
     height: 34%;
+
+    @include less-than($bp-md-768) {
+      display: none;
+    }
   }
 
-  &__header {}
+  &__header {
+  }
 
   &__footer {
     display: flex;
@@ -33,10 +38,14 @@
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorSecondary;
     @include font-size(36px);
     @include padding(13px, 240px, 13px, 0px);
+
+    @include less-than($bp-md-768) {
+      padding: 12px;
+    }
   }
 
   &__inner {
@@ -58,11 +67,18 @@ font-weight: bold;
     @include less-than($bp-xl-1170) {
       left: 0;
     }
+
+    @include less-than($bp-md-768) {
+      display: none;
+    }
   }
 }
 
 .p-slider {
-  //min-height: 40vh;
+  @include less-than($bp-md-768) {
+    width: 100%;
+    margin-bottom: 12px;
+  }
 
   &__img-wrapper {
     overflow: hidden;
@@ -84,6 +100,11 @@ font-weight: bold;
     @include less-than($bp-md-768) {
       border-radius: #{get-vw(6px, $bp-md-768)};
       filter: drop-shadow(#{get-vw(1px, $bp-md-768)} #{get-vw(1px, $bp-md-768)} #{get-vw(4px, $bp-md-768)} rgba(0, 0, 0, 0.25));
+
+      width: 94%;
+      height: auto;
+      padding: 8px 0;
+      margin: 0 8px;
     }
   }
 
@@ -92,6 +113,10 @@ font-weight: bold;
     object-fit: contain;
 
     &--show {
+      display: block;
+    }
+
+    @include less-than($bp-md-768) {
       display: block;
     }
   }
@@ -105,20 +130,36 @@ font-weight: bold;
 
     &:nth-child(1) {
       width: 40%;
+      @include less-than($bp-md-768) {
+        display: none;
+      }
     }
 
 
     &:nth-child(2) {
       width: 60%;
+
+      @include less-than($bp-md-768) {
+        width: 100%;
+      }
     }
   }
 
   &__text {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     font-style: italic;
     @include font-size(18px);
     @include padding(0px, 80px, 0px, 0px);
+  }
+
+  &__btn {
+    display: inline-block;
+
+    @include less-than($bp-md-768) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -136,7 +177,7 @@ font-weight: normal;
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(24px);
     color: #FFFEFE;
   }
@@ -175,7 +216,7 @@ font-weight: bold;
 
   &__item-title {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
     @include margin(0px, 0px, 0px, 15px);
   }
@@ -188,14 +229,15 @@ font-weight: normal;
     border-left: 2px solid #E1F1FE;
     transition: max-height 0.3s ease-out;
 
-    ol>li {
+    ol > li {
       padding: 8px 0;
       font-family: $fontMain;
-font-weight: normal;
+      font-weight: normal;
       @include font-size(15px);
       color: #9B9B9B;
     }
   }
 
-  &__item-text {}
+  &__item-text {
+  }
 }
