@@ -73,11 +73,9 @@
     box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
   }
 
-  @media (max-width: #{$bp-sm-576}) {
-    border-radius: #{get-vw(6px, $bp-sm-576)};
-    border-left: #001437 solid #{get-vw(12px, $bp-sm-576)};
-
-    box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
+  @media (max-width: #{$bp-md-768}) {
+    border-left: 0;
+    box-shadow: none;
   }
 }
 

@@ -5,7 +5,7 @@
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     text-align: left;
     @include font-size(36px);
     padding-right: 280px;
@@ -29,6 +29,10 @@ font-weight: bold;
     flex-direction: row;
     justify-content: space-between;
     @include margin(24px);
+
+    @include less-than($bp-md-768) {
+      flex-direction: column;
+    }
   }
 
   &__column {
@@ -48,6 +52,66 @@ font-weight: bold;
       &:nth-child(2) {
         width: calc(48.6905916586% + 7.953443259% / 4);
       }
+    }
+
+    @include less-than($bp-md-768) {
+      width: 100%;
+
+      &:nth-child(1) {
+        margin-top: 24px;
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        width: 100%;
+        order: -1;
+      }
+    }
+  }
+
+  &__slider {
+    @include less-than($bp-md-768) {
+      height: #{get-vw(280px, $bp-md-768)};
+      width: 100%;
+      margin-bottom: 12px;
+
+      @include less-than(375px) {
+        height: 310px;
+      }
+    }
+  }
+
+  &__slider-item {
+    & + & {
+      margin-top: 12px;
+    }
+
+    @include less-than($bp-md-768) {
+      width: 94%;
+      height: 100%;
+
+      & + & {
+        margin: 0 8px;
+      }
+      padding: 8px 0;
+      margin: 0 8px;
+    }
+  }
+
+  .slider__item-wrapper {
+    @include less-than($bp-md-768) {
+      width: 100%;
+      height: 100%;
+
+      & + & {
+        margin: 0 8px;
+      }
+
+      background: $popupBackground;
+      box-shadow: 1px 1px 4px $colorShadow;
+      border-radius: 6px;
+      @include padding(31px, 30px, 73px, 14px);
+      margin: 0 8px;
     }
   }
 
@@ -69,7 +133,11 @@ font-weight: bold;
 
   &__contract {
     width: 32%;
+    @include less-than($bp-md-768) {
+      width: 64%;
+    }
   }
+
 }
 
 .manifest {
@@ -77,6 +145,13 @@ font-weight: bold;
   background: $popupBackground;
   @extend %s-border;
   @include padding(12px, 5px, 20px, 21px);
+
+  @include less-than($bp-md-768) {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
 
   &--ribbon {
     @extend %s-border--manifest;
@@ -110,7 +185,7 @@ font-weight: bold;
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(14px);
     line-height: 110%;
   }
@@ -162,7 +237,7 @@ font-weight: bold;
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
   }
 
