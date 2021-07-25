@@ -117,20 +117,6 @@
   @media (min-width: $bp-xxl-1442) {
     margin: #{get-vw($t-margin, $bp-xxl-1442)} #{get-vw($r-margin, $bp-xxl-1442)} #{get-vw($b-margin, $bp-xxl-1442)} #{get-vw($l-margin, $bp-xxl-1442)};
   }
-
-  @media (max-width: #{$bp-lg-979}) {
-  }
-
-  @media (max-width: #{$bp-md-768}) {
-    margin-top: #{get-vw($t-margin, $bp-sm-576)};
-    margin-right: #{get-vw($r-margin, $bp-sm-576)};
-    margin-bottom: #{get-vw($b-margin, $bp-sm-576)};
-    margin-left: #{get-vw($l-margin, $bp-sm-576)};
-  }
-
-  @media (max-width: #{$bp-sm-576}) {
-    margin: $t-margin $r-margin $b-margin $l-margin;
-  }
 }
 
 @mixin more-than($resolution: 180px) {

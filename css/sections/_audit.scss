@@ -62,7 +62,7 @@
   &__container {
     @include padding(16px, 26px, 16px, 26px);
 
-    @media (max-width: #{$bp-sm-576}) {
+    @media (max-width: #{$bp-md-768}) {
       @include padding(12px, 8px, 12px, 8px);
     }
   }
@@ -102,6 +102,11 @@
     justify-content: space-between;
     align-items: flex-start;
     @include padding(0px, 26px, 0px, 26px);
+
+    @include less-than($bp-md-768) {
+      padding: 0 8px;
+      flex-direction: column;
+    }
   }
 
   &__inputs {
@@ -134,12 +139,23 @@
 
   &__email {
     flex: 2;
+
+    @include less-than($bp-md-768) {
+      flex: 0;
+      width: 100%;
+    }
   }
 
   &__submit {
     flex: 1;
     @include margin(0px, 0px, 0px, 20px);
     width: 100%;
+
+    @include less-than($bp-md-768) {
+      flex: 0;
+      margin: 12px 0 0;
+      width: 100%;
+    }
   }
 
   &__btn {
@@ -169,6 +185,9 @@
     align-items: center;
     margin: 0 auto;
     width: 65%;
+    @include less-than($bp-md-768) {
+      width: 100%;
+    }
   }
 
   &__main {
@@ -212,6 +231,18 @@
 
     & + & {
       @include margin(12px);
+    }
+
+    &_main {
+      margin: 0;
+
+      & + & {
+        @include margin(0px, 0px, 0px, 12px);
+
+        @include less-than($bp-md-768) {
+          @include margin(12px);
+        }
+      }
     }
   }
 
@@ -298,6 +329,19 @@
   &__message-box {
     width: 60%;
     margin: 0 auto;
+  }
+
+  &__cards {
+
+    &_main {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: row;
+
+      @include less-than($bp-md-768) {
+        flex-direction: column;
+      }
+    }
   }
 }
 
