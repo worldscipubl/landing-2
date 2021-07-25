@@ -32,7 +32,7 @@
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
     @include margin(20px);
   }
@@ -65,8 +65,12 @@ font-weight: bold;
     align-self: flex-end;
 
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
+
+    @include less-than($bp-md-768) {
+      width: 80%;
+    }
   }
 
 }
@@ -84,14 +88,14 @@ font-weight: normal;
     padding: 6px 20px;
 
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(24px);
   }
 
   &__title {
     width: 100%;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(24px);
     text-align: left;
     color: #161616;
