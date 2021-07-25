@@ -55,6 +55,18 @@ $maxWidthContainer: $maxWidthContainer + 2 * $p-side;
 
   &:after {
     @extend %block-background;
+    @include less-than($bp-md-768) {
+      display: none;
+    }
+  }
+
+  @include less-than($bp-md-768) {
+    background: $popupBackground;
+    box-shadow: 1px 1px 4px $colorShadow;
+    border-radius: 6px;
+
+    height: auto;
+    width: 100%;
   }
 
 

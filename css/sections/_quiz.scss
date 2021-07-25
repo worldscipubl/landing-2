@@ -3,22 +3,28 @@
 .quiz {
   @include margin(160px);
 
+  &__wrap {
+    @include less-than($bp-md-768) {
+      padding: 0;
+    }
+  }
+
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(36px);
   }
 
   &__subtitle {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorSecondary;
 
     @include font-size(14px);
     @include padding(7px, 64px, 7px, 82px);
 
-    @include less-than(720px) {
-      @include padding(7px, 28px, 7px, 0px);
+    @include less-than($bp-md-768) {
+      padding: 7px 18px;
     }
   }
 
@@ -27,6 +33,10 @@ font-weight: bold;
     flex-direction: row;
     width: 100%;
     @include margin(36px);
+
+    @include less-than($bp-md-768) {
+      flex-direction: column;
+    }
   }
 
   &__header {
@@ -39,7 +49,7 @@ font-weight: bold;
       left: 0;
       top: 0;
 
-      @include less-than(720px) {
+      @include less-than($bp-md-768) {
         display: none;
       }
     }
@@ -64,7 +74,15 @@ font-weight: bold;
     }
 
     @include less-than($bp-md-768) {
-      height: #{get-vw(520px, $bp-md-768)};
+      transform: translateY(#{get-vw(-46px, $bp-md-768)});
+      height: auto;
+      width: 90%;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    @include less-than(375px) {
+      transform: translateY(-46px);
     }
   }
 
@@ -72,8 +90,8 @@ font-weight: bold;
     @include padding(0px, 64px, 60px, 82px);
     @include margin(20px);
 
-    @include less-than(720px) {
-      @include padding(0px, 28px, 0px, 0px);
+    @include less-than($bp-md-768) {
+      padding: 18px;
     }
   }
 
@@ -81,6 +99,17 @@ font-weight: bold;
     width: 30%;
     position: relative;
     @include margin(0px, 0px, 0px, 24px);
+
+    @include less-than($bp-md-768) {
+      height: #{get-vw(455px, 375px)};
+      width: 100%;
+      order: -1;
+      margin: 0;
+    }
+
+    @include less-than(375px) {
+
+    }
   }
 
   &__quote {
@@ -93,9 +122,13 @@ font-weight: bold;
     width: 100%;
     height: 100%;
 
+    @include less-than($bp-md-768) {
+      display: none;
+    }
+
     &-text {
       font-family: $fontMain;
-font-weight: normal;
+      font-weight: normal;
       font-style: italic;
       @include font-size(18px);
       @include padding(0px, 20px, 0px, 20px);
@@ -114,7 +147,7 @@ font-weight: normal;
     &::before,
     &::after {
       font-family: $fontMain;
-font-weight: normal;
+      font-weight: normal;
       @include font-size(96px);
       color: $colorAccent;
     }

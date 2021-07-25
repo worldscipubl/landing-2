@@ -130,10 +130,6 @@
   width: 70vw;
   background: $popupBackground;
   @extend %s-border;
-
-  @include less-than($bp-md-768) {
-    width: 100%;
-  }
 }
 
 %header-background {
@@ -144,6 +140,10 @@
   height: 100%;
   width: 70vw;
   background: $colorAccent;
+
+  @include less-than($bp-md-768) {
+    width: 100%;
+  }
 }
 
 %subtitle-background {
