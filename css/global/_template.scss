@@ -130,6 +130,10 @@
   width: 70vw;
   background: $popupBackground;
   @extend %s-border;
+
+  @include less-than($bp-md-768) {
+    width: 100%;
+  }
 }
 
 %header-background {
@@ -171,7 +175,7 @@
   border-radius: 6px;
 
   font-family: $fontMain;
-font-weight: bold;
+  font-weight: bold;
   color: $textColorSecondary;
   background: $colorAccent;
 
@@ -194,7 +198,7 @@ font-weight: bold;
   font-size: 14px;
   font-style: normal;
   font-family: $fontMain;
-font-weight: normal;
+  font-weight: normal;
   line-height: 115%;
 }
 
@@ -203,7 +207,7 @@ font-weight: normal;
   font-size: 36px;
   font-style: normal;
   font-family: $fontMain;
-font-weight: bold;
+  font-weight: bold;
   line-height: 41px;
 }
 

@@ -27,8 +27,8 @@
       #{get-vw(20px, $bp-lg-979)}
     }
 
-    @include less-than($bp-sm-576) {
-
+    @include less-than($bp-md-768) {
+      width: 100%;
     }
   }
 
@@ -36,6 +36,10 @@
     width: 30%;
     position: relative;
     @include margin(0px, 0px, 0px, 24px);
+
+    @include less-than($bp-md-768) {
+      display: none;
+    }
   }
 
   &__poster-label {
@@ -43,6 +47,7 @@
   }
 
   &__title {
+    font-weight: bold;
     @include font-size(24px);
   }
 
@@ -71,5 +76,9 @@
     @include padding(12px, 12px, 12px, 12px);
     line-height: 117%;
     width: 60%;
+
+    @include less-than($bp-md-768) {
+      margin: 24px auto 0;
+    }
   }
 }
