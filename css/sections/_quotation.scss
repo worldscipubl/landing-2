@@ -22,7 +22,7 @@
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorSecondary;
     @include font-size(35px);
   }
@@ -54,6 +54,7 @@ font-weight: bold;
 
     @include less-than($bp-md-768) {
       margin-top: #{get-vw(16px, $bp-md-768)};
+      width: 100%;
     }
   }
 
