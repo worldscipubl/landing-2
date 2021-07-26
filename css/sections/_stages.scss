@@ -3,6 +3,10 @@
 .stages {
   @include margin(150px);
 
+  @include less-than($bp-md-768) {
+    margin-top: 96px;
+  }
+
   &__wrap {
     display: flex;
     flex-direction: column;
@@ -13,7 +17,6 @@
   }
 
   &__title {
-    font-family: $fontMain;
     font-family: $fontMain;
     font-weight: bold;
     color: $textColorSecondary;

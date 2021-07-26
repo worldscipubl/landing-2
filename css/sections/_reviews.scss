@@ -3,21 +3,18 @@
 .reviews {
   @include margin(80px);
 
-  @include less-than($bp-md-768) {
-    display: none;
-  }
-
   &__wrap {
     position: relative;
   }
 
   &__title {
     font-family: $fontMain;
-    font-weight: normal;
-    font-style: normal;
-    font-family: $fontMain;
     font-weight: bold;
     @include font-size(36px);
+
+    @include less-than($bp-md-768) {
+      font-size: 21px;
+    }
   }
 
   &__inner {
@@ -25,10 +22,18 @@
     flex-direction: row;
     justify-content: space-between;
     @include margin(28px);
+
+    @include less-than($bp-md-768) {
+      flex-direction: column;
+    }
   }
 
   &__column {
     width: 48.78%;
+
+    @include less-than($bp-md-768) {
+      width: 100%;
+    }
   }
 
   &__video {
@@ -63,6 +68,10 @@
     position: absolute;
     right: 0;
     bottom: -8%;
+
+    @include less-than($bp-md-768) {
+      display: none;
+    }
   }
 }
 
@@ -147,11 +156,19 @@
     @include padding(0px, 4px, 0px, 39px);
     @include margin(20px);
 
+    @include less-than($bp-md-768) {
+      padding: 0;
+    }
+
     color: #000000;
 
     &::before {
       content: "“";
       transform: translateX(-8%) translateY(100%);
+
+      @include less-than($bp-md-768) {
+        transform: translateX(0%) translateY(50%);
+      }
     }
 
     &::after {
@@ -190,6 +207,10 @@
     text-decoration-line: underline;
 
     color: #31A3C7;
+
+    @include less-than($bp-md-768) {
+      padding: 0;
+    }
   }
 }
 
@@ -256,19 +277,6 @@
     @include less-than($bp-md-768) {
       @include font-size(16px);
     }
-  }
-
-  &__profile-link {
-    font-family: $fontMain;
-    font-weight: normal;
-    @include font-size(12px);
-
-    @include less-than($bp-md-768) {
-      @include font-size(16px);
-    }
-
-    text-decoration-line: underline;
-    color: #31A3C7;
   }
 
   &__statistics {
