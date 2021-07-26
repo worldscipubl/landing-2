@@ -9,6 +9,7 @@ function initSlider(slider) {
         prevNextButtons: false,
         autoPlay: 5000,
         wrapAround: true,
+        // adaptiveHeight: true,
         watchCSS: true
     });
 }

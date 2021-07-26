@@ -4,7 +4,7 @@
   @include margin(160px);
 
   @include less-than($bp-md-768) {
-    display: none;
+    margin-top: 96px;
   }
 
   &__wrap {
@@ -17,7 +17,6 @@
 
   &__title {
     padding: 12px;
-    font-family: Helvetica;
     font-style: normal;
     font-family: $fontMain;
     font-weight: bold;
@@ -26,12 +25,23 @@
     text-align: center;
 
     color: #161616;
+
+    @include less-than($bp-md-768) {
+      padding: 0;
+      font-size: 21px;
+    }
   }
 
   &__cards {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include less-than($bp-md-768) {
+      display: block;
+      min-height: 100%;
+      height: auto;
+    }
   }
 
   &__column {
@@ -39,6 +49,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include less-than($bp-md-768) {
+      width: 100%;
+      min-height: 100%;
+      height: auto;
+      padding: 12px 8px;
+      justify-content: flex-start;
+    }
   }
 
   &__card {
@@ -57,10 +75,18 @@
       font-weight: bold;
       color: $textColorSecondary;
       @include font-size(24px);
+
+      @include less-than($bp-md-768) {
+        font-size: 21px;
+      }
     }
 
     @include more-than($bp-xxl-1442) {
       margin-top: #{get-vw(160px, $bp-xxl-1442)};
+    }
+
+    @include less-than($bp-md-768) {
+      margin-top: 96px;
     }
   }
 }
@@ -199,6 +225,14 @@
   @extend %s-border;
   background-color: $colorAccent;
 
+  @include less-than($bp-md-768) {
+    padding: 12px;
+    height: auto;
+    & + & {
+      margin-top: 12px;
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -212,7 +246,6 @@
     font-weight: bold;
     color: $textColorSecondary;
     @include font-size(48px);
-    //@include margin(43px);
   }
 
   &__stars {
