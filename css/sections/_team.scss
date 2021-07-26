@@ -2,8 +2,9 @@
 
 .team {
   @include margin(160px);
+
   @include less-than($bp-md-768) {
-    display: none;
+    margin-top: 96px;
   }
 
   &__wrap {
@@ -15,6 +16,11 @@
     font-family: $fontMain;
     font-weight: bold;
     @include font-size(36px);
+
+    @include less-than($bp-md-768) {
+      padding: 0;
+      font-size: 21px;
+    }
   }
 
   &__about {
@@ -59,6 +65,13 @@
   &__tab {
     width: 32.2674418605%;
     text-decoration: none;
+
+    @include less-than($bp-md-768) {
+      &:nth-child(1), &:nth-child(3) {
+        display: none;
+      }
+      width: 100%;
+    }
 
     &--show {
       color: $textColorPrimary;
@@ -111,6 +124,14 @@
       max-height: #{get-vw(430px, $bp-xxl-1442)};
     }
 
+    @include less-than($bp-md-768) {
+      flex-direction: column;
+
+      &:nth-child(1), &:nth-child(3) {
+        display: none;
+      }
+    }
+
     &--show {
       display: flex;
     }
@@ -119,6 +140,12 @@
   &__column {
     display: flex;
     width: 32.2674418605%;
+    @include less-than($bp-md-768) {
+      width: 100%;
+      &:nth-child(1) {
+        display: none;
+      }
+    }
   }
 
   &__img {
@@ -133,6 +160,10 @@
     background-color: $popupBackground;
     box-shadow: 1px 1px 4px $colorShadow;
     @include padding(68px, 27px, 58px, 27px);
+
+    @include less-than($bp-md-768) {
+      padding: 64px 12px 24px;
+    }
   }
 
   &__text {
@@ -156,12 +187,10 @@
       height: #{get-vw($h-logo, $bp-xxl-1442)};
     }
 
-    @include less-than($bp-lg-979) {
-      height: #{get-vw($h-logo, $bp-lg-979)};
+    @include less-than($bp-md-768) {
+      left: auto;
+      right: 12px;
     }
 
-    @include less-than($bp-sm-576) {
-      height: #{get-vw($h-logo, $bp-sm-576)};
-    }
   }
 }
