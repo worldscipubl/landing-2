@@ -31,6 +31,10 @@
   &__inner {
     position: relative;
     @include margin(34px);
+
+    @include less-than($bp-md-768) {
+      min-height: 100vh;
+    }
   }
 
   &__slider {
