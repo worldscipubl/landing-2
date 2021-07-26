@@ -196,7 +196,7 @@
                             removeErrorInput(input, hint);
                             return true;
                         } else {
-                            setErrorInput(input, hint, 'Введите купон!');
+                            setErrorInput(input, hint, 'Введите промокод!');
                             return false;
                         }
                         break;

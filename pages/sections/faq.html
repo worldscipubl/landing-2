@@ -1,10 +1,8 @@
 <section class="faq" id="faq-section">
-
     <div class="faq__wrap container">
         <h2 class="faq__title">
             F.A.Q. Часто задаваемые вопросы
         </h2>
-
         <div class="faq__inner">
             <div class="spoilers" id="spoilers-faq">
                 <div class="spoilers__item spoiler">
@@ -192,30 +190,29 @@
                 </div>
             </div>
         </div>
-
         <form novalidate name="question_1" class="faq__form your-question" action="/">
             <h3 class="your-question__description">
                 Если Вашего вопроса нет в списке, задайте его в форме расположенной ниже.
                 Ответ будет направлен на электронную почту.
             </h3>
-
             <div class="input-wrapper">
-                <textarea class="your-question__textarea" placeholder="Текст для примера" name="text" maxlength="1000" minlength="1"
-                    required></textarea>
+                <textarea class="your-question__textarea" placeholder="Текст для примера"
+                          name="text" maxlength="1000" minlength="1"
+                          required></textarea>
                 <span class="input-wrapper__error"></span>
             </div>
-
             <div class="input-wrapper">
-                <input name="email" type="email" class="your-question__email" placeholder="Email"
-                    pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+                <input name="email" type="email" class="your-question__email"
+                       placeholder="Email"
+                       pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                       required>
                 <span class="input-wrapper__error"></span>
             </div>
-
-            <button type="submit" class="button your-question__submit" data-show-popup="0" data-formsended="question_"
-                data-step="1">
+            <button type="submit" class="button your-question__submit" data-show-popup="0"
+                    data-formsended="question_"
+                    data-step="1">
                 Задать свой вопрос
             </button>
         </form>
     </div>
-
 </section>

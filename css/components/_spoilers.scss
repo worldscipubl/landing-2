@@ -41,61 +41,66 @@
     &:before {
       display: inline;
       content: "0" counter(counter-spoiler);
-      font-family: Helvetica;
       font-style: normal;
       font-family: $fontMain;
-font-weight: bold;
+      font-weight: bold;
       font-size: 36px;
       line-height: 122%;
       padding-right: 12px;
       color: #000000;
+
+      @include less-than($bp-md-768) {
+        font-size: 16px;
+        padding-right: 12px;
+      }
     }
   }
 
   &__label {
     cursor: pointer;
-    width: 95%;
-    font-family: Helvetica;
     font-style: normal;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     font-size: 18px;
     line-height: 120%;
 
     border-bottom: 2px solid #C4C4C4;
     color: #000000;
 
-
-    &:after {
-      content: "+";
-      float: right;
-      font-family: monospace;
-      font-family: $fontMain;
-font-weight: bold;
-      color: #C4C4C4;
-      font-size: 20px;
-    }
-  }
-
-  &__label {
     background: transparent;
     padding: 24px 18px 24px 0;
     overflow: hidden;
     width: 100%;
     display: block;
     box-sizing: border-box;
+
+    @include less-than($bp-md-768) {
+      font-size: 14px;
+      @include padding(21px, 12px, 21px, 0px);
+    }
+
+
+    &:after {
+      content: "+";
+      float: right;
+      font-family: $fontMain;
+      font-weight: bold;
+      color: #C4C4C4;
+      font-size: 20px;
+    }
   }
 
   &__text {
-    font-family: Helvetica;
     font-style: normal;
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     font-size: 18px;
     line-height: 140%;
 
     color: #000000;
-
+    @include less-than($bp-md-768) {
+      font-size: 14px;
+    }
   }
 
   &__inner {
@@ -116,14 +121,19 @@ font-weight: normal;
     &:before {
       display: inline;
       content: "00";
-      font-family: Helvetica;
       font-style: normal;
       font-family: $fontMain;
-font-weight: bold;
+      font-weight: bold;
       font-size: 36px;
       line-height: 122%;
       padding-right: 12px;
       color: transparent;
+
+      @include less-than($bp-md-768) {
+        @include font-size(16px);
+        line-height: 122%;
+        padding-right: 12px;
+      }
     }
   }
 

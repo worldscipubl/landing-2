@@ -3,6 +3,10 @@
 .foreign {
   @include margin(160px);
 
+  @include less-than($bp-md-768) {
+    display: none;
+  }
+
   &__wrap {
 
   }
@@ -16,7 +20,7 @@
     font-family: Helvetica;
     font-style: normal;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     font-size: 36px;
     line-height: 120%;
     text-align: center;
@@ -50,17 +54,13 @@ font-weight: bold;
 
     &-title {
       font-family: $fontMain;
-font-weight: bold;
+      font-weight: bold;
       color: $textColorSecondary;
       @include font-size(24px);
     }
 
     @include more-than($bp-xxl-1442) {
       margin-top: #{get-vw(160px, $bp-xxl-1442)};
-    }
-
-    @include less-than($bp-lg-979) {
-      margin-top: #{get-vw(90px, $bp-lg-979)};
     }
   }
 }
@@ -73,14 +73,14 @@ font-weight: bold;
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(48px);
     text-align: left;
   }
 
   &__text {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
     text-align: left;
   }
@@ -127,7 +127,7 @@ font-weight: bold;
   &__title {
     @include margin(12px);
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
   }
 
@@ -137,7 +137,7 @@ font-weight: normal;
 
   &__option {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include margin(12px);
     @include font-size(14px);
     @include padding(3px, 22px, 3px, 7px);
@@ -177,13 +177,13 @@ font-weight: normal;
 
   &__country {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(12px);
   }
 
   &__btn {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
     @include padding(4px, 10px, 4px, 10px);
     width: 80%;
@@ -209,7 +209,7 @@ font-weight: normal;
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorSecondary;
     @include font-size(48px);
     //@include margin(43px);
@@ -217,7 +217,7 @@ font-weight: bold;
 
   &__stars {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorSecondary;
 
     &-img {
@@ -230,7 +230,7 @@ font-weight: bold;
 
   &__text {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorSecondary;
     @include font-size(18px);
     @include margin(12px);

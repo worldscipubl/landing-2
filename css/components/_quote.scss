@@ -11,6 +11,10 @@
     font-style: italic;
     color: $textColorSecondary;
     @include font-size(18px);
+
+    @include less-than($bp-md-768) {
+      font-size: 14px;
+    }
   }
 
   &::before {
@@ -20,6 +24,10 @@
   &::after {
     content: "“";
     transform: rotateZ(180deg) translateX(200%) translateY(-200%);
+
+    @include less-than($bp-sm-576) {
+      transform: rotateZ(180deg) translateX(0%) translateY(-200%);
+    }
   }
 
   &::before,
@@ -27,8 +35,12 @@
     height: 10px;
     line-height: 0%;
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     color: $textColorSecondary;
     @include font-size(72px);
+
+    @include less-than($bp-md-768) {
+      font-size: 64px;
+    }
   }
 }

@@ -4,7 +4,10 @@ initMainSlider(mainSlider);
 function initMainSlider(mainSlider) {
     const flkty = new Flickity(mainSlider, {
         // options
-        cellAlign: 'left'
-        // contain: true
+        cellAlign: 'left',
+        adaptiveHeight: true,
+        contain: true,
+        prevNextButtons: false,
+        wrapAround: true
     });
 }

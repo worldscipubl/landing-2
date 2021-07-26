@@ -13,18 +13,15 @@
     #{get-vw(17px, $bp-xxl-1442)};
   }
 
-  @include less-than($bp-lg-979) {
-    padding: #{get-vw(30px, $bp-lg-979)}
-    #{get-vw(24px, $bp-lg-979)}
-    #{get-vw(48px, $bp-lg-979)}
-    #{get-vw(17px, $bp-lg-979)};
-  }
-
   &__title {
     font-family: $fontMain;
     font-weight: bold;
     color: $textColorAccent;
     @include font-size(48px);
+
+    @include less-than($bp-md-768) {
+      font-size: 34px;
+    }
   }
 
   &__text {
@@ -34,14 +31,6 @@
 
     @include more-than($bp-xxl-1442) {
       margin-top: #{get-vw(4px, $bp-xxl-1442)};
-    }
-
-    @include less-than($bp-lg-979) {
-      margin-top: #{get-vw(4px, $bp-lg-979)};
-    }
-
-    @include less-than($bp-sm-576) {
-
     }
   }
 }

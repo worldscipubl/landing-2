@@ -190,11 +190,3 @@ $text-colors: (
     }
   }
 }
-
-
-@media (max-width: #{$bp-sm-576}) {
-  .text_size_accent {
-    font-size: 14px;
-  }
-}
-

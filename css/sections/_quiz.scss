@@ -3,6 +3,10 @@
 .quiz {
   @include margin(160px);
 
+  @include less-than($bp-md-768) {
+    margin-top: 96px;
+  }
+
   &__wrap {
     @include less-than($bp-md-768) {
       padding: 0;
@@ -13,6 +17,11 @@
     font-family: $fontMain;
     font-weight: bold;
     @include font-size(36px);
+
+    @include less-than($bp-md-768) {
+      font-size: 21px;
+      padding: 0 12px;
+    }
   }
 
   &__subtitle {
@@ -76,7 +85,7 @@
     @include less-than($bp-md-768) {
       transform: translateY(#{get-vw(-46px, $bp-md-768)});
       height: auto;
-      width: 90%;
+      width: 95%;
       margin: 0 auto;
       z-index: 2;
     }
@@ -91,7 +100,8 @@
     @include margin(20px);
 
     @include less-than($bp-md-768) {
-      padding: 18px;
+      margin: 12px 0;
+      padding: 8px;
     }
   }
 
@@ -105,10 +115,6 @@
       width: 100%;
       order: -1;
       margin: 0;
-    }
-
-    @include less-than(375px) {
-
     }
   }
 
@@ -152,5 +158,4 @@
       color: $colorAccent;
     }
   }
-
 }

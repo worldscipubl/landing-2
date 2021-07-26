@@ -44,7 +44,8 @@
     @include padding(13px, 240px, 13px, 0px);
 
     @include less-than($bp-md-768) {
-      padding: 12px;
+      font-size: 21px;
+      padding: 12px 0;
     }
   }
 

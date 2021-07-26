@@ -114,11 +114,19 @@
 
   &__text {
     margin-left: 18px;
+
+    @include less-than($bp-md-768) {
+      margin-left: 10px;
+    }
   }
 
   &__btn {
     display: inline-block;
     margin-left: 14px;
+
+    @include less-than($bp-md-768) {
+      margin-left: 10px;
+    }
   }
 }
 

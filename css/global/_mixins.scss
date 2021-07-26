@@ -20,18 +20,9 @@
     font-size: #{get-vw($f-size, $bp-xxl-1442)};
   }
 
-  @media (max-width: #{$bp-lg-979}) {
-    font-size: #{get-vw($f-size, $bp-lg-979)};
-  }
-
   @media (max-width: #{$bp-md-768}) {
-    font-size: #{get-vw($f-size, $bp-sm-576)};
-  }
-
-  @media (max-width: #{$bp-sm-576}) {
     font-size: $f-size;
   }
-
 }
 
 %s-border {
@@ -41,16 +32,6 @@
   @media (min-width: $bp-xxl-1442) {
     border-radius: #{get-vw(6px, $bp-xxl-1442)};
     box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
-  }
-
-  @media (max-width: #{$bp-lg-979}) {
-    border-radius: #{get-vw(6px, $bp-lg-979)};
-    box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
-  }
-
-  @media (max-width: #{$bp-sm-576}) {
-    border-radius: #{get-vw(6px, $bp-sm-576)};
-    box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
   }
 }
 
@@ -62,15 +43,7 @@
   @media (min-width: $bp-xxl-1442) {
     border-radius: #{get-vw(6px, $bp-xxl-1442)};
     border-left: #001437 solid #{get-vw(12px, $bp-xxl-1442)};
-
     box-shadow: #{get-vw(1px, $bp-xxl-1442)} #{get-vw(1px, $bp-xxl-1442)} #{get-vw(4px, $bp-xxl-1442)} $colorShadow;
-  }
-
-  @media (max-width: #{$bp-lg-979}) {
-    border-radius: #{get-vw(6px, $bp-lg-979)};
-    border-left: #001437 solid #{get-vw(12px, $bp-lg-979)};
-
-    box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
   }
 
   @media (max-width: #{$bp-md-768}) {
@@ -98,16 +71,6 @@
 
   @media (min-width: $bp-xxl-1442) {
     padding: #{get-vw($t-padding, $bp-xxl-1442)} #{get-vw($r-padding, $bp-xxl-1442)} #{get-vw($b-padding, $bp-xxl-1442)} #{get-vw($l-padding, $bp-xxl-1442)};
-  }
-
-  @media (max-width: #{$bp-lg-979}) {
-  }
-
-  @media (max-width: #{$bp-md-768}) {
-    padding-top: #{get-vw($t-padding, $bp-sm-576)};
-    padding-right: #{get-vw($r-padding, $bp-sm-576)};
-    padding-bottom: #{get-vw($b-padding, $bp-sm-576)};
-    padding-left: #{get-vw($l-padding, $bp-sm-576)};
   }
 }
 

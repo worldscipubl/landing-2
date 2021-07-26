@@ -19,6 +19,11 @@
     color: $textColorSecondary;
     @include font-size(36px);
     @include padding(13px, 33px, 13px, 0px);
+
+    @include less-than($bp-md-768) {
+      font-size: 21px;
+      padding: 12px 0;
+    }
   }
 
   &__content {
@@ -78,24 +83,6 @@
       margin-top: #{get-vw(13px, $bp-xxl-1442)};
       row-gap: #{get-vw(16px, $bp-xxl-1442)};
       column-gap: #{get-vw(16px, $bp-xxl-1442)};
-    }
-
-    @include less-than($bp-xl-1170) {
-      margin-top: #{get-vw(13px, $bp-xl-1170)};
-      row-gap: #{get-vw(16px, $bp-xl-1170)};
-      column-gap: #{get-vw(16px, $bp-xl-1170)};
-    }
-
-    @include less-than($bp-lg-979) {
-      margin-top: #{get-vw(13px, $bp-lg-979)};
-      row-gap: #{get-vw(16px, $bp-lg-979)};
-      column-gap: #{get-vw(16px, $bp-lg-979)};
-    }
-
-    @include less-than($bp-md-768) {
-      margin-top: #{get-vw(13px, $bp-md-768)};
-      row-gap: #{get-vw(16px, $bp-md-768)};
-      column-gap: #{get-vw(16px, $bp-md-768)};
     }
   }
 

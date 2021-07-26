@@ -1,7 +1,7 @@
 @use '../global' as *;
 
 .promo {
-  @include margin(97px);
+  @include margin(96px);
 
   &__title {
     font-family: $fontMain;
@@ -19,7 +19,12 @@
     }
 
     @include less-than($bp-lg-979) {
-      padding-right: #{get-vw(80px, $bp-lg-979)};
+      padding-right: 80px;
+    }
+
+    @include less-than($bp-md-768) {
+      padding: 0;
+      font-size: 21px;
     }
   }
 
@@ -71,12 +76,12 @@
 
   &__slider {
     @include less-than($bp-md-768) {
-      height: #{get-vw(280px, $bp-md-768)};
+      height: #{get-vw(360px, $bp-md-768)};
       width: 100%;
       margin-bottom: 12px;
 
       @include less-than(375px) {
-        height: 310px;
+        height: 340px;
       }
     }
   }
@@ -110,7 +115,7 @@
       background: $popupBackground;
       box-shadow: 1px 1px 4px $colorShadow;
       border-radius: 6px;
-      @include padding(31px, 30px, 73px, 14px);
+      padding: 28px 12px;
       margin: 0 8px;
     }
   }
@@ -128,6 +133,10 @@
 
     @include less-than($bp-lg-979) {
       margin-top: #{get-vw(50px, $bp-lg-979)};
+    }
+
+    @include less-than($bp-md-768) {
+      margin-top: 24px;
     }
   }
 
@@ -191,6 +200,10 @@
     font-weight: bold;
     @include font-size(14px);
     line-height: 110%;
+
+    @include less-than($bp-md-768) {
+      padding-left: 12px;
+    }
   }
 
   &__text {
@@ -242,6 +255,10 @@
     font-family: $fontMain;
     font-weight: bold;
     @include font-size(18px);
+
+    @include less-than($bp-md-768) {
+      font-size: 14px;
+    }
   }
 
   &__inner {
@@ -260,7 +277,9 @@
       column-gap: #{get-vw(16px, $bp-lg-979)};
     }
 
-    @include less-than($bp-sm-576) {
+    @include less-than($bp-md-768) {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -270,6 +289,9 @@
   }
 
   &__submit {
+    @include less-than($bp-md-768) {
+      margin-top: 12px;
+    }
   }
 
   &__note {
@@ -282,6 +304,11 @@
 
     &--link {
       text-decoration: underline;
+    }
+
+    @include less-than($bp-md-768) {
+      max-width: 100%;
+      margin-top: 6px;
     }
   }
 }

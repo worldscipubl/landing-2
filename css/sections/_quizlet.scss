@@ -12,6 +12,13 @@
     @include font-size(14px);
     @include margin(20px);
     @extend %highlighter;
+
+    @include less-than($bp-md-768) {
+      padding: 6px;
+      font-weight: bold;
+      color: $textColorPrimary;
+      background-color: transparent;
+    }
   }
 
   &__answers {
@@ -48,5 +55,8 @@
 
   &__option {
     width: 100%;
+    @media (max-width: #{$bp-md-768}) {
+      margin-top: 8px;
+    }
   }
 }

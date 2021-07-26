@@ -3,16 +3,20 @@
 .reviews {
   @include margin(80px);
 
+  @include less-than($bp-md-768) {
+    display: none;
+  }
+
   &__wrap {
     position: relative;
   }
 
   &__title {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     font-style: normal;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(36px);
   }
 
@@ -124,14 +128,14 @@ font-weight: bold;
   &__name {
     display: block;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
   }
 
   &__post {
     display: block;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
   }
 
@@ -157,7 +161,7 @@ font-weight: bold;
 
     &::before, &::after {
       font-family: $fontMain;
-font-weight: normal;
+      font-weight: normal;
       @include font-size(64px);
       line-height: 50%;
       color: #219653;
@@ -166,7 +170,7 @@ font-weight: normal;
 
   &__text {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
 
     @include less-than($bp-md-768) {
@@ -180,7 +184,7 @@ font-weight: normal;
 
   &__profile-link {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
     @include padding(5px, 0px, 0px, 39px);
     text-decoration-line: underline;
@@ -236,7 +240,7 @@ font-weight: normal;
 
   &__name {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(14px);
 
     @include less-than($bp-md-768) {
@@ -246,7 +250,7 @@ font-weight: bold;
 
   &__degree {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(12px);
 
     @include less-than($bp-md-768) {
@@ -256,7 +260,7 @@ font-weight: normal;
 
   &__profile-link {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(12px);
 
     @include less-than($bp-md-768) {
@@ -295,7 +299,7 @@ font-weight: normal;
   &__counter {
     display: block;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(36px);
     text-align: center;
   }
@@ -304,7 +308,7 @@ font-weight: bold;
     display: block;
     text-align: center;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(9px);
 
     @include less-than($bp-md-768) {

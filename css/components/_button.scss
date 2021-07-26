@@ -33,16 +33,8 @@
     padding: #{get-vw(12px, $bp-xxl-1442)};
   }
 
-  @include less-than($bp-lg-979) {
-    box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
-    border-radius: #{get-vw(24px, $bp-lg-979)};
-    padding: #{get-vw(12px, $bp-lg-979)};
-  }
-
   @include less-than($bp-md-768) {
-    box-shadow: #{get-vw(1px, $bp-sm-576)} #{get-vw(1px, $bp-sm-576)} #{get-vw(4px, $bp-sm-576)} $colorShadow;
-    border-radius: #{get-vw(24px, $bp-sm-576)};
-    padding: #{get-vw(12px, $bp-sm-576)};
+    font-size: 12px;
   }
 
   &--submit {
@@ -50,6 +42,10 @@
     font-family: $fontMain;
     font-weight: normal;
     @include font-size(14px);
+
+    @include less-than($bp-md-768) {
+      font-size: 12px;
+    }
   }
 
   &--contract {
@@ -67,8 +63,8 @@
       border-radius: #{get-vw(6px, $bp-xxl-1442)};
     }
 
-    @include less-than($bp-lg-979) {
-      border-radius: #{get-vw(6px, $bp-lg-979)};
+    @include less-than($bp-md-768) {
+      font-size: 12px;
     }
   }
 
@@ -107,14 +103,13 @@
       border-radius: #{get-vw(34px, $bp-xxl-1442)};
     }
 
-    @include less-than($bp-lg-979) {
-      border-radius: #{get-vw(34px, $bp-lg-979)};
+    @include less-than($bp-md-768) {
+      font-size: 12px;
     }
-
   }
 
   &--upload {
-    @include less-than($bp-sm-576) {
+    @include less-than($bp-md-768) {
       font-size: 12px;
     }
   }
@@ -140,7 +135,7 @@
 
   font-family: $fontMain;
   font-weight: bold;
-  line-height: 100%;
+  line-height: 120%;
   text-align: center;
 
   border: 1px solid rgba(51, 51, 51, 0.6);
@@ -158,23 +153,7 @@
   }
 
   @include less-than(999px) {
-    font-size: 13px;
-  }
-
-  @include less-than($bp-lg-979) {
-    border: #{get-vw(1px, $bp-lg-979)} solid rgba(51, 51, 51, 0.6);
-    box-shadow: #{get-vw(1px, $bp-lg-979)} #{get-vw(1px, $bp-lg-979)} #{get-vw(4px, $bp-lg-979)} $colorShadow;
-    border-radius: #{get-vw(24px, $bp-lg-979)};
-    padding: #{get-vw(10px, $bp-lg-979)};
-  }
-
-
-  @include less-than($bp-md-768) {
-    border: #{get-vw(1px, $bp-md-768)} solid rgba(51, 51, 51, 0.6);
-    box-shadow: #{get-vw(1px, $bp-md-768)} #{get-vw(1px, $bp-md-768)} #{get-vw(4px, $bp-md-768)} $colorShadow;
-    border-radius: #{get-vw(24px, $bp-md-768)};
-
-    padding: #{get-vw(10px, $bp-md-768)};
+    font-size: 12px;
   }
 }
 

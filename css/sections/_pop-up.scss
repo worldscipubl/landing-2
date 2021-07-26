@@ -76,7 +76,7 @@
 
   &__label {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
 
     color: #FFFFFF;
@@ -159,15 +159,15 @@ font-weight: normal;
     align-self: flex-start;
     @include padding(0px, 52px, 24px, 52px);
 
-
-    @include less-than($bp-sm-576) {
-      padding: 0 2.2em 1em;
-    }
-
     &--narrow {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    @include less-than($bp-md-768) {
+      width: 100%;
+      padding: 0 12px;
     }
   }
 
@@ -194,7 +194,7 @@ font-weight: normal;
 
   &__desc {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
     display: block;
     width: 80%;
@@ -206,7 +206,7 @@ font-weight: normal;
   &__input {
     width: 100%;
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     cursor: text;
     @include margin(15px);
     @include font-size(14px);
@@ -216,6 +216,11 @@ font-weight: normal;
 
     &--file {
       cursor: pointer;
+    }
+
+    @include less-than($bp-md-768) {
+      font-size: 12px;
+      padding: 10px;
     }
   }
 
@@ -227,6 +232,11 @@ font-weight: normal;
     transition: 0.3s;
     cursor: pointer;
     @include margin(20px);
+
+    @include less-than($bp-md-768) {
+      font-size: 14px;
+      padding: 12px;
+    }
 
     &:hover {
       color: #fff;
@@ -240,7 +250,7 @@ font-weight: normal;
 
   &__super-desc {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include margin(21px);
     @include font-size(10px);
     color: #BBBBBB;
@@ -268,7 +278,7 @@ font-weight: normal;
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
     line-height: 120%;
 
@@ -277,6 +287,10 @@ font-weight: bold;
     }
 
     color: #000000;
+
+    @include less-than($bp-md-768) {
+      font-size: 16px;
+    }
   }
 
   &__video {
@@ -357,7 +371,7 @@ font-weight: bold;
 .popup-2 {
   &__promo {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(24px);
     @include padding(24px, 24px, 24px, 24px);
     background: #ECECEC;
@@ -366,7 +380,7 @@ font-weight: bold;
 
   &__description {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
     text-align: left;
     cursor: default;
@@ -392,7 +406,7 @@ font-weight: bold;
 .popup-3 {
   &__promo {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(24px);
     @include padding(24px, 24px, 24px, 24px);
     background: #ECECEC;
@@ -401,7 +415,7 @@ font-weight: bold;
 
   &__description {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     font-size: 24px;
     padding-right: 100px;
 
@@ -449,6 +463,10 @@ font-weight: normal;
 
   &--audit {
     @include padding(10px, 20px, 10px, 20px);
+
+    @include less-than($bp-md-768) {
+      padding: 10px;
+    }
   }
 
   &--active {
@@ -505,7 +523,7 @@ font-weight: normal;
     display: block;
     text-align: left;
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     color: #B7B7B7;
     @include font-size(14px);
   }
@@ -540,7 +558,7 @@ font-weight: normal;
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(18px);
     @include padding(16px, 12px, 0px, 12px);
     line-height: 110%;
@@ -563,6 +581,7 @@ font-weight: bold;
 
     @include less-than($bp-sm-576) {
       font-size: 12px;
+      font-weight: bold;
     }
   }
 
@@ -588,6 +607,11 @@ font-weight: bold;
     justify-content: space-around;
     align-items: center;
 
+    @include less-than($bp-md-768) {
+      align-items: center;
+      flex-direction: column;
+      padding: 12px;
+    }
   }
 
   &__iframe {
@@ -596,7 +620,12 @@ font-weight: bold;
     height: 100%;
   }
 
-  &__close {
+  &__column {
+    @include less-than($bp-md-768) {
+      & + & {
+        margin-top: 8px;
+      }
+    }
   }
 
   &__btn {
@@ -606,6 +635,10 @@ font-weight: bold;
     @include padding(12px, 50px, 12px, 50px);
     transition: 0.3s;
     cursor: pointer;
+
+    @include less-than($bp-md-768) {
+      font-size: 12px;
+    }
 
     &:hover {
       color: #fff;
@@ -650,7 +683,7 @@ font-weight: bold;
     background-color: #FFFEFE;
     color: rgba(183, 183, 183, 1);
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
     @include padding(12px, 12px, 12px, 12px);
     border-radius: 6px;
@@ -720,7 +753,7 @@ font-weight: normal;
     padding: 0 16px;
 
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
 
     transition: all 0.2s ease-out;
@@ -814,7 +847,7 @@ font-weight: normal;
   &__title {
     position: relative;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorSecondary;
     @include font-size(18px);
     line-height: 116%;
@@ -840,14 +873,14 @@ font-weight: bold;
 
     &--pink {
       font-family: $fontMain;
-font-weight: normal;
+      font-weight: normal;
       background-color: #F595A8;
     }
   }
 
   &__title-email {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorSecondary;
     @include font-size(18px);
     line-height: 116%;
@@ -860,7 +893,7 @@ font-weight: bold;
   &__subtitle {
     width: 80%;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorPrimary;
     @include font-size(18px);
     line-height: 116%;
@@ -868,7 +901,7 @@ font-weight: bold;
 
   &__text {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     color: $textColorPrimary;
     @include font-size(14px);
     @include margin(35px);
@@ -941,7 +974,7 @@ font-weight: normal;
 
   &__subtitle {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorPrimary;
     @include font-size(36px);
     line-height: 116%;
@@ -949,7 +982,7 @@ font-weight: bold;
 
   &__text {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     color: $textColorPrimary;
     @include font-size(24px);
     @include margin(24px);
@@ -996,7 +1029,7 @@ font-weight: normal;
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $textColorPrimary;
     @include font-size(18px);
     @include margin(12px);
@@ -1022,7 +1055,7 @@ font-weight: bold;
 
   &__title {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     color: $textColorPrimary;
     @include font-size(14px);
     @include margin(12px);

@@ -10,16 +10,19 @@
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     @include font-size(36px);
     text-align: left;
+
+    @include less-than($bp-md-768) {
+      padding: 0;
+      font-size: 21px;
+    }
   }
 
   &__inner {
   }
 
-  &__form {
-  }
 }
 
 .your-question {
@@ -28,9 +31,14 @@ font-weight: bold;
 
   &__description {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(24px);
     @include margin(36px);
+
+    @include less-than($bp-md-768) {
+      font-size: 18px;
+      margin-top: 24px;
+    }
   }
 
   &__textarea {
@@ -49,14 +57,8 @@ font-weight: normal;
       min-height: #{get-vw(93px, $bp-xxl-1442)};
     }
 
-    @include less-than($bp-lg-979) {
-      border-radius: #{get-vw(6px, $bp-lg-979)};
-      min-height: #{get-vw(93px, $bp-lg-979)};
-    }
-
     @include less-than($bp-md-768) {
-      border-radius: #{get-vw(6px, $bp-lg-979)};
-      min-height: #{get-vw(93px, $bp-lg-979)};
+      font-size: 12px;
     }
 
   }
@@ -69,6 +71,11 @@ font-weight: normal;
 
     border: 1px solid rgba(0, 0, 0, 0.49);
     border-radius: 6px;
+
+    @include less-than($bp-md-768) {
+      font-size: 12px;
+      width: 100%;
+    }
   }
 
   &__submit {
@@ -79,5 +86,9 @@ font-weight: normal;
 
     width: 30%;
     @include margin(20px);
+
+    @include less-than($bp-md-768) {
+      width: 100%;
+    }
   }
 }

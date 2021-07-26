@@ -3,6 +3,10 @@
 .audit {
   @include margin(170px);
 
+  @include less-than($bp-md-768) {
+    margin-top: 96px;
+  }
+
   &_container {
     margin-top: 170px;
     margin: 0 auto;
@@ -54,8 +58,9 @@
     @include font-size(36px);
     @include margin(0px, 0px, 22px, 0px);
 
-    @include less-than($bp-sm-576) {
-      @include font-size(24px);
+    @include less-than($bp-md-768) {
+      font-size: 21px;
+      padding: 0;
     }
   }
 
@@ -423,6 +428,11 @@
 
     &:focus {
       border: 2px solid $colorAccent;
+    }
+
+    @include less-than($bp-md-768) {
+      font-size: 12px;
+      padding: 10px;
     }
   }
 

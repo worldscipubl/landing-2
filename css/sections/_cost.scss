@@ -49,6 +49,10 @@
   &__title {
     font-weight: bold;
     @include font-size(24px);
+
+    @include less-than($bp-md-768) {
+      font-size: 16px;
+    }
   }
 
   &__text {
@@ -66,8 +70,8 @@
       padding-right: #{get-vw(50px, $bp-lg-979)};
     }
 
-    @include less-than($bp-sm-576) {
-
+    @include less-than($bp-md-768) {
+      font-size: 12px;
     }
   }
 

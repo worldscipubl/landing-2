@@ -3,7 +3,7 @@
 .main-slider {
   width: 100%;
   min-height: calc(100vh - #{$header-height});
-  overflow: visible;
+  overflow: hidden;
 
   &_first-section {
     margin-top: $header-height;
