@@ -45,10 +45,10 @@
                 return;
             }
 
-            if (formName.includes('promocode')) {
-                checkPromoCode(formData, submitForm, formName);
-            } else if (formName.includes('promocode-file')) {
+            if (formName.includes('promocode-file')) {
                 submitPromoCodeFileStepOne(formData, submitForm, formName);
+            } else if (formName.includes('promocode')) {
+                checkPromoCode(formData, submitForm, formName);
             }
 
             /*
@@ -183,8 +183,7 @@
                         if (resDataWarning['coupon']) {
                             submitPromoCodeFileStepTwo(sendData, currentForm, formName);
                             removeErrorInput(input, hint);
-                        }
-                        else if (resDataWarning['time'])
+                        } else if (resDataWarning['time'])
                             setErrorInput(
                                 input,
                                 hint,
@@ -495,7 +494,6 @@
 
             if (formName.includes('promocode-file')) {
                 fo.append('email', emailUser);
-                fo.append('coupon', promoCodeUser);
             }
 
             return fo;
