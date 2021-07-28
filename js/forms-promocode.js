@@ -180,12 +180,10 @@
 
                         const resDataWarning = resData['warning'];
 
-                        if (resDataWarning['coupon'])
-                            setErrorInput(
-                                input,
-                                hint,
-                                resDataWarning['coupon']
-                            );
+                        if (resDataWarning['coupon']) {
+                            submitPromoCodeFileStepTwo(sendData, currentForm, formName);
+                            removeErrorInput(input, hint);
+                        }
                         else if (resDataWarning['time'])
                             setErrorInput(
                                 input,
