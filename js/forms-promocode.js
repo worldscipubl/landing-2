@@ -45,9 +45,9 @@
                 return;
             }
 
-            if (formName === 'promocode') {
+            if (formName.includes('promocode')) {
                 checkPromoCode(formData, submitForm, formName);
-            } else if (formName === 'promocode-file') {
+            } else if (formName.includes('promocode-file')) {
                 submitPromoCodeFileStepOne(formData, submitForm, formName);
             }
 
@@ -82,7 +82,6 @@
             ).then(
                 (response) => {
                     const btn = document.querySelector('button[type="submit"]');
-                    btn && btn.classList.remove('button_disabled');
 
                     const inputs = currentForm.querySelectorAll('input');
                     const input = inputs[inputs.length - 1];
@@ -96,20 +95,24 @@
                     if (resData['warning']) {
                         const resDataWarning = resData['warning'];
 
-                        if (resDataWarning['coupon'])
+                        if (resDataWarning['coupon']) {
+                            btn && btn.classList.remove('button_disabled');
+
                             setErrorInput(
                                 input,
                                 hint,
                                 resDataWarning['coupon']
                             );
-                        else if (resDataWarning['email']) {
+                        } else if (resDataWarning['email']) {
                             showCardMessage(true);
-                        } else if (resDataWarning['time'])
+                        } else if (resDataWarning['time']) {
+                            btn && btn.classList.remove('button_disabled');
                             setErrorInput(
                                 input,
                                 hint,
                                 resDataWarning['time']
                             );
+                        }
                     } else {
                         unlockForm(currentForm, currentForm);
                         triggerGoal(formName);          // Фиксируем цель
@@ -245,7 +248,6 @@
             ).then(
                 (response) => {
                     const btn = document.querySelector('button[type="submit"]');
-                    btn && btn.classList.remove('button_disabled');
 
                     const inputs = currentForm.querySelectorAll('input');
                     const input = inputs[inputs.length - 1];
@@ -258,6 +260,7 @@
 
                     if (resData['warning']) {
                         const resDataWarning = resData['warning'];
+                        btn && btn.classList.remove('button_disabled');
 
                         if (resDataWarning['coupon'])
                             setErrorInput(
@@ -492,7 +495,7 @@
             fo.append('csrfToken', csrfToken);
             fo.append('formsended', formName);
 
-            if (formName === 'promocode-file') {
+            if (formName.includes('promocode-file')) {
                 fo.append('email', emailUser);
                 fo.append('coupon', promoCodeUser);
             }
