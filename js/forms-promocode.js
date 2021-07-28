@@ -492,7 +492,7 @@
             fo.append('csrfToken', csrfToken);
             fo.append('formsended', formName);
 
-            if (formName.includes('promocode-file')) {
+            if (formName.includes('promocode-file') && emailUser) {
                 fo.append('email', emailUser);
             }
 

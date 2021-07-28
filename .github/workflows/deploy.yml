@@ -34,5 +34,6 @@ jobs:
       - run: mv we_need_editors.html build/we_need_editors.php
       - run: mv promocode.html build/promocode.php
       - run: mv promocode-ads.html build/promocode-ads.php
+      - run: mv overtake.html build/overtake.php
       # Other
       - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@5.253.63.141:/var/www/www-root/data/www/worldscipubl.com/public_html/public/landing/

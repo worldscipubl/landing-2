@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/landing/">
+    <link rel="stylesheet" href="css/style_promocode.min.css">
+    <link href="media/icons/favicon.ico" rel="shortcut icon">
+    <title>WorldSciPubl</title>
+
+    <!-- @import "./sections/telemetry-header.html" -->
+</head>
+
+<body>
+<!-- @import "./sections/header_promocode.html"-->
+<main>
+    <!-- @import "./sections/promocode_section-overtake.html" -->
+</main>
+
+<!-- @import "./sections/telemetry-footer.html" -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gliojs/0.0.7/glio.min.js"></script>
+<script src="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
+
+<script src="js/custom-select.js"></script>
+<script src="js/header.js"></script>
+
+<script src="js/forms-promocode.js"></script>
+<script src="js/file_upload.js"></script>
+<script src="js/async_image.js"></script>
+
+<!-- Roistat -->
+<script>
+    (function (w, d, s, h, id) {
+        w.roistatProjectId = id;
+        w.roistatHost = h;
+        var p = d.location.protocol == 'https:' ? 'https://' : 'http://';
+        var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ?
+            '/dist/module.js' :
+            '/api/site/1.0/' + id + '/init';
+        var js = d.createElement(s);
+        js.charset = 'UTF-8';
+        js.async = 1;
+        js.src = p + h + u;
+        var js2 = d.getElementsByTagName(s)[0];
+        js2.parentNode.insertBefore(js, js2);
+    })(
+        window,
+        document,
+        'script',
+        'cloud.roistat.com',
+        '3637cf6d91e2208e61bad15f7e17651d'
+    );
+</script>
+<!-- /Roistat -->
+
+</body>
+
+</html>
