@@ -28,6 +28,8 @@
         if (_couponFromURL && couponField) couponField.value = _couponFromURL;
         if (_emailFromURL && couponEmail) couponEmail.value = _emailFromURL;
 
+        if (_emailFromURL) emailUser = _emailFromURL;
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
