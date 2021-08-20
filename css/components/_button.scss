@@ -33,7 +33,7 @@
     padding: #{get-vw(12px, $bp-xxl-1442)};
   }
 
-  @include less-than($bp-md-768) {
+  @include less-than(420px) {
     font-size: 12px;
   }
 
@@ -50,6 +50,14 @@
     &:hover {
       background: #E1E1E1;
       color: $gray-blue;
+    }
+
+    @include less-than(420px) {
+      font-size: 14px;
+    }
+
+    @include less-than(340px) {
+      font-size: 12px;
     }
   }
 
