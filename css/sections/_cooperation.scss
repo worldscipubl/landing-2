@@ -8,6 +8,7 @@
 }
 
 .cooperation {
+  margin-top: 58px;
 
   &__inner {
     position: relative;
@@ -70,10 +71,10 @@
 
   &__title {
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     font-style: normal;
     font-family: $fontMain;
-font-weight: bold;
+    font-weight: bold;
     color: $subtitleBackground;
     text-align: center;
     @include margin(0px, 0px, 42px, 0px);
@@ -82,7 +83,7 @@ font-weight: bold;
 
   &__description {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     color: $textColorPrimary;
     @include margin(0px, 0px, 18px, 0px);
     @include font-size(18px);
@@ -114,7 +115,7 @@ font-weight: normal;
   &__input {
     width: 100%;
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     cursor: text;
     @include margin(5px);
     @include font-size(14px);

@@ -35,53 +35,182 @@
             </li>
         </ul>
     </div>
-
     <div class="drawer js-drawer">
         <div class="drawer__overlay js-drawer-overlay"></div>
         <div class="drawer__sidebar drawer__sidebar_pos_right">
             <nav class="navbar navbar_bg_white">
                 <div class="navbar__inner">
+                    <h3 class="navbar__title text text_weight_bold text_color_gray-blue text_size_accent">
+                        Меню сервиса World Sci Publ
+                    </h3>
                     <ul class="navbar__links nav-links">
                         <li class="nav-links__item">
-                            <a class="button button--link" href="/"
-                               target="_blank">Сайт</a>
-                        </li>
-                        <li class="nav-links__item">
-                            <a class="button button--link"
-                               href="https://worldscipubl.com/cabinet/login"
-                               target="_blank">Личный кабинет</a>
-                        </li>
-                        <li class="nav-links__item">
-                            <a class="button button--link" href="https://teletype.in/@wsp"
+                            <a class="button button--menu"
+                               href="/main/audit/"
                                target="_blank">
-                                Блог “Кафедра WSP”
+                                ⚙️ Подробный аудит статьи с рецензией
                             </a>
                         </li>
                         <li class="nav-links__item">
-                            <a class="button button--link" href="/#faq-section"
-                               target="_blank">F.A.Q.</a>
+                            <button class="button button--menu"
+                                    data-show-popup="1"
+                                    data-step="1"
+                                    data-formsended="submit_application_">
+                                ⏱ Сроки и стоимость публикации
+                            </button>
                         </li>
                         <li class="nav-links__item">
-                            <a class="button button--link" href="/#footer-section"
-                               target="_blank">Контакты</a>
+                            <a class="button button--menu"
+                               href="/main/promocode"
+                               target="_blank">
+                                💵 Промокод 100$ на первую публикацию
+                            </a>
                         </li>
                         <li class="nav-links__item">
-                            <a class="button button--link" href="/#footer-section"
-                               target="_blank">Соцсети</a>
+                            <a class="button button--menu"
+                               href="/main/cooperation"
+                               target="_blank">
+                                ✍🏼 Вакансия “редактор научных статей”
+                            </a>
                         </li>
                     </ul>
+                    <ul class="navbar__cards">
+                        <li class="navbar__card navbar-card">
+                            <a href="/cabinet/" class="navbar-card__link">
+                                <img class="navbar-card__img"
+                                     src="./media/menu/cabinet.svg"
+                                     alt="Личный кабинет">
+                                <span class="navbar-card__label text">
+                                Личный кабинет
+                            </span>
+                            </a>
+                        </li>
+                        <li class="navbar__card navbar-card">
+                            <a href="https://journal.worldscipubl.com"
+                               class="navbar-card__link">
+                                <img class="navbar-card__img"
+                                     src="./media/menu/blog.svg"
+                                     alt="Блог">
+                                <span class="navbar-card__label text">
+                                Блог
+                            </span>
+                            </a>
+                        </li>
+                        <li class="navbar__card navbar-card">
+                            <a href="https://taplink.cc/world.sci.publ"
+                               class="navbar-card__link">
+                                <img class="navbar-card__img"
+                                     src="./media/menu/favorites.svg"
+                                     alt="Избранное">
+                                <span class="navbar-card__label text">
+                                Избранное
+                            </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="navbar__banner navbar-banner">
+                        <h3 class="navbar-banner__title
+                                text text_color_gray-blue
+                                text_size_accent text_weight_bold">
+                            Чат-бот
+                        </h3>
+                        <h4 class="navbar-banner__subtitle text text_color_gray-blue text_weight_bold">
+                            Робот помощник автоматически предоставит:
+                        </h4>
+                        <p class="navbar-banner__description text text_color_gray-blue">
+                            – доступ к полезным материалам;<br>
+                            – информацию о продукте;<br>
+                            – чат со специалистом.<br>
+                        </p>
+                        <button class="navbar-banner__btn button button--submit">
+                            Запустить чат-бот
+                        </button>
+
+                        <img class="navbar-banner__bg" src="./media/menu/bot.svg" alt="bot">
+                    </div>
                     <div class="navbar__footer">
-                        <img class="navbar__logo lazy"
-                             src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                             data-src="./media/logos/logo_black.svg"
-                             alt="logo">
-                        <p class="text navbar__date">2021 г.</p>
+                        <ul class="navbar__actions">
+                            <li class="navbar__actions-item">
+                                <a class="link link_color_gray-blue"
+                                   href="mailto:ask@worldscipubl.com">
+                                    ask@worldscipubl.com
+                                </a>
+                            </li>
+                            <li class="navbar__actions-item">
+                                <a class="link link_color_gray-blue"
+                                   href="tel:+74951277926">
+                                    +7 (495) 127 - 79 - 26
+                                </a>
+                            </li>
+                            <li class="navbar__actions-item">
+                                <ul class="social-list navbar__social">
+                                    <li class="social-list__item">
+                                        <a href="https://teleg.run/worldscipubl"
+                                           target="_blank"
+                                           class="social-list__link">
+                                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                                 data-src="./media/social/telegram.png"
+                                                 alt="telegram"
+                                                 class="social-list__link-img lazy">
+                                        </a>
+                                    </li>
+
+                                    <li class="social-list__item">
+                                        <a href="https://vk.com/worldscipubl/"
+                                           target="_blank"
+                                           class="social-list__link">
+                                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                                 data-src="./media/social/vk.png" alt="vk"
+                                                 class="social-list__link-img lazy">
+                                        </a>
+                                    </li>
+                                    <li class="social-list__item">
+                                        <a href="https://api.whatsapp.com/send/?phone=%2B79086008126&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9D%D0%BE%D0%BC%D0%B5%D1%80+%D0%BC%D0%BE%D0%B5%D0%B9+%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B8%3A+undefined&app_absent=0"
+                                           target="_blank" class="social-list__link">
+                                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                                 data-src="./media/social/whatsapp.png"
+                                                 alt="whatsapp"
+                                                 class="social-list__link-img lazy">
+                                        </a>
+                                    </li>
+                                    <li class="social-list__item">
+                                        <a href="https://www.youtube.com/channel/UC9Wuvp-a1pZn_iHkPAFrwKA?view_as=subscriber"
+                                           target="_blank" class="social-list__link">
+                                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                                 data-src="./media/social/youtube.png"
+                                                 alt="youtube"
+                                                 class="social-list__link-img lazy">
+                                        </a>
+                                    </li>
+                                    <li class="social-list__item">
+                                        <a href="https://www.instagram.com/world.sci.publ/"
+                                           target="_blank"
+                                           class="social-list__link">
+                                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                                 data-src="./media/social/instagram.png"
+                                                 alt="instagram"
+                                                 class="social-list__link-img lazy">
+                                        </a>
+                                    </li>
+                                    <li class="social-list__item">
+                                        <a href="https://www.facebook.com/worldscipubl/"
+                                           target="_blank"
+                                           class="social-list__link">
+                                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                                 data-src="./media/social/facebook.png"
+                                                 alt="facebook"
+                                                 class="social-list__link-img lazy">
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <a class="navbar__faq link link_color_gray-blue" href="#">
+                            F.A.Q.
+                        </a>
                     </div>
                 </div>
-                <img class="navbar__union lazy"
-                     src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                     data-src="./media/logos/union_black.svg"
-                     alt="logo">
             </nav>
         </div>
     </div>

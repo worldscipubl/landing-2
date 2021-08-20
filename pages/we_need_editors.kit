@@ -43,13 +43,23 @@
     <!-- End VK Pixel Code -->
     <!-- Facebook Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '970881040417894');
         fbq('track', 'PageView');
@@ -205,10 +215,9 @@
 </head>
 
 <body>
-
+<!-- @import "./sections/header_promocode.html"-->
 <main class="cooperation-main">
     <!-- @import "./sections/cooperation_section.html" -->
-
     <!-- @import "./sections/footer_cooperation.html" -->
 </main>
 
@@ -232,7 +241,9 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <script>
-    var csrfToken = '<?=$_SESSION['csrf-token']?>';
+    var csrfToken = '<?=$_SESSION['
+    csrf - token
+    ']?>';
     // var csrfToken = 121;
 </script>
 
@@ -241,6 +252,7 @@
 <script src="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
 
+<script src="js/header.js"></script>
 <script src="js/forms-coop.js"></script>
 <script src="js/async_image.js"></script>
 

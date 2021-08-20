@@ -6,7 +6,7 @@
 
   &__web {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(14px);
     @include margin(8px);
     color: $textColorPrimary;
@@ -15,7 +15,7 @@ font-weight: normal;
 
   &__copy {
     font-family: $fontMain;
-font-weight: normal;
+    font-weight: normal;
     @include font-size(9px);
     @include margin(8px);
     color: $textColorPrimary;
