@@ -57,11 +57,24 @@
     @include less-than(940px) {
       min-width: auto;
       width: 100%;
+      padding: 18px;
+    }
+
+    @include less-than(420px) {
+      min-width: auto;
+      width: 100%;
+      padding: 18px 8px;
     }
   }
 
   &__form {
 
+  }
+
+  &__success {
+    &.hidden {
+      display: none;
+    }
   }
 }
 
@@ -70,23 +83,34 @@
   }
 
   &__title {
-    font-family: $fontMain;
-    font-weight: bold;
-    font-style: normal;
-    font-family: $fontMain;
-    font-weight: bold;
-    color: $subtitleBackground;
     text-align: center;
     @include margin(0px, 0px, 42px, 0px);
-    @include font-size(64px);
+
+    @media screen and (max-width: 795px) {
+      font-size: 36px;
+    }
   }
 
   &__description {
-    font-family: $fontMain;
-    font-weight: normal;
-    color: $textColorPrimary;
     @include margin(0px, 0px, 18px, 0px);
-    @include font-size(18px);
+
+    @media screen and (max-width: 795px) {
+      font-size: 14px;
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__favorite {
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
   }
 
   &__form {
@@ -110,6 +134,9 @@
     @include font-size(18px);
     @include margin(16px);
 
+    @media screen and (max-width: 795px) {
+      font-size: 14px;
+    }
   }
 
   &__input {

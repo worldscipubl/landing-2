@@ -8,7 +8,6 @@ function initForm(_form) {
     if (_emailInput && _emailFromURL)
         _emailInput.value = _emailFromURL;
 
-
     _form.addEventListener('submit', (e) => {
         e.preventDefault();
         const {currentTarget} = e;
@@ -50,11 +49,9 @@ function initForm(_form) {
         }
 
         function showSuccess() {
-            const _des = document.querySelector('.coop-form__description');
-            const _form = document.querySelector('.coop-form__form');
-            _des.innerHTML = "Спасибо!" + "</br>" +
-                "Вы получите письмо с нашим предложением."
-
+            const _success = document.querySelector('.cooperation__success');
+            const _form = document.querySelector('.cooperation__form');
+            _success.classList.remove('hidden');
             _form.remove();
         }
 
