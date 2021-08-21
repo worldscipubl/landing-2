@@ -2,9 +2,13 @@ const duration = 0.5;
 let currentShowPopUp = 0;
 
 function initPopUp(button) {
+    if (!button) return;
+
     const numberPopUp = button.dataset.showPopup;
     const idPopUp = 'popup-' + numberPopUp;
     const _popUp = document.getElementById(idPopUp);
+
+    if (!_popUp) return;
     const _closeButton = _popUp.querySelector('.pop-up__close');
     const _closeBtn = _popUp.querySelector('.pop-up__button--close');
 
@@ -173,6 +177,10 @@ function getDocIDbyName(nameDoc) {
             return '1w904xoCCq6lhLxyY_09YaA4DjuHRV7Sw';
         case "example_final_article":
             return '1eJf04ioy7zhJkao60TA6KjFmvIKCivFH';
+        case "tech-aspects":
+            return '1Snpiuv7jjd5XhRkn2FUVevUyvaixAYPc';
+        case "editor-review":
+            return '1u_94uW7CmOwAzm9FNELqBisE1bl4MuuQ';
         default:
             return;
     }
@@ -289,3 +297,13 @@ buttons.forEach((button) => {
             popups.set(idShowPopUp, initPopUp(button));
     }
 });
+
+
+const _currentURLAudit = new URL(window.location.href);
+const _emailFromURL = _currentURLAudit.searchParams.get("e");
+
+if (_emailFromURL) {
+    const _inputEmailAudit = document.getElementById('input-email-audit');
+    _inputEmailAudit.value = _emailFromURL;
+}
+
