@@ -86,8 +86,8 @@
 
                 // Separates directories, and performs operations on those directories
                 if (is_dir($currdir . '/' . $dirArray[$index])) {
-                    $extn = "&lt;Cartella&gt;";
-                    $size = "&lt;Cartella&gt;";
+                    $extn = "-";
+                    $size = "&lt;Папка&gt;";
                     $sizekey = "0";
                     $class = "dir";
 
@@ -99,13 +99,13 @@
 
                     // Cleans up . and .. directories
                     if ($name == ".") {
-                        $name = ". (Current Directory)";
-                        $extn = "&lt;System Dir&gt;";
+                        $name = ". (Текущий каталог)";
+                        $extn = "&lt;Системный каталог&gt;";
                         $favicon = " style='background-image:url($namehref/.favicon.ico);'";
                     }
                     if ($name == "..") {
-                        $name = ".. (Cartella Precedente)";
-                        $extn = "&lt;System Dir&gt;";
+                        $name = "..(вернуться назад)";
+                        $extn = "&lt;Системный каталог&gt;";
                     }
                     if ($currdir == "." && $dirArray[$index] == "..")
                         $namehref = "";
@@ -208,15 +208,16 @@
                     // Gets and cleans up file size
                     $size = pretty_filesize($fullname);
                     $sizekey = filesize($fullname);
+                    $target = strcmp($class, 'dir') ? '_blank' : "_parent";
                 }
 
                 // Output
                 echo("
 		<tr class='$class'>
-			<td><a href='$namehref'$favicon class='name'>$name</a></td>
-			<td><a href='$namehref'>$extn</a></td>
-			<td sorttable_customkey='$sizekey'><a href='$namehref'>$size</a></td>
-			<td sorttable_customkey='$timekey'><a href='$namehref'>$modtime</a></td>
+			<td><a href='$namehref'$favicon class='name' target='$target'>$name</a></td>
+			<td><a href='$namehref' target='$target'>$extn</a></td>
+			<td sorttable_customkey='$sizekey'><a href='$namehref' target='$target'>$size</a></td>
+			<td sorttable_customkey='$timekey'><a href='$namehref' target='$target'>$modtime</a></td>
 		</tr>");
             }
         }
@@ -224,8 +225,6 @@
 
         </tbody>
     </table>
-
-    <!-- <h2><?php echo("<a href='$ahref'>$atext hidden files</a>"); ?></h2> -->
 </div>
 </body>
 </html>
