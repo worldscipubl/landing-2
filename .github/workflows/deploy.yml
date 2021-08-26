@@ -28,6 +28,8 @@ jobs:
       - run: mv fonts build/fonts
       - run: mv js build/js
       - run: mv media build/media
+      # Knowledge move
+      - run: mv knowledge build/knowledge
       # Pages move
       - run: mv index.html build/index.php
       - run: mv technical_audit.html build/technical_audit.php
