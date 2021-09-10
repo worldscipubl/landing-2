@@ -57,7 +57,7 @@
             setDragHover();
 
             // Process all File objects
-            for (let i = 0, f; f = files[i]; i++) {
+            for (let file_i = 0, f; f = files[file_i]; file_i++) {
                 setNameFile(f.name);
                 uploadFile(f);
             }

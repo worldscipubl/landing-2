@@ -12,8 +12,8 @@ function initSelector(_selector) {
     });
 
     // Close when click to option
-    for (let i = 0; i < _selectorLabels.length; i++) {
-        _selectorLabels[i].addEventListener('click', (evt) => {
+    for (let selectorLabels_i = 0; selectorLabels_i < _selectorLabels.length; selectorLabels_i++) {
+        _selectorLabels[selectorLabels_i].addEventListener('click', (evt) => {
             _selectorTitle.textContent = evt.target.textContent;
             _selectorTitle.classList.add("selector__title--show");
             _selector.setAttribute('data-state', '');

@@ -4,7 +4,7 @@
         input.addEventListener('change', (e) => {
             let files = e.target.files || e.dataTransfer.files;
             // Process all File objects
-            for (let i = 0, f; f = files[i]; i++) {
+            for (let files_i = 0, f; f = files[files_i]; files_i++) {
                 setNameFile(f.name);
                 uploadFile(f);
             }

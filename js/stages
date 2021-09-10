@@ -19,15 +19,15 @@ const _sliderNav = document.getElementById('stages-slider-nav');
     const initSlider = () => {
         changeTitle(step + 1);
 
-        for (let i = 0; i < countSliders; i++) {
+        for (let countSliders_i = 0; countSliders_i < countSliders; countSliders_i++) {
             const a = document.createElement('a');
 
             a.className = 'stage-gird__item';
-            a.innerText = i + 1;
-            if (i === step) setActiveControl(a);
+            a.innerText = countSliders_i + 1;
+            if (countSliders_i === step) setActiveControl(a);
             a.addEventListener('click', (e) => {
                 setActiveControl(e.target);
-                setActiveSlide(i);
+                setActiveSlide(countSliders_i);
             });
 
             controls.push(a);

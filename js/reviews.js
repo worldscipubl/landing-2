@@ -6,14 +6,14 @@ const _tabsReview = document.getElementById('tabs-review');
     const _tabsVideo = _tabsBlock.querySelector('.review-video-wrapper');
 
     function clearBody(tabsBody, classShow) {
-        for (let i = 0; i < tabsBody.children.length; i++) {
-            tabsBody.children[i].classList.remove(classShow);
+        for (let tabsBody_i = 0; tabsBody_i < tabsBody.children.length; tabsBody_i++) {
+            tabsBody.children[tabsBody_i].classList.remove(classShow);
         }
     }
 
     function clearHeader(tabsBody, classShow) {
-        for (let i = 0; i < tabsBody.children.length; i++) {
-            tabsBody.children[i].classList.add(classShow);
+        for (let tabsBody_i = 0; tabsBody_i < tabsBody.children.length; tabsBody_i++) {
+            tabsBody.children[tabsBody_i].classList.add(classShow);
         }
     }
 
@@ -26,18 +26,18 @@ const _tabsReview = document.getElementById('tabs-review');
     clearHeader(_tabsHeader, "review-card--show");
     _tabsHeader.children[0].classList.remove("review-card--show")
 
-    for (let i = 0; i < _tabsHeader.children.length; i++) {
-        _tabsHeader.children[i]
+    for (let tabsHeader_i = 0; tabsHeader_i < _tabsHeader.children.length; tabsHeader_i++) {
+        _tabsHeader.children[tabsHeader_i]
             .querySelector(".review-card__profile-link")
             .addEventListener("click", (e) => {
                 clearBody(_tabsBody, "review--show");
-                _tabsBody.children[i].classList.add("review--show");
+                _tabsBody.children[tabsHeader_i].classList.add("review--show");
 
                 clearBody(_tabsVideo, "reviews__video--show");
-                _tabsVideo.children[i].classList.add("reviews__video--show");
+                _tabsVideo.children[tabsHeader_i].classList.add("reviews__video--show");
 
                 clearHeader(_tabsHeader, "review-card--show");
-                _tabsHeader.children[i].classList.remove("review-card--show")
+                _tabsHeader.children[tabsHeader_i].classList.remove("review-card--show")
 
             })
     }
