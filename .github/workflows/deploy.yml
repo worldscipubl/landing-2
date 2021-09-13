@@ -24,6 +24,7 @@ jobs:
       - run: mv css/style_audit.min.css build/css/style_audit.min.css
       - run: mv css/style_cooperation.min.css build/css/style_cooperation.min.css
       - run: mv css/style_promocode.min.css build/css/style_promocode.min.css
+      - run: mv css/style_referral.min.css build/css/style_referral.min.css
       # Assets move
       - run: mv fonts build/fonts
       - run: mv js build/js
