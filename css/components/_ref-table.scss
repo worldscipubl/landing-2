@@ -21,7 +21,7 @@
 }
 
 .ref-table__body {
-
+  counter-reset: rating;
 }
 
 .ref-table__row {
@@ -41,6 +41,7 @@
 
   &_body {
     cursor: pointer;
+    counter-increment: rating;
 
     &.green {
       background-color: rgba(33, 150, 83, .2);
@@ -82,7 +83,38 @@
   line-height: 13px;
   vertical-align: middle;
 
+  &_counter {
+    content: counters(rating);
+  }
+
   &_th {
     padding-top: 1.56em;
+  }
+}
+
+.ref-table__pagination {
+  padding-right: 1em;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+
+.pagination__pages {
+  display: flex;
+  padding: 0 0.8em;
+}
+
+.pagination__page {
+  padding: 0.5em 0.8em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
   }
 }

@@ -190,6 +190,10 @@
   justify-content: center;
   transition: all .3s;
 
+  &.hidden {
+    display: none;
+  }
+
   &_type {
     &_square {
       border-radius: 6px;
