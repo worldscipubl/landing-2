@@ -11,6 +11,7 @@ function initViewPager(viewPager) {
         tab.addEventListener('click', (e) => {
             resetTabs();
             setActiveTab(tab);
+
             resetPages();
             setActivePage(index);
         })
