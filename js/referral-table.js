@@ -4,43 +4,55 @@ initReferralTable(referralTable);
 function initReferralTable(referralTable) {
     const body = referralTable.querySelector(".ref-table__body");
     const pagination = referralTable.querySelector(".pagination");
-    const btnBack = pagination.querySelector(".pagination__back-btn");
-    const btnNext = pagination.querySelector(".pagination__next-btn");
-    const stateTable = {page: 1, counter: 1}
-    updateState(stateTable);
+    const stateTable = {
+        counter: 0,
+        currentPage: 1,
+        maxPerPage: 2,
+        totalResults: 8,
+        showLoader: false,
+        pageCount: function () {
+            return Math.ceil(this.totalResults / this.maxPerPage)
+        }
+    };
 
-    btnBack.addEventListener('click', () => {
-        stateTable.page--;
-        updateState(stateTable);
-    })
-    btnNext.addEventListener('click', () => {
-        stateTable.page++;
-        updateState(stateTable);
-    })
+    updateState(1);
 
-    function updateState(state) {
-        body.innerHTML = '';
-        downloadData(state?.page)
-            .then(({data, currentPage, countPage}) => {
-                state.page = currentPage;
-                state.counter = countPage;
+    function updateState(page) {
+        // body.innerHTML = '';
+        downloadData(page)
+            .then(({data, perPage, totalCount}) => {
                 data.map((item, index) => {
-                    addRowToBody({...item, rating: index + 1}, body);
+                    stateTable.counter++;
+                    addRowToBody({...item, rating: stateTable.counter}, body);
                 });
+
+                perPage && (stateTable.maxPerPage = perPage);
+                totalCount && (stateTable.totalResults = totalCount);
+
+                scrollTrigger();
             })
             .catch((error) => {
                 console.log(error.message);
             })
             .finally(() => {
-                console.log(state);
-                if (state.page === state.counter) {
-                    btnNext.classList.add('hidden')
-                } else {
-                    btnNext.classList.remove('hidden');
-                }
+
             })
     }
 
+
+    function scrollTrigger() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0 && stateTable.currentPage < stateTable.pageCount()) {
+                    stateTable.currentPage++;
+                    stateTable.showLoader = false;
+                    updateState(stateTable.currentPage);
+                }
+            })
+        });
+
+        observer.observe(body.querySelector('.ref-table__row:last-child'));
+    }
 }
 
 function createRow({rating, name, score}) {
@@ -56,20 +68,26 @@ function addRowToBody(item, body) {
     body.insertAdjacentHTML('beforeend', row);
 }
 
-
 async function downloadData(page) {
     const URL = `https://api.worldscipubl.com/v1/chat-bot-ref?page=${page}`;
     const response = await fetch(URL);
 
     if (response.ok) {
-        currentPage = response.headers.get('x-pagination-current-page') || 0;
-        countPage = response.headers.get('x-pagination-page-count') || 0;
+        currentPage = +response.headers.get('x-pagination-current-page') || 0;
+        pageCount = +response.headers.get('x-pagination-page-count') || 0;
+        perPage = +response.headers.get('x-pagination-per-page') || 0;
+        totalCount = +response.headers.get('x-pagination-total-count') || 0;
 
         const data = await response.json();
+        // response.headers.forEach(function (value, name) {
+        //     console.log(name + ": " + value);
+        // });
         return {
             data,
-            currentPage: Number.parseInt(currentPage),
-            countPage: Number.parseInt(countPage)
+            currentPage,
+            pageCount,
+            perPage,
+            totalCount
         }
     } else {
         return new Error(`Ошибка HTTP: ${response.status}`);
