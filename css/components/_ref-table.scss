@@ -1,0 +1,88 @@
+@use '../global' as *;
+
+.ref-table {
+  margin-top: 20px;
+  padding-bottom: 2em;
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+
+.ref-table__inner {
+  text-decoration: none;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  border-spacing: 1em;
+}
+
+.ref-table__header {
+
+}
+
+.ref-table__body {
+
+}
+
+.ref-table__row {
+  position: relative;
+
+  &_header {
+    &:after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      background-color: #C8C8C8;
+      bottom: 0;
+      left: 1em;
+      right: 1em;
+    }
+  }
+
+  &_body {
+    cursor: pointer;
+
+    &.green {
+      background-color: rgba(33, 150, 83, .2);
+
+      &:hover {
+        background-color: rgba(33, 150, 83, .3);
+      }
+    }
+
+    &.yellow {
+      background-color: rgba(255, 199, 0, .2);
+
+      &:hover {
+        background-color: rgba(255, 199, 0, .3);
+      }
+    }
+
+    &:not(:last-child) {
+      &:after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        background-color: #C8C8C8;
+        bottom: 0;
+        left: 1em;
+        right: 1em;
+      }
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .05);
+    }
+  }
+}
+
+.ref-table__cell {
+  white-space: pre-wrap;
+  padding: 10px 1em;
+  line-height: 13px;
+  vertical-align: middle;
+
+  &_th {
+    padding-top: 1.56em;
+  }
+}

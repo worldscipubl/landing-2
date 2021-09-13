@@ -1,0 +1,27 @@
+@use '../global' as *;
+
+.view-pager {
+
+}
+
+.view-pager__navbar {
+  display: flex;
+}
+
+.view-pager__body {
+  margin-top: 20px;
+}
+
+.view-pager__tab {
+  & + & {
+    margin-left: 1em;
+  }
+}
+
+.view-pager__page {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

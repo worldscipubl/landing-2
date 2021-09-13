@@ -181,6 +181,70 @@
   }
 }
 
+.bem-button {
+  display: inline-flex;
+  padding: 0.5em 0.8em;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+
+  &_type {
+    &_square {
+      border-radius: 6px;
+      @media screen and (min-width: $bp-xxl-1442) {
+        border-radius: #{get-vw(6px, $bp-xxl-1442)};
+      }
+    }
+
+    &_ellipse {
+      border-radius: 24px;
+      @media screen and (min-width: $bp-xxl-1442) {
+        border-radius: #{get-vw(24px, $bp-xxl-1442)};
+      }
+    }
+  }
+
+  &_color {
+    &_blue {
+      background-color: #0D1D47;
+      border: 1px solid #0D1D47;
+      color: white;
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid #0D1D47;
+        color: #0D1D47;
+      }
+
+      &.active {
+        background-color: transparent;
+        border: 1px solid #0D1D47;
+        color: #0D1D47;
+      }
+    }
+
+    &_blue_shell {
+      background-color: transparent;
+      border: 1px solid #0D1D47;
+      color: #0D1D47;
+
+      &:hover {
+        background-color: #0D1D47;
+        border: 1px solid #0D1D47;
+        color: white;
+      }
+
+      &.active {
+        background-color: #0D1D47;
+        border: 1px solid #0D1D47;
+        color: white;
+      }
+    }
+  }
+}
+
 .has-animation-blink {
   animation: 3s linear 0s infinite normal;
   position: relative;

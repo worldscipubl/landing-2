@@ -1,0 +1,16 @@
+@use '../global/index' as *;
+
+.referral {
+
+  &__container {
+    @include margin(75px, 0px, 40px, 0px);
+  }
+}
+
+.referral__view-pager {
+  margin-top: 20px;
+}
+
+.referral__paragraph {
+  margin-top: 20px;
+}
