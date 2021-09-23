@@ -1,3 +1,8 @@
 {
+  "audit": "technical_audit.php",
+  "cooperation": "we_need_editors.php",
+  "promocode": "promocode.php",
+  "promocode-ads": "promocode-ads.php",
+  "overtake": "overtake.php",
   "referral": "referral.php"
 }

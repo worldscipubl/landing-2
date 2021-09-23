@@ -19,6 +19,8 @@ jobs:
       # Deploy
       - run: mkdir build
       - run: mkdir build/css
+      # Config move
+      - run: mv config.json build/config.json
       # Style move
       - run: mv css/style.min.css build/css/style.min.css
       - run: mv css/style_audit.min.css build/css/style_audit.min.css
