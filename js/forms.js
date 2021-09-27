@@ -74,7 +74,6 @@
                     _fileUploadBtn.style.display = 'block';
                     _uploaderArrowImg.style.display = 'block';
                     _uploaderDoneImg.style.display = 'none';
-
                 }
             }
 

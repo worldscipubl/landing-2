@@ -11,9 +11,12 @@
                 <div class="audit__main">
 
                     <div class="audit__uploader uploader" id="file-upload-form">
-                        <input class="uploader__input-file" id="file-upload" type="file"
+                        <input class="uploader__input-file"
+                               accept=".pdf, .doc, .docx"
                                name="fileUpload"
-                               accept=".pdf, .doc, .docx" required>
+                               id="file-upload"
+                               type="file"
+                               required>
                         <label class="uploader__inner" for="file-upload" id="file-drag">
                             <span class="uploader__img lazy">
                                 <img class="uploader__cloud lazy"

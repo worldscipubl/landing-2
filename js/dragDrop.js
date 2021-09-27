@@ -45,12 +45,35 @@
                 _wrapperError.classList.remove('input-wrapper__error--show');
                 _wrapperError.innerHTML = '';
             }
+        }
 
+        function removeDragHover() {
+            const fileDrag = document.getElementById('file-drag');
+            fileDrag.classList.remove('uploader__inner--drag');
+            fileDrag.className = 'uploader__inner';
+
+            const _fileUploadBtn = document.querySelector('.file-upload-btn');
+            const _uploaderArrowImg = document.querySelector('.uploader__arrow');
+            const _uploaderDoneImg = document.querySelector('.uploader__done');
+
+            const _status = document.getElementById('status');
+            _status.innerHTML = '';
+
+            const _messages = document.getElementById('messages');
+            _messages.innerHTML = 'Загрузите научную работу';
+
+            _fileUploadBtn.style.display = 'block';
+            _uploaderArrowImg.style.display = 'block';
+            _uploaderDoneImg.style.display = 'none';
         }
 
         function fileSelectHandler(e) {
             // Fetch FileList object
             let files = e.target.files || e.dataTransfer.files;
+            if (!files.length) {
+                removeDragHover();
+                return;
+            }
 
             // Cancel event and hover styling
             fileDragHover(e);
@@ -115,5 +138,4 @@
             document.getElementById('file-drag').style.display = 'none';
         }
     }
-
 )();
