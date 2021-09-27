@@ -485,14 +485,14 @@
 
     const showSnakebar = (msg) => {
         const snackbar = document.getElementById("snackbar");
-        const html = `<div id="snackbar">${msg}</div>`;
-
         // Add the "show" class to DIV
-        snackbar.className = "show";
+        snackbar.classList.add('show');
+        snackbar.innerText = msg || ""
         // After 3 seconds, remove the show class from DIV
-        setTimeout(() => { snackbar.className = x.className.replace("show", ""); snackbar.remove}, 3000);
+        setTimeout(() => {
+            snackbar.classList.remove('show')
+        }, 3000);
     }
-
     const forms = document.querySelectorAll('form');
     forms.forEach((_form) => {
         if (!_form.hasAttribute("data-form-type"))
