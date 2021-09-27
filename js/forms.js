@@ -402,10 +402,14 @@
                     {headers: headers}
                 ).then(
                     (response) => {
+
                         console.log(response);
                         const resData = response.data;
                         if (resData['warning']) {
-                            showSnakebar(resData['warning']?.error)
+                            const error = resData['warning']?.error;
+                            showSnakebar(error)
+                            const _error = document.querySelector('.audit__error');
+                            _error && (_error.innerHTML = error);
                         } else {
                             triggerGoal(formName);          // Фиксируем цель
                             openNextPopUp();                // Открываем следующий PopUp
